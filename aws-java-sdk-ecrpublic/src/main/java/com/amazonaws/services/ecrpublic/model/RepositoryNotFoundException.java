@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified repository could not be found. Check the spelling of the specified repository and ensure that you are
+ * The specified repository can't be found. Check the spelling of the specified repository and ensure that you're
  * performing operations on the correct registry.
  * </p>
  */

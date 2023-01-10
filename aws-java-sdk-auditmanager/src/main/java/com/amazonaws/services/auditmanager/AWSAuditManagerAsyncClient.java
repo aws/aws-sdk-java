@@ -59,7 +59,7 @@ import java.util.concurrent.ExecutorService;
  * <li>
  * <p>
  * <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/CommonParameters.html">Common parameters</a>:
- * Parameters that all Query operations can use.
+ * Parameters that all operations can use.
  * </p>
  * </li>
  * <li>

@@ -25,7 +25,9 @@ public enum ContactInitiationMethod {
     TRANSFER("TRANSFER"),
     QUEUE_TRANSFER("QUEUE_TRANSFER"),
     CALLBACK("CALLBACK"),
-    API("API");
+    API("API"),
+    DISCONNECT("DISCONNECT"),
+    MONITOR("MONITOR");
 
     private String value;
 

@@ -27,27 +27,27 @@ public class InitiateLayerUploadRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID associated with the registry to which you intend to upload layers. If you do not specify a
-     * registry, the default public registry is assumed.
+     * The Amazon Web Services account ID, or registry alias, that's associated with the registry to which you intend to
+     * upload layers. If you do not specify a registry, the default public registry is assumed.
      * </p>
      */
     private String registryId;
     /**
      * <p>
-     * The name of the repository to which you intend to upload layers.
+     * The name of the repository that you want to upload layers to.
      * </p>
      */
     private String repositoryName;
 
     /**
      * <p>
-     * The AWS account ID associated with the registry to which you intend to upload layers. If you do not specify a
-     * registry, the default public registry is assumed.
+     * The Amazon Web Services account ID, or registry alias, that's associated with the registry to which you intend to
+     * upload layers. If you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry to which you intend to upload layers. If you do not
-     *        specify a registry, the default public registry is assumed.
+     *        The Amazon Web Services account ID, or registry alias, that's associated with the registry to which you
+     *        intend to upload layers. If you do not specify a registry, the default public registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -56,12 +56,12 @@ public class InitiateLayerUploadRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID associated with the registry to which you intend to upload layers. If you do not specify a
-     * registry, the default public registry is assumed.
+     * The Amazon Web Services account ID, or registry alias, that's associated with the registry to which you intend to
+     * upload layers. If you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the registry to which you intend to upload layers. If you do not
-     *         specify a registry, the default public registry is assumed.
+     * @return The Amazon Web Services account ID, or registry alias, that's associated with the registry to which you
+     *         intend to upload layers. If you do not specify a registry, the default public registry is assumed.
      */
 
     public String getRegistryId() {
@@ -70,13 +70,13 @@ public class InitiateLayerUploadRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID associated with the registry to which you intend to upload layers. If you do not specify a
-     * registry, the default public registry is assumed.
+     * The Amazon Web Services account ID, or registry alias, that's associated with the registry to which you intend to
+     * upload layers. If you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry to which you intend to upload layers. If you do not
-     *        specify a registry, the default public registry is assumed.
+     *        The Amazon Web Services account ID, or registry alias, that's associated with the registry to which you
+     *        intend to upload layers. If you do not specify a registry, the default public registry is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class InitiateLayerUploadRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the repository to which you intend to upload layers.
+     * The name of the repository that you want to upload layers to.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository to which you intend to upload layers.
+     *        The name of the repository that you want to upload layers to.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -100,10 +100,10 @@ public class InitiateLayerUploadRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the repository to which you intend to upload layers.
+     * The name of the repository that you want to upload layers to.
      * </p>
      * 
-     * @return The name of the repository to which you intend to upload layers.
+     * @return The name of the repository that you want to upload layers to.
      */
 
     public String getRepositoryName() {
@@ -112,11 +112,11 @@ public class InitiateLayerUploadRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the repository to which you intend to upload layers.
+     * The name of the repository that you want to upload layers to.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository to which you intend to upload layers.
+     *        The name of the repository that you want to upload layers to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdatePortalRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authenticationType").build();
     private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
     private static final MarshallingInfo<String> PORTALARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,7 @@ public class UpdatePortalRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updatePortalRequest.getAuthenticationType(), AUTHENTICATIONTYPE_BINDING);
             protocolMarshaller.marshall(updatePortalRequest.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(updatePortalRequest.getPortalArn(), PORTALARN_BINDING);
         } catch (Exception e) {

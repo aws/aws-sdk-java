@@ -50,8 +50,9 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      * <li>
      * <p>
      * <code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We
-     * recommend that you wait 24 hours until the event data store is backfilled with your past evidence data. You can
-     * use evidence finder in the meantime, but not all data might be available until the backfill is complete.
+     * recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of
+     * evidence data. You can use evidence finder in the meantime, but not all data might be available until the
+     * backfill is complete.
      * </p>
      * </li>
      * <li>
@@ -75,7 +76,7 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      * </p>
      * <p>
      * The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event data
-     * store with your past evidence data so that your evidence can be queried.
+     * store with your past two years’ worth of evidence data so that your evidence can be queried.
      * </p>
      * <ul>
      * <li>
@@ -85,7 +86,7 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 24 hours to complete,
+     * <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete,
      * depending on the amount of evidence data.
      * </p>
      * </li>
@@ -164,8 +165,9 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      * <li>
      * <p>
      * <code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We
-     * recommend that you wait 24 hours until the event data store is backfilled with your past evidence data. You can
-     * use evidence finder in the meantime, but not all data might be available until the backfill is complete.
+     * recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of
+     * evidence data. You can use evidence finder in the meantime, but not all data might be available until the
+     * backfill is complete.
      * </p>
      * </li>
      * <li>
@@ -194,9 +196,9 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      *        <li>
      *        <p>
      *        <code>ENABLED</code> means that an event data store was successfully created and evidence finder is
-     *        enabled. We recommend that you wait 24 hours until the event data store is backfilled with your past
-     *        evidence data. You can use evidence finder in the meantime, but not all data might be available until the
-     *        backfill is complete.
+     *        enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two
+     *        years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be
+     *        available until the backfill is complete.
      *        </p>
      *        </li>
      *        <li>
@@ -232,8 +234,9 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      * <li>
      * <p>
      * <code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We
-     * recommend that you wait 24 hours until the event data store is backfilled with your past evidence data. You can
-     * use evidence finder in the meantime, but not all data might be available until the backfill is complete.
+     * recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of
+     * evidence data. You can use evidence finder in the meantime, but not all data might be available until the
+     * backfill is complete.
      * </p>
      * </li>
      * <li>
@@ -261,9 +264,9 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      *         <li>
      *         <p>
      *         <code>ENABLED</code> means that an event data store was successfully created and evidence finder is
-     *         enabled. We recommend that you wait 24 hours until the event data store is backfilled with your past
-     *         evidence data. You can use evidence finder in the meantime, but not all data might be available until the
-     *         backfill is complete.
+     *         enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two
+     *         years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be
+     *         available until the backfill is complete.
      *         </p>
      *         </li>
      *         <li>
@@ -299,8 +302,9 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      * <li>
      * <p>
      * <code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We
-     * recommend that you wait 24 hours until the event data store is backfilled with your past evidence data. You can
-     * use evidence finder in the meantime, but not all data might be available until the backfill is complete.
+     * recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of
+     * evidence data. You can use evidence finder in the meantime, but not all data might be available until the
+     * backfill is complete.
      * </p>
      * </li>
      * <li>
@@ -329,9 +333,9 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      *        <li>
      *        <p>
      *        <code>ENABLED</code> means that an event data store was successfully created and evidence finder is
-     *        enabled. We recommend that you wait 24 hours until the event data store is backfilled with your past
-     *        evidence data. You can use evidence finder in the meantime, but not all data might be available until the
-     *        backfill is complete.
+     *        enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two
+     *        years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be
+     *        available until the backfill is complete.
      *        </p>
      *        </li>
      *        <li>
@@ -369,8 +373,9 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      * <li>
      * <p>
      * <code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We
-     * recommend that you wait 24 hours until the event data store is backfilled with your past evidence data. You can
-     * use evidence finder in the meantime, but not all data might be available until the backfill is complete.
+     * recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of
+     * evidence data. You can use evidence finder in the meantime, but not all data might be available until the
+     * backfill is complete.
      * </p>
      * </li>
      * <li>
@@ -399,9 +404,9 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      *        <li>
      *        <p>
      *        <code>ENABLED</code> means that an event data store was successfully created and evidence finder is
-     *        enabled. We recommend that you wait 24 hours until the event data store is backfilled with your past
-     *        evidence data. You can use evidence finder in the meantime, but not all data might be available until the
-     *        backfill is complete.
+     *        enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two
+     *        years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be
+     *        available until the backfill is complete.
      *        </p>
      *        </li>
      *        <li>
@@ -431,7 +436,7 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      * </p>
      * <p>
      * The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event data
-     * store with your past evidence data so that your evidence can be queried.
+     * store with your past two years’ worth of evidence data so that your evidence can be queried.
      * </p>
      * <ul>
      * <li>
@@ -441,7 +446,7 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 24 hours to complete,
+     * <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete,
      * depending on the amount of evidence data.
      * </p>
      * </li>
@@ -456,7 +461,7 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      *        The current status of the evidence data backfill process. </p>
      *        <p>
      *        The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event
-     *        data store with your past evidence data so that your evidence can be queried.
+     *        data store with your past two years’ worth of evidence data so that your evidence can be queried.
      *        </p>
      *        <ul>
      *        <li>
@@ -466,7 +471,7 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 24 hours to complete,
+     *        <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete,
      *        depending on the amount of evidence data.
      *        </p>
      *        </li>
@@ -488,7 +493,7 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      * </p>
      * <p>
      * The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event data
-     * store with your past evidence data so that your evidence can be queried.
+     * store with your past two years’ worth of evidence data so that your evidence can be queried.
      * </p>
      * <ul>
      * <li>
@@ -498,7 +503,7 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 24 hours to complete,
+     * <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete,
      * depending on the amount of evidence data.
      * </p>
      * </li>
@@ -512,7 +517,7 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      * @return The current status of the evidence data backfill process. </p>
      *         <p>
      *         The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event
-     *         data store with your past evidence data so that your evidence can be queried.
+     *         data store with your past two years’ worth of evidence data so that your evidence can be queried.
      *         </p>
      *         <ul>
      *         <li>
@@ -522,8 +527,8 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      *         </li>
      *         <li>
      *         <p>
-     *         <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 24 hours to
-     *         complete, depending on the amount of evidence data.
+     *         <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete,
+     *         depending on the amount of evidence data.
      *         </p>
      *         </li>
      *         <li>
@@ -544,7 +549,7 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      * </p>
      * <p>
      * The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event data
-     * store with your past evidence data so that your evidence can be queried.
+     * store with your past two years’ worth of evidence data so that your evidence can be queried.
      * </p>
      * <ul>
      * <li>
@@ -554,7 +559,7 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 24 hours to complete,
+     * <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete,
      * depending on the amount of evidence data.
      * </p>
      * </li>
@@ -569,7 +574,7 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      *        The current status of the evidence data backfill process. </p>
      *        <p>
      *        The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event
-     *        data store with your past evidence data so that your evidence can be queried.
+     *        data store with your past two years’ worth of evidence data so that your evidence can be queried.
      *        </p>
      *        <ul>
      *        <li>
@@ -579,7 +584,7 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 24 hours to complete,
+     *        <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete,
      *        depending on the amount of evidence data.
      *        </p>
      *        </li>
@@ -603,7 +608,7 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      * </p>
      * <p>
      * The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event data
-     * store with your past evidence data so that your evidence can be queried.
+     * store with your past two years’ worth of evidence data so that your evidence can be queried.
      * </p>
      * <ul>
      * <li>
@@ -613,7 +618,7 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 24 hours to complete,
+     * <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete,
      * depending on the amount of evidence data.
      * </p>
      * </li>
@@ -628,7 +633,7 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      *        The current status of the evidence data backfill process. </p>
      *        <p>
      *        The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event
-     *        data store with your past evidence data so that your evidence can be queried.
+     *        data store with your past two years’ worth of evidence data so that your evidence can be queried.
      *        </p>
      *        <ul>
      *        <li>
@@ -638,7 +643,7 @@ public class EvidenceFinderEnablement implements Serializable, Cloneable, Struct
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 24 hours to complete,
+     *        <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete,
      *        depending on the amount of evidence data.
      *        </p>
      *        </li>

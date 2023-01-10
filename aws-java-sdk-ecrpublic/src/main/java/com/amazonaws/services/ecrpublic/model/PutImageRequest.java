@@ -27,26 +27,26 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository in which to put the image. If
-     * you do not specify a registry, the default public registry is assumed.
+     * The Amazon Web Services account ID, or registry alias, that's associated with the public registry that contains
+     * the repository where the image is put. If you do not specify a registry, the default public registry is assumed.
      * </p>
      */
     private String registryId;
     /**
      * <p>
-     * The name of the repository in which to put the image.
+     * The name of the repository where the image is put.
      * </p>
      */
     private String repositoryName;
     /**
      * <p>
-     * The image manifest corresponding to the image to be uploaded.
+     * The image manifest that corresponds to the image to be uploaded.
      * </p>
      */
     private String imageManifest;
     /**
      * <p>
-     * The media type of the image manifest. If you push an image manifest that does not contain the
+     * The media type of the image manifest. If you push an image manifest that doesn't contain the
      * <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.
      * </p>
      */
@@ -60,20 +60,21 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String imageTag;
     /**
      * <p>
-     * The image digest of the image manifest corresponding to the image.
+     * The image digest of the image manifest that corresponds to the image.
      * </p>
      */
     private String imageDigest;
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository in which to put the image. If
-     * you do not specify a registry, the default public registry is assumed.
+     * The Amazon Web Services account ID, or registry alias, that's associated with the public registry that contains
+     * the repository where the image is put. If you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the public registry that contains the repository in which to put the
-     *        image. If you do not specify a registry, the default public registry is assumed.
+     *        The Amazon Web Services account ID, or registry alias, that's associated with the public registry that
+     *        contains the repository where the image is put. If you do not specify a registry, the default public
+     *        registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -82,12 +83,13 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository in which to put the image. If
-     * you do not specify a registry, the default public registry is assumed.
+     * The Amazon Web Services account ID, or registry alias, that's associated with the public registry that contains
+     * the repository where the image is put. If you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the public registry that contains the repository in which to put the
-     *         image. If you do not specify a registry, the default public registry is assumed.
+     * @return The Amazon Web Services account ID, or registry alias, that's associated with the public registry that
+     *         contains the repository where the image is put. If you do not specify a registry, the default public
+     *         registry is assumed.
      */
 
     public String getRegistryId() {
@@ -96,13 +98,14 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository in which to put the image. If
-     * you do not specify a registry, the default public registry is assumed.
+     * The Amazon Web Services account ID, or registry alias, that's associated with the public registry that contains
+     * the repository where the image is put. If you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the public registry that contains the repository in which to put the
-     *        image. If you do not specify a registry, the default public registry is assumed.
+     *        The Amazon Web Services account ID, or registry alias, that's associated with the public registry that
+     *        contains the repository where the image is put. If you do not specify a registry, the default public
+     *        registry is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +116,11 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name of the repository in which to put the image.
+     * The name of the repository where the image is put.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository in which to put the image.
+     *        The name of the repository where the image is put.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -126,10 +129,10 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name of the repository in which to put the image.
+     * The name of the repository where the image is put.
      * </p>
      * 
-     * @return The name of the repository in which to put the image.
+     * @return The name of the repository where the image is put.
      */
 
     public String getRepositoryName() {
@@ -138,11 +141,11 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name of the repository in which to put the image.
+     * The name of the repository where the image is put.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository in which to put the image.
+     *        The name of the repository where the image is put.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +156,11 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The image manifest corresponding to the image to be uploaded.
+     * The image manifest that corresponds to the image to be uploaded.
      * </p>
      * 
      * @param imageManifest
-     *        The image manifest corresponding to the image to be uploaded.
+     *        The image manifest that corresponds to the image to be uploaded.
      */
 
     public void setImageManifest(String imageManifest) {
@@ -166,10 +169,10 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The image manifest corresponding to the image to be uploaded.
+     * The image manifest that corresponds to the image to be uploaded.
      * </p>
      * 
-     * @return The image manifest corresponding to the image to be uploaded.
+     * @return The image manifest that corresponds to the image to be uploaded.
      */
 
     public String getImageManifest() {
@@ -178,11 +181,11 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The image manifest corresponding to the image to be uploaded.
+     * The image manifest that corresponds to the image to be uploaded.
      * </p>
      * 
      * @param imageManifest
-     *        The image manifest corresponding to the image to be uploaded.
+     *        The image manifest that corresponds to the image to be uploaded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,12 +196,12 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The media type of the image manifest. If you push an image manifest that does not contain the
+     * The media type of the image manifest. If you push an image manifest that doesn't contain the
      * <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.
      * </p>
      * 
      * @param imageManifestMediaType
-     *        The media type of the image manifest. If you push an image manifest that does not contain the
+     *        The media type of the image manifest. If you push an image manifest that doesn't contain the
      *        <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.
      */
 
@@ -208,11 +211,11 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The media type of the image manifest. If you push an image manifest that does not contain the
+     * The media type of the image manifest. If you push an image manifest that doesn't contain the
      * <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.
      * </p>
      * 
-     * @return The media type of the image manifest. If you push an image manifest that does not contain the
+     * @return The media type of the image manifest. If you push an image manifest that doesn't contain the
      *         <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.
      */
 
@@ -222,12 +225,12 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The media type of the image manifest. If you push an image manifest that does not contain the
+     * The media type of the image manifest. If you push an image manifest that doesn't contain the
      * <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.
      * </p>
      * 
      * @param imageManifestMediaType
-     *        The media type of the image manifest. If you push an image manifest that does not contain the
+     *        The media type of the image manifest. If you push an image manifest that doesn't contain the
      *        <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -285,11 +288,11 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The image digest of the image manifest corresponding to the image.
+     * The image digest of the image manifest that corresponds to the image.
      * </p>
      * 
      * @param imageDigest
-     *        The image digest of the image manifest corresponding to the image.
+     *        The image digest of the image manifest that corresponds to the image.
      */
 
     public void setImageDigest(String imageDigest) {
@@ -298,10 +301,10 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The image digest of the image manifest corresponding to the image.
+     * The image digest of the image manifest that corresponds to the image.
      * </p>
      * 
-     * @return The image digest of the image manifest corresponding to the image.
+     * @return The image digest of the image manifest that corresponds to the image.
      */
 
     public String getImageDigest() {
@@ -310,11 +313,11 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The image digest of the image manifest corresponding to the image.
+     * The image digest of the image manifest that corresponds to the image.
      * </p>
      * 
      * @param imageDigest
-     *        The image digest of the image manifest corresponding to the image.
+     *        The image digest of the image manifest that corresponds to the image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

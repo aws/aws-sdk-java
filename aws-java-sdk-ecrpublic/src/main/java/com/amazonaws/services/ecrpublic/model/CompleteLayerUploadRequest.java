@@ -27,8 +27,8 @@ public class CompleteLayerUploadRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID associated with the registry to which to upload layers. If you do not specify a registry, the
-     * default public registry is assumed.
+     * The Amazon Web Services account ID, or registry alias, associated with the registry where layers are uploaded. If
+     * you do not specify a registry, the default public registry is assumed.
      * </p>
      */
     private String registryId;
@@ -53,13 +53,13 @@ public class CompleteLayerUploadRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID associated with the registry to which to upload layers. If you do not specify a registry, the
-     * default public registry is assumed.
+     * The Amazon Web Services account ID, or registry alias, associated with the registry where layers are uploaded. If
+     * you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry to which to upload layers. If you do not specify a
-     *        registry, the default public registry is assumed.
+     *        The Amazon Web Services account ID, or registry alias, associated with the registry where layers are
+     *        uploaded. If you do not specify a registry, the default public registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -68,12 +68,12 @@ public class CompleteLayerUploadRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID associated with the registry to which to upload layers. If you do not specify a registry, the
-     * default public registry is assumed.
+     * The Amazon Web Services account ID, or registry alias, associated with the registry where layers are uploaded. If
+     * you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the registry to which to upload layers. If you do not specify a
-     *         registry, the default public registry is assumed.
+     * @return The Amazon Web Services account ID, or registry alias, associated with the registry where layers are
+     *         uploaded. If you do not specify a registry, the default public registry is assumed.
      */
 
     public String getRegistryId() {
@@ -82,13 +82,13 @@ public class CompleteLayerUploadRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID associated with the registry to which to upload layers. If you do not specify a registry, the
-     * default public registry is assumed.
+     * The Amazon Web Services account ID, or registry alias, associated with the registry where layers are uploaded. If
+     * you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry to which to upload layers. If you do not specify a
-     *        registry, the default public registry is assumed.
+     *        The Amazon Web Services account ID, or registry alias, associated with the registry where layers are
+     *        uploaded. If you do not specify a registry, the default public registry is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

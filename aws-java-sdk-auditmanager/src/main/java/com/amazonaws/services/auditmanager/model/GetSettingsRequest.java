@@ -27,18 +27,18 @@ public class GetSettingsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of <code>SettingAttribute</code> enum values.
+     * The list of setting attribute enum values.
      * </p>
      */
     private String attribute;
 
     /**
      * <p>
-     * The list of <code>SettingAttribute</code> enum values.
+     * The list of setting attribute enum values.
      * </p>
      * 
      * @param attribute
-     *        The list of <code>SettingAttribute</code> enum values.
+     *        The list of setting attribute enum values.
      * @see SettingAttribute
      */
 
@@ -48,10 +48,10 @@ public class GetSettingsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of <code>SettingAttribute</code> enum values.
+     * The list of setting attribute enum values.
      * </p>
      * 
-     * @return The list of <code>SettingAttribute</code> enum values.
+     * @return The list of setting attribute enum values.
      * @see SettingAttribute
      */
 
@@ -61,11 +61,11 @@ public class GetSettingsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of <code>SettingAttribute</code> enum values.
+     * The list of setting attribute enum values.
      * </p>
      * 
      * @param attribute
-     *        The list of <code>SettingAttribute</code> enum values.
+     *        The list of setting attribute enum values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SettingAttribute
      */
@@ -77,11 +77,11 @@ public class GetSettingsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of <code>SettingAttribute</code> enum values.
+     * The list of setting attribute enum values.
      * </p>
      * 
      * @param attribute
-     *        The list of <code>SettingAttribute</code> enum values.
+     *        The list of setting attribute enum values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SettingAttribute
      */

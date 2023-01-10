@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PortalSummaryMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authenticationType").build();
     private static final MarshallingInfo<String> BROWSERSETTINGSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("browserSettingsArn").build();
     private static final MarshallingInfo<String> BROWSERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -68,6 +70,7 @@ public class PortalSummaryMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(portalSummary.getAuthenticationType(), AUTHENTICATIONTYPE_BINDING);
             protocolMarshaller.marshall(portalSummary.getBrowserSettingsArn(), BROWSERSETTINGSARN_BINDING);
             protocolMarshaller.marshall(portalSummary.getBrowserType(), BROWSERTYPE_BINDING);
             protocolMarshaller.marshall(portalSummary.getCreationDate(), CREATIONDATE_BINDING);

@@ -29,7 +29,7 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The Amazon Resource Number (ARN) of the private CA to associate with the policy. The ARN of the CA can be found
      * by calling the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html"
      * >ListCertificateAuthorities</a> action.
      * </p>
      * <p/>
@@ -51,7 +51,7 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The Amazon Resource Number (ARN) of the private CA to associate with the policy. The ARN of the CA can be found
      * by calling the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html"
      * >ListCertificateAuthorities</a> action.
      * </p>
      * <p/>
@@ -59,7 +59,7 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @param resourceArn
      *        The Amazon Resource Number (ARN) of the private CA to associate with the policy. The ARN of the CA can be
      *        found by calling the <a
-     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     *        href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html"
      *        >ListCertificateAuthorities</a> action.
      *        </p>
      */
@@ -72,14 +72,14 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The Amazon Resource Number (ARN) of the private CA to associate with the policy. The ARN of the CA can be found
      * by calling the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html"
      * >ListCertificateAuthorities</a> action.
      * </p>
      * <p/>
      * 
      * @return The Amazon Resource Number (ARN) of the private CA to associate with the policy. The ARN of the CA can be
      *         found by calling the <a
-     *         href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     *         href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html"
      *         >ListCertificateAuthorities</a> action.
      *         </p>
      */
@@ -92,7 +92,7 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The Amazon Resource Number (ARN) of the private CA to associate with the policy. The ARN of the CA can be found
      * by calling the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html"
      * >ListCertificateAuthorities</a> action.
      * </p>
      * <p/>
@@ -100,7 +100,7 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @param resourceArn
      *        The Amazon Resource Number (ARN) of the private CA to associate with the policy. The ARN of the CA can be
      *        found by calling the <a
-     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     *        href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html"
      *        >ListCertificateAuthorities</a> action.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

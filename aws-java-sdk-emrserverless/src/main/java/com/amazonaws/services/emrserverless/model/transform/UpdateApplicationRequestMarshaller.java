@@ -48,6 +48,10 @@ public class UpdateApplicationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkConfiguration").build();
     private static final MarshallingInfo<String> ARCHITECTURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("architecture").build();
+    private static final MarshallingInfo<StructuredPojo> IMAGECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageConfiguration").build();
+    private static final MarshallingInfo<Map> WORKERTYPESPECIFICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workerTypeSpecifications").build();
 
     private static final UpdateApplicationRequestMarshaller instance = new UpdateApplicationRequestMarshaller();
 
@@ -73,6 +77,8 @@ public class UpdateApplicationRequestMarshaller {
             protocolMarshaller.marshall(updateApplicationRequest.getAutoStopConfiguration(), AUTOSTOPCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getArchitecture(), ARCHITECTURE_BINDING);
+            protocolMarshaller.marshall(updateApplicationRequest.getImageConfiguration(), IMAGECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateApplicationRequest.getWorkerTypeSpecifications(), WORKERTYPESPECIFICATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

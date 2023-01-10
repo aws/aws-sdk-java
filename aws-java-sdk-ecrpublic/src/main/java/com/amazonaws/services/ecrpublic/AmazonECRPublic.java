@@ -28,9 +28,9 @@ import com.amazonaws.services.ecrpublic.model.*;
  * <p>
  * <fullname>Amazon Elastic Container Registry Public</fullname>
  * <p>
- * Amazon Elastic Container Registry (Amazon ECR) is a managed container image registry service. Amazon ECR provides
- * both public and private registries to host your container images. You can use the familiar Docker CLI, or their
- * preferred client, to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry for
+ * Amazon Elastic Container Registry Public (Amazon ECR Public) is a managed container image registry service. Amazon
+ * ECR provides both public and private registries to host your container images. You can use the Docker CLI or your
+ * preferred client to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry for
  * your Docker or Open Container Initiative (OCI) images. Amazon ECR supports public repositories with this API. For
  * information about the Amazon ECR API for private repositories, see <a
  * href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/Welcome.html">Amazon Elastic Container Registry API
@@ -50,9 +50,9 @@ public interface AmazonECRPublic {
 
     /**
      * <p>
-     * Checks the availability of one or more image layers within a repository in a public registry. When an image is
-     * pushed to a repository, each image layer is checked to verify if it has been uploaded before. If it has been
-     * uploaded, then the image layer is skipped.
+     * Checks the availability of one or more image layers that are within a repository in a public registry. When an
+     * image is pushed to a repository, each image layer is checked to verify if it has been uploaded before. If it has
+     * been uploaded, then the image layer is skipped.
      * </p>
      * <note>
      * <p>
@@ -64,14 +64,16 @@ public interface AmazonECRPublic {
      * @param batchCheckLayerAvailabilityRequest
      * @return Result of the BatchCheckLayerAvailability operation returned by the service.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
      * @throws RegistryNotFoundException
-     *         The registry does not exist.
+     *         The registry doesn't exist.
+     * @throws UnsupportedCommandException
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.BatchCheckLayerAvailability
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/BatchCheckLayerAvailability"
      *      target="_top">AWS API Documentation</a>
@@ -80,15 +82,15 @@ public interface AmazonECRPublic {
 
     /**
      * <p>
-     * Deletes a list of specified images within a repository in a public registry. Images are specified with either an
-     * <code>imageTag</code> or <code>imageDigest</code>.
+     * Deletes a list of specified images that are within a repository in a public registry. Images are specified with
+     * either an <code>imageTag</code> or <code>imageDigest</code>.
      * </p>
      * <p>
      * You can remove a tag from an image by specifying the image's tag in your request. When you remove the last tag
      * from an image, the image is deleted from your repository.
      * </p>
      * <p>
-     * You can completely delete an image (and all of its tags) by specifying the image's digest in your request.
+     * You can completely delete an image (and all of its tags) by specifying the digest of the image in your request.
      * </p>
      * 
      * @param batchDeleteImageRequest
@@ -98,8 +100,10 @@ public interface AmazonECRPublic {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
+     * @throws UnsupportedCommandException
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.BatchDeleteImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/BatchDeleteImage" target="_top">AWS
      *      API Documentation</a>
@@ -108,13 +112,13 @@ public interface AmazonECRPublic {
 
     /**
      * <p>
-     * Informs Amazon ECR that the image layer upload has completed for a specified public registry, repository name,
-     * and upload ID. You can optionally provide a <code>sha256</code> digest of the image layer for data validation
+     * Informs Amazon ECR that the image layer upload is complete for a specified public registry, repository name, and
+     * upload ID. You can optionally provide a <code>sha256</code> digest of the image layer for data validation
      * purposes.
      * </p>
      * <p>
-     * When an image is pushed, the CompleteLayerUpload API is called once per each new image layer to verify that the
-     * upload has completed.
+     * When an image is pushed, the CompleteLayerUpload API is called once for each new image layer to verify that the
+     * upload is complete.
      * </p>
      * <note>
      * <p>
@@ -130,23 +134,23 @@ public interface AmazonECRPublic {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
      * @throws UploadNotFoundException
-     *         The upload could not be found, or the specified upload ID is not valid for this repository.
+     *         The upload can't be found, or the specified upload ID isn't valid for this repository.
      * @throws InvalidLayerException
-     *         The layer digest calculation performed by Amazon ECR upon receipt of the image layer does not match the
-     *         digest specified.
+     *         The layer digest calculation performed by Amazon ECR when the image layer doesn't match the digest
+     *         specified.
      * @throws LayerPartTooSmallException
      *         Layer parts must be at least 5 MiB in size.
      * @throws LayerAlreadyExistsException
      *         The image layer already exists in the associated repository.
      * @throws EmptyUploadException
-     *         The specified layer upload does not contain any layer parts.
+     *         The specified layer upload doesn't contain any layer parts.
      * @throws RegistryNotFoundException
-     *         The registry does not exist.
+     *         The registry doesn't exist.
      * @throws UnsupportedCommandException
-     *         The action is not supported in this Region.
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.CompleteLayerUpload
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/CompleteLayerUpload" target="_top">AWS
      *      API Documentation</a>
@@ -175,10 +179,12 @@ public interface AmazonECRPublic {
      * @throws RepositoryAlreadyExistsException
      *         The specified repository already exists in the specified registry.
      * @throws LimitExceededException
-     *         The operation did not succeed because it would have exceeded a service limit for your account. For more
+     *         The operation didn't succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service
      *         Quotas</a> in the Amazon Elastic Container Registry User Guide.
+     * @throws UnsupportedCommandException
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.CreateRepository
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/CreateRepository" target="_top">AWS
      *      API Documentation</a>
@@ -187,9 +193,9 @@ public interface AmazonECRPublic {
 
     /**
      * <p>
-     * Deletes a repository in a public registry. If the repository contains images, you must either delete all images
-     * in the repository or use the <code>force</code> option which deletes all images on your behalf before deleting
-     * the repository.
+     * Deletes a repository in a public registry. If the repository contains images, you must either manually delete all
+     * images in the repository or use the <code>force</code> option. This option deletes all images on your behalf
+     * before deleting the repository.
      * </p>
      * 
      * @param deleteRepositoryRequest
@@ -199,11 +205,13 @@ public interface AmazonECRPublic {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
      * @throws RepositoryNotEmptyException
      *         The specified repository contains images. To delete a repository that contains images, you must force the
      *         deletion with the <code>force</code> parameter.
+     * @throws UnsupportedCommandException
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.DeleteRepository
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DeleteRepository" target="_top">AWS
      *      API Documentation</a>
@@ -212,7 +220,7 @@ public interface AmazonECRPublic {
 
     /**
      * <p>
-     * Deletes the repository policy associated with the specified repository.
+     * Deletes the repository policy that's associated with the specified repository.
      * </p>
      * 
      * @param deleteRepositoryPolicyRequest
@@ -222,10 +230,12 @@ public interface AmazonECRPublic {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
      * @throws RepositoryPolicyNotFoundException
-     *         The specified repository and registry combination does not have an associated repository policy.
+     *         The specified repository and registry combination doesn't have an associated repository policy.
+     * @throws UnsupportedCommandException
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.DeleteRepositoryPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DeleteRepositoryPolicy"
      *      target="_top">AWS API Documentation</a>
@@ -244,8 +254,10 @@ public interface AmazonECRPublic {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
+     * @throws UnsupportedCommandException
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.DescribeImageTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DescribeImageTags" target="_top">AWS
      *      API Documentation</a>
@@ -254,13 +266,13 @@ public interface AmazonECRPublic {
 
     /**
      * <p>
-     * Returns metadata about the images in a repository in a public registry.
+     * Returns metadata that's related to the images in a repository in a public registry.
      * </p>
      * <note>
      * <p>
      * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
-     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may
-     * return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     * registry. The output of the <code>docker images</code> command shows the uncompressed image size. Therefore, it
+     * might return a larger image size than the image sizes that are returned by <a>DescribeImages</a>.
      * </p>
      * </note>
      * 
@@ -271,10 +283,12 @@ public interface AmazonECRPublic {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
      * @throws ImageNotFoundException
-     *         The image requested does not exist in the specified repository.
+     *         The image requested doesn't exist in the specified repository.
+     * @throws UnsupportedCommandException
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.DescribeImages
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DescribeImages" target="_top">AWS API
      *      Documentation</a>
@@ -291,7 +305,7 @@ public interface AmazonECRPublic {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws UnsupportedCommandException
-     *         The action is not supported in this Region.
+     *         The action isn't supported in this Region.
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
      * @sample AmazonECRPublic.DescribeRegistries
@@ -302,7 +316,7 @@ public interface AmazonECRPublic {
 
     /**
      * <p>
-     * Describes repositories in a public registry.
+     * Describes repositories that are in a public registry.
      * </p>
      * 
      * @param describeRepositoriesRequest
@@ -312,8 +326,10 @@ public interface AmazonECRPublic {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
+     * @throws UnsupportedCommandException
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.DescribeRepositories
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DescribeRepositories"
      *      target="_top">AWS API Documentation</a>
@@ -322,8 +338,8 @@ public interface AmazonECRPublic {
 
     /**
      * <p>
-     * Retrieves an authorization token. An authorization token represents your IAM authentication credentials and can
-     * be used to access any Amazon ECR registry that your IAM principal has access to. The authorization token is valid
+     * Retrieves an authorization token. An authorization token represents your IAM authentication credentials. You can
+     * use it to access any Amazon ECR registry that your IAM principal has access to. The authorization token is valid
      * for 12 hours. This API requires the <code>ecr-public:GetAuthorizationToken</code> and
      * <code>sts:GetServiceBearerToken</code> permissions.
      * </p>
@@ -334,6 +350,8 @@ public interface AmazonECRPublic {
      *         These errors are usually caused by a server-side issue.
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws UnsupportedCommandException
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.GetAuthorizationToken
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/GetAuthorizationToken"
      *      target="_top">AWS API Documentation</a>
@@ -350,7 +368,7 @@ public interface AmazonECRPublic {
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
      * @throws UnsupportedCommandException
-     *         The action is not supported in this Region.
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.GetRegistryCatalogData
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/GetRegistryCatalogData"
      *      target="_top">AWS API Documentation</a>
@@ -369,9 +387,13 @@ public interface AmazonECRPublic {
      *         These errors are usually caused by a server-side issue.
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryCatalogDataNotFoundException
+     *         The repository catalog data doesn't exist.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
+     * @throws UnsupportedCommandException
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.GetRepositoryCatalogData
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/GetRepositoryCatalogData"
      *      target="_top">AWS API Documentation</a>
@@ -390,10 +412,12 @@ public interface AmazonECRPublic {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
      * @throws RepositoryPolicyNotFoundException
-     *         The specified repository and registry combination does not have an associated repository policy.
+     *         The specified repository and registry combination doesn't have an associated repository policy.
+     * @throws UnsupportedCommandException
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.GetRepositoryPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/GetRepositoryPolicy" target="_top">AWS
      *      API Documentation</a>
@@ -405,9 +429,8 @@ public interface AmazonECRPublic {
      * Notifies Amazon ECR that you intend to upload an image layer.
      * </p>
      * <p>
-     * When an image is pushed, the InitiateLayerUpload API is called once per image layer that has not already been
-     * uploaded. Whether or not an image layer has been uploaded is determined by the BatchCheckLayerAvailability API
-     * action.
+     * When an image is pushed, the InitiateLayerUpload API is called once for each image layer that hasn't already been
+     * uploaded. Whether an image layer uploads is determined by the BatchCheckLayerAvailability API action.
      * </p>
      * <note>
      * <p>
@@ -423,12 +446,12 @@ public interface AmazonECRPublic {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
      * @throws RegistryNotFoundException
-     *         The registry does not exist.
+     *         The registry doesn't exist.
      * @throws UnsupportedCommandException
-     *         The action is not supported in this Region.
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.InitiateLayerUpload
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/InitiateLayerUpload" target="_top">AWS
      *      API Documentation</a>
@@ -445,8 +468,10 @@ public interface AmazonECRPublic {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
+     * @throws UnsupportedCommandException
+     *         The action isn't supported in this Region.
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
      * @sample AmazonECRPublic.ListTagsForResource
@@ -457,11 +482,11 @@ public interface AmazonECRPublic {
 
     /**
      * <p>
-     * Creates or updates the image manifest and tags associated with an image.
+     * Creates or updates the image manifest and tags that are associated with an image.
      * </p>
      * <p>
      * When an image is pushed and all new image layers have been uploaded, the PutImage API is called once to create or
-     * update the image manifest and the tags associated with the image.
+     * update the image manifest and the tags that are associated with the image.
      * </p>
      * <note>
      * <p>
@@ -477,17 +502,17 @@ public interface AmazonECRPublic {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
      * @throws ImageAlreadyExistsException
      *         The specified image has already been pushed, and there were no changes to the manifest or image tag after
      *         the last push.
      * @throws LayersNotFoundException
-     *         The specified layers could not be found, or the specified layer is not valid for this repository.
+     *         The specified layers can't be found, or the specified layer isn't valid for this repository.
      * @throws ReferencedImagesNotFoundException
-     *         The manifest list is referencing an image that does not exist.
+     *         The manifest list is referencing an image that doesn't exist.
      * @throws LimitExceededException
-     *         The operation did not succeed because it would have exceeded a service limit for your account. For more
+     *         The operation didn't succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service
      *         Quotas</a> in the Amazon Elastic Container Registry User Guide.
@@ -495,11 +520,11 @@ public interface AmazonECRPublic {
      *         The specified image is tagged with a tag that already exists. The repository is configured for tag
      *         immutability.
      * @throws ImageDigestDoesNotMatchException
-     *         The specified image digest does not match the digest that Amazon ECR calculated for the image.
+     *         The specified image digest doesn't match the digest that Amazon ECR calculated for the image.
      * @throws RegistryNotFoundException
-     *         The registry does not exist.
+     *         The registry doesn't exist.
      * @throws UnsupportedCommandException
-     *         The action is not supported in this Region.
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.PutImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/PutImage" target="_top">AWS API
      *      Documentation</a>
@@ -508,7 +533,7 @@ public interface AmazonECRPublic {
 
     /**
      * <p>
-     * Create or updates the catalog data for a public registry.
+     * Create or update the catalog data for a public registry.
      * </p>
      * 
      * @param putRegistryCatalogDataRequest
@@ -518,7 +543,7 @@ public interface AmazonECRPublic {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws UnsupportedCommandException
-     *         The action is not supported in this Region.
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.PutRegistryCatalogData
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/PutRegistryCatalogData"
      *      target="_top">AWS API Documentation</a>
@@ -537,8 +562,10 @@ public interface AmazonECRPublic {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
+     * @throws UnsupportedCommandException
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.PutRepositoryCatalogData
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/PutRepositoryCatalogData"
      *      target="_top">AWS API Documentation</a>
@@ -559,8 +586,10 @@ public interface AmazonECRPublic {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
+     * @throws UnsupportedCommandException
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.SetRepositoryPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/SetRepositoryPolicy" target="_top">AWS
      *      API Documentation</a>
@@ -570,8 +599,8 @@ public interface AmazonECRPublic {
     /**
      * <p>
      * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
-     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
-     * associated with that resource are deleted as well.
+     * resource aren't specified in the request parameters, they aren't changed. When a resource is deleted, the tags
+     * associated with that resource are also deleted.
      * </p>
      * 
      * @param tagResourceRequest
@@ -585,8 +614,10 @@ public interface AmazonECRPublic {
      *         The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a
      *         repository is 50.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
+     * @throws UnsupportedCommandException
+     *         The action isn't supported in this Region.
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
      * @sample AmazonECRPublic.TagResource
@@ -611,8 +642,10 @@ public interface AmazonECRPublic {
      *         The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a
      *         repository is 50.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
+     * @throws UnsupportedCommandException
+     *         The action isn't supported in this Region.
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
      * @sample AmazonECRPublic.UntagResource
@@ -627,7 +660,7 @@ public interface AmazonECRPublic {
      * </p>
      * <p>
      * When an image is pushed, each new image layer is uploaded in parts. The maximum size of each image layer part can
-     * be 20971520 bytes (or about 20MB). The UploadLayerPart API is called once per each new image layer part.
+     * be 20971520 bytes (about 20MB). The UploadLayerPart API is called once for each new image layer part.
      * </p>
      * <note>
      * <p>
@@ -643,22 +676,22 @@ public interface AmazonECRPublic {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws InvalidLayerPartException
-     *         The layer part size is not valid, or the first byte specified is not consecutive to the last byte of a
+     *         The layer part size isn't valid, or the first byte specified isn't consecutive to the last byte of a
      *         previous layer part upload.
      * @throws RepositoryNotFoundException
-     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
-     *         that you are performing operations on the correct registry.
+     *         The specified repository can't be found. Check the spelling of the specified repository and ensure that
+     *         you're performing operations on the correct registry.
      * @throws UploadNotFoundException
-     *         The upload could not be found, or the specified upload ID is not valid for this repository.
+     *         The upload can't be found, or the specified upload ID isn't valid for this repository.
      * @throws LimitExceededException
-     *         The operation did not succeed because it would have exceeded a service limit for your account. For more
+     *         The operation didn't succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service
      *         Quotas</a> in the Amazon Elastic Container Registry User Guide.
      * @throws RegistryNotFoundException
-     *         The registry does not exist.
+     *         The registry doesn't exist.
      * @throws UnsupportedCommandException
-     *         The action is not supported in this Region.
+     *         The action isn't supported in this Region.
      * @sample AmazonECRPublic.UploadLayerPart
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/UploadLayerPart" target="_top">AWS API
      *      Documentation</a>

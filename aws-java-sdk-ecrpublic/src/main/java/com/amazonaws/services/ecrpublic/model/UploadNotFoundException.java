@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The upload could not be found, or the specified upload ID is not valid for this repository.
+ * The upload can't be found, or the specified upload ID isn't valid for this repository.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

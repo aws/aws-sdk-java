@@ -124,7 +124,6 @@ import com.amazonaws.services.mwaa.model.transform.*;
  * </p>
  * </li>
  * </ul>
- * <br />
  * </li>
  * <li>
  * <p>

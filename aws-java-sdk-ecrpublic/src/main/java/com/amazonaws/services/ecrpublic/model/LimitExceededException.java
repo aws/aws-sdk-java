@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The operation did not succeed because it would have exceeded a service limit for your account. For more information,
+ * The operation didn't succeed because it would have exceeded a service limit for your account. For more information,
  * see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service
  * Quotas</a> in the Amazon Elastic Container Registry User Guide.
  * </p>

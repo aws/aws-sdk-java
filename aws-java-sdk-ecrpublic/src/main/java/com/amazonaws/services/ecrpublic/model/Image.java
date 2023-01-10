@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing an Amazon ECR image.
+ * An object that represents an Amazon ECR image.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/Image" target="_top">AWS API
@@ -30,25 +30,25 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID associated with the registry containing the image.
+     * The Amazon Web Services account ID that's associated with the registry containing the image.
      * </p>
      */
     private String registryId;
     /**
      * <p>
-     * The name of the repository associated with the image.
+     * The name of the repository that's associated with the image.
      * </p>
      */
     private String repositoryName;
     /**
      * <p>
-     * An object containing the image tag and image digest associated with an image.
+     * An object that contains the image tag and image digest associated with an image.
      * </p>
      */
     private ImageIdentifier imageId;
     /**
      * <p>
-     * The image manifest associated with the image.
+     * The image manifest that's associated with the image.
      * </p>
      */
     private String imageManifest;
@@ -61,11 +61,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID associated with the registry containing the image.
+     * The Amazon Web Services account ID that's associated with the registry containing the image.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry containing the image.
+     *        The Amazon Web Services account ID that's associated with the registry containing the image.
      */
 
     public void setRegistryId(String registryId) {
@@ -74,10 +74,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID associated with the registry containing the image.
+     * The Amazon Web Services account ID that's associated with the registry containing the image.
      * </p>
      * 
-     * @return The AWS account ID associated with the registry containing the image.
+     * @return The Amazon Web Services account ID that's associated with the registry containing the image.
      */
 
     public String getRegistryId() {
@@ -86,11 +86,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID associated with the registry containing the image.
+     * The Amazon Web Services account ID that's associated with the registry containing the image.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry containing the image.
+     *        The Amazon Web Services account ID that's associated with the registry containing the image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the repository associated with the image.
+     * The name of the repository that's associated with the image.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository associated with the image.
+     *        The name of the repository that's associated with the image.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -114,10 +114,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the repository associated with the image.
+     * The name of the repository that's associated with the image.
      * </p>
      * 
-     * @return The name of the repository associated with the image.
+     * @return The name of the repository that's associated with the image.
      */
 
     public String getRepositoryName() {
@@ -126,11 +126,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the repository associated with the image.
+     * The name of the repository that's associated with the image.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository associated with the image.
+     *        The name of the repository that's associated with the image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing the image tag and image digest associated with an image.
+     * An object that contains the image tag and image digest associated with an image.
      * </p>
      * 
      * @param imageId
-     *        An object containing the image tag and image digest associated with an image.
+     *        An object that contains the image tag and image digest associated with an image.
      */
 
     public void setImageId(ImageIdentifier imageId) {
@@ -154,10 +154,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing the image tag and image digest associated with an image.
+     * An object that contains the image tag and image digest associated with an image.
      * </p>
      * 
-     * @return An object containing the image tag and image digest associated with an image.
+     * @return An object that contains the image tag and image digest associated with an image.
      */
 
     public ImageIdentifier getImageId() {
@@ -166,11 +166,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing the image tag and image digest associated with an image.
+     * An object that contains the image tag and image digest associated with an image.
      * </p>
      * 
      * @param imageId
-     *        An object containing the image tag and image digest associated with an image.
+     *        An object that contains the image tag and image digest associated with an image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +181,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image manifest associated with the image.
+     * The image manifest that's associated with the image.
      * </p>
      * 
      * @param imageManifest
-     *        The image manifest associated with the image.
+     *        The image manifest that's associated with the image.
      */
 
     public void setImageManifest(String imageManifest) {
@@ -194,10 +194,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image manifest associated with the image.
+     * The image manifest that's associated with the image.
      * </p>
      * 
-     * @return The image manifest associated with the image.
+     * @return The image manifest that's associated with the image.
      */
 
     public String getImageManifest() {
@@ -206,11 +206,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image manifest associated with the image.
+     * The image manifest that's associated with the image.
      * </p>
      * 
      * @param imageManifest
-     *        The image manifest associated with the image.
+     *        The image manifest that's associated with the image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

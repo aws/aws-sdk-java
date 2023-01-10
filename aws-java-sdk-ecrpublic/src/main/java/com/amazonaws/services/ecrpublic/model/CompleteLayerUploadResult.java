@@ -25,19 +25,19 @@ public class CompleteLayerUploadResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The public registry ID associated with the request.
+     * The public registry ID that's associated with the request.
      * </p>
      */
     private String registryId;
     /**
      * <p>
-     * The repository name associated with the request.
+     * The repository name that's associated with the request.
      * </p>
      */
     private String repositoryName;
     /**
      * <p>
-     * The upload ID associated with the layer.
+     * The upload ID that's associated with the layer.
      * </p>
      */
     private String uploadId;
@@ -50,11 +50,11 @@ public class CompleteLayerUploadResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The public registry ID associated with the request.
+     * The public registry ID that's associated with the request.
      * </p>
      * 
      * @param registryId
-     *        The public registry ID associated with the request.
+     *        The public registry ID that's associated with the request.
      */
 
     public void setRegistryId(String registryId) {
@@ -63,10 +63,10 @@ public class CompleteLayerUploadResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The public registry ID associated with the request.
+     * The public registry ID that's associated with the request.
      * </p>
      * 
-     * @return The public registry ID associated with the request.
+     * @return The public registry ID that's associated with the request.
      */
 
     public String getRegistryId() {
@@ -75,11 +75,11 @@ public class CompleteLayerUploadResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The public registry ID associated with the request.
+     * The public registry ID that's associated with the request.
      * </p>
      * 
      * @param registryId
-     *        The public registry ID associated with the request.
+     *        The public registry ID that's associated with the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class CompleteLayerUploadResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The repository name associated with the request.
+     * The repository name that's associated with the request.
      * </p>
      * 
      * @param repositoryName
-     *        The repository name associated with the request.
+     *        The repository name that's associated with the request.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -103,10 +103,10 @@ public class CompleteLayerUploadResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The repository name associated with the request.
+     * The repository name that's associated with the request.
      * </p>
      * 
-     * @return The repository name associated with the request.
+     * @return The repository name that's associated with the request.
      */
 
     public String getRepositoryName() {
@@ -115,11 +115,11 @@ public class CompleteLayerUploadResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The repository name associated with the request.
+     * The repository name that's associated with the request.
      * </p>
      * 
      * @param repositoryName
-     *        The repository name associated with the request.
+     *        The repository name that's associated with the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +130,11 @@ public class CompleteLayerUploadResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The upload ID associated with the layer.
+     * The upload ID that's associated with the layer.
      * </p>
      * 
      * @param uploadId
-     *        The upload ID associated with the layer.
+     *        The upload ID that's associated with the layer.
      */
 
     public void setUploadId(String uploadId) {
@@ -143,10 +143,10 @@ public class CompleteLayerUploadResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The upload ID associated with the layer.
+     * The upload ID that's associated with the layer.
      * </p>
      * 
-     * @return The upload ID associated with the layer.
+     * @return The upload ID that's associated with the layer.
      */
 
     public String getUploadId() {
@@ -155,11 +155,11 @@ public class CompleteLayerUploadResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The upload ID associated with the layer.
+     * The upload ID that's associated with the layer.
      * </p>
      * 
      * @param uploadId
-     *        The upload ID associated with the layer.
+     *        The upload ID that's associated with the layer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

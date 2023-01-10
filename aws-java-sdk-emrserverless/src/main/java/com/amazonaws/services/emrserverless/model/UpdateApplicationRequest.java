@@ -71,6 +71,23 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String architecture;
+    /**
+     * <p>
+     * The image configuration to be used for all worker types. You can either set this parameter or
+     * <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.
+     * </p>
+     */
+    private ImageConfigurationInput imageConfiguration;
+    /**
+     * <p>
+     * The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must
+     * contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code>
+     * and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive
+     * applications. You can either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.
+     * </p>
+     */
+    private java.util.Map<String, WorkerTypeSpecificationInput> workerTypeSpecifications;
 
     /**
      * <p>
@@ -438,6 +455,144 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The image configuration to be used for all worker types. You can either set this parameter or
+     * <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.
+     * </p>
+     * 
+     * @param imageConfiguration
+     *        The image configuration to be used for all worker types. You can either set this parameter or
+     *        <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.
+     */
+
+    public void setImageConfiguration(ImageConfigurationInput imageConfiguration) {
+        this.imageConfiguration = imageConfiguration;
+    }
+
+    /**
+     * <p>
+     * The image configuration to be used for all worker types. You can either set this parameter or
+     * <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.
+     * </p>
+     * 
+     * @return The image configuration to be used for all worker types. You can either set this parameter or
+     *         <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.
+     */
+
+    public ImageConfigurationInput getImageConfiguration() {
+        return this.imageConfiguration;
+    }
+
+    /**
+     * <p>
+     * The image configuration to be used for all worker types. You can either set this parameter or
+     * <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.
+     * </p>
+     * 
+     * @param imageConfiguration
+     *        The image configuration to be used for all worker types. You can either set this parameter or
+     *        <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApplicationRequest withImageConfiguration(ImageConfigurationInput imageConfiguration) {
+        setImageConfiguration(imageConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must
+     * contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code>
+     * and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive
+     * applications. You can either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.
+     * </p>
+     * 
+     * @return The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter
+     *         must contain all valid worker types for a Spark or Hive application. Valid worker types include
+     *         <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and
+     *         <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each
+     *         worker type, or in <code>imageConfiguration</code> for all worker types.
+     */
+
+    public java.util.Map<String, WorkerTypeSpecificationInput> getWorkerTypeSpecifications() {
+        return workerTypeSpecifications;
+    }
+
+    /**
+     * <p>
+     * The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must
+     * contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code>
+     * and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive
+     * applications. You can either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.
+     * </p>
+     * 
+     * @param workerTypeSpecifications
+     *        The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter
+     *        must contain all valid worker types for a Spark or Hive application. Valid worker types include
+     *        <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and
+     *        <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each
+     *        worker type, or in <code>imageConfiguration</code> for all worker types.
+     */
+
+    public void setWorkerTypeSpecifications(java.util.Map<String, WorkerTypeSpecificationInput> workerTypeSpecifications) {
+        this.workerTypeSpecifications = workerTypeSpecifications;
+    }
+
+    /**
+     * <p>
+     * The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must
+     * contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code>
+     * and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive
+     * applications. You can either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.
+     * </p>
+     * 
+     * @param workerTypeSpecifications
+     *        The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter
+     *        must contain all valid worker types for a Spark or Hive application. Valid worker types include
+     *        <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and
+     *        <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each
+     *        worker type, or in <code>imageConfiguration</code> for all worker types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApplicationRequest withWorkerTypeSpecifications(java.util.Map<String, WorkerTypeSpecificationInput> workerTypeSpecifications) {
+        setWorkerTypeSpecifications(workerTypeSpecifications);
+        return this;
+    }
+
+    /**
+     * Add a single WorkerTypeSpecifications entry
+     *
+     * @see UpdateApplicationRequest#withWorkerTypeSpecifications
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApplicationRequest addWorkerTypeSpecificationsEntry(String key, WorkerTypeSpecificationInput value) {
+        if (null == this.workerTypeSpecifications) {
+            this.workerTypeSpecifications = new java.util.HashMap<String, WorkerTypeSpecificationInput>();
+        }
+        if (this.workerTypeSpecifications.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.workerTypeSpecifications.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into WorkerTypeSpecifications.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApplicationRequest clearWorkerTypeSpecificationsEntries() {
+        this.workerTypeSpecifications = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -464,7 +619,11 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getNetworkConfiguration() != null)
             sb.append("NetworkConfiguration: ").append(getNetworkConfiguration()).append(",");
         if (getArchitecture() != null)
-            sb.append("Architecture: ").append(getArchitecture());
+            sb.append("Architecture: ").append(getArchitecture()).append(",");
+        if (getImageConfiguration() != null)
+            sb.append("ImageConfiguration: ").append(getImageConfiguration()).append(",");
+        if (getWorkerTypeSpecifications() != null)
+            sb.append("WorkerTypeSpecifications: ").append(getWorkerTypeSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -511,6 +670,14 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
             return false;
+        if (other.getImageConfiguration() == null ^ this.getImageConfiguration() == null)
+            return false;
+        if (other.getImageConfiguration() != null && other.getImageConfiguration().equals(this.getImageConfiguration()) == false)
+            return false;
+        if (other.getWorkerTypeSpecifications() == null ^ this.getWorkerTypeSpecifications() == null)
+            return false;
+        if (other.getWorkerTypeSpecifications() != null && other.getWorkerTypeSpecifications().equals(this.getWorkerTypeSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -527,6 +694,8 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getAutoStopConfiguration() == null) ? 0 : getAutoStopConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
+        hashCode = prime * hashCode + ((getImageConfiguration() == null) ? 0 : getImageConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getWorkerTypeSpecifications() == null) ? 0 : getWorkerTypeSpecifications().hashCode());
         return hashCode;
     }
 

@@ -25,36 +25,36 @@ public class UploadLayerPartResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The registry ID associated with the request.
+     * The registry ID that's associated with the request.
      * </p>
      */
     private String registryId;
     /**
      * <p>
-     * The repository name associated with the request.
+     * The repository name that's associated with the request.
      * </p>
      */
     private String repositoryName;
     /**
      * <p>
-     * The upload ID associated with the request.
+     * The upload ID that's associated with the request.
      * </p>
      */
     private String uploadId;
     /**
      * <p>
-     * The integer value of the last byte received in the request.
+     * The integer value of the last byte that's received in the request.
      * </p>
      */
     private Long lastByteReceived;
 
     /**
      * <p>
-     * The registry ID associated with the request.
+     * The registry ID that's associated with the request.
      * </p>
      * 
      * @param registryId
-     *        The registry ID associated with the request.
+     *        The registry ID that's associated with the request.
      */
 
     public void setRegistryId(String registryId) {
@@ -63,10 +63,10 @@ public class UploadLayerPartResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The registry ID associated with the request.
+     * The registry ID that's associated with the request.
      * </p>
      * 
-     * @return The registry ID associated with the request.
+     * @return The registry ID that's associated with the request.
      */
 
     public String getRegistryId() {
@@ -75,11 +75,11 @@ public class UploadLayerPartResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The registry ID associated with the request.
+     * The registry ID that's associated with the request.
      * </p>
      * 
      * @param registryId
-     *        The registry ID associated with the request.
+     *        The registry ID that's associated with the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class UploadLayerPartResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The repository name associated with the request.
+     * The repository name that's associated with the request.
      * </p>
      * 
      * @param repositoryName
-     *        The repository name associated with the request.
+     *        The repository name that's associated with the request.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -103,10 +103,10 @@ public class UploadLayerPartResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The repository name associated with the request.
+     * The repository name that's associated with the request.
      * </p>
      * 
-     * @return The repository name associated with the request.
+     * @return The repository name that's associated with the request.
      */
 
     public String getRepositoryName() {
@@ -115,11 +115,11 @@ public class UploadLayerPartResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The repository name associated with the request.
+     * The repository name that's associated with the request.
      * </p>
      * 
      * @param repositoryName
-     *        The repository name associated with the request.
+     *        The repository name that's associated with the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +130,11 @@ public class UploadLayerPartResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The upload ID associated with the request.
+     * The upload ID that's associated with the request.
      * </p>
      * 
      * @param uploadId
-     *        The upload ID associated with the request.
+     *        The upload ID that's associated with the request.
      */
 
     public void setUploadId(String uploadId) {
@@ -143,10 +143,10 @@ public class UploadLayerPartResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The upload ID associated with the request.
+     * The upload ID that's associated with the request.
      * </p>
      * 
-     * @return The upload ID associated with the request.
+     * @return The upload ID that's associated with the request.
      */
 
     public String getUploadId() {
@@ -155,11 +155,11 @@ public class UploadLayerPartResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The upload ID associated with the request.
+     * The upload ID that's associated with the request.
      * </p>
      * 
      * @param uploadId
-     *        The upload ID associated with the request.
+     *        The upload ID that's associated with the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,11 +170,11 @@ public class UploadLayerPartResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The integer value of the last byte received in the request.
+     * The integer value of the last byte that's received in the request.
      * </p>
      * 
      * @param lastByteReceived
-     *        The integer value of the last byte received in the request.
+     *        The integer value of the last byte that's received in the request.
      */
 
     public void setLastByteReceived(Long lastByteReceived) {
@@ -183,10 +183,10 @@ public class UploadLayerPartResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The integer value of the last byte received in the request.
+     * The integer value of the last byte that's received in the request.
      * </p>
      * 
-     * @return The integer value of the last byte received in the request.
+     * @return The integer value of the last byte that's received in the request.
      */
 
     public Long getLastByteReceived() {
@@ -195,11 +195,11 @@ public class UploadLayerPartResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The integer value of the last byte received in the request.
+     * The integer value of the last byte that's received in the request.
      * </p>
      * 
      * @param lastByteReceived
-     *        The integer value of the last byte received in the request.
+     *        The integer value of the last byte that's received in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

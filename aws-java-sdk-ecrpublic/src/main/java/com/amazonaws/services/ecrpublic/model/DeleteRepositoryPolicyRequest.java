@@ -27,27 +27,27 @@ public class DeleteRepositoryPolicyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository policy to delete. If you do
-     * not specify a registry, the default public registry is assumed.
+     * The Amazon Web Services account ID that's associated with the public registry that contains the repository policy
+     * to delete. If you do not specify a registry, the default public registry is assumed.
      * </p>
      */
     private String registryId;
     /**
      * <p>
-     * The name of the repository that is associated with the repository policy to delete.
+     * The name of the repository that's associated with the repository policy to delete.
      * </p>
      */
     private String repositoryName;
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository policy to delete. If you do
-     * not specify a registry, the default public registry is assumed.
+     * The Amazon Web Services account ID that's associated with the public registry that contains the repository policy
+     * to delete. If you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the public registry that contains the repository policy to delete. If
-     *        you do not specify a registry, the default public registry is assumed.
+     *        The Amazon Web Services account ID that's associated with the public registry that contains the repository
+     *        policy to delete. If you do not specify a registry, the default public registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -56,12 +56,12 @@ public class DeleteRepositoryPolicyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository policy to delete. If you do
-     * not specify a registry, the default public registry is assumed.
+     * The Amazon Web Services account ID that's associated with the public registry that contains the repository policy
+     * to delete. If you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the public registry that contains the repository policy to delete. If
-     *         you do not specify a registry, the default public registry is assumed.
+     * @return The Amazon Web Services account ID that's associated with the public registry that contains the
+     *         repository policy to delete. If you do not specify a registry, the default public registry is assumed.
      */
 
     public String getRegistryId() {
@@ -70,13 +70,13 @@ public class DeleteRepositoryPolicyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository policy to delete. If you do
-     * not specify a registry, the default public registry is assumed.
+     * The Amazon Web Services account ID that's associated with the public registry that contains the repository policy
+     * to delete. If you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the public registry that contains the repository policy to delete. If
-     *        you do not specify a registry, the default public registry is assumed.
+     *        The Amazon Web Services account ID that's associated with the public registry that contains the repository
+     *        policy to delete. If you do not specify a registry, the default public registry is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class DeleteRepositoryPolicyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the repository that is associated with the repository policy to delete.
+     * The name of the repository that's associated with the repository policy to delete.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository that is associated with the repository policy to delete.
+     *        The name of the repository that's associated with the repository policy to delete.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -100,10 +100,10 @@ public class DeleteRepositoryPolicyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the repository that is associated with the repository policy to delete.
+     * The name of the repository that's associated with the repository policy to delete.
      * </p>
      * 
-     * @return The name of the repository that is associated with the repository policy to delete.
+     * @return The name of the repository that's associated with the repository policy to delete.
      */
 
     public String getRepositoryName() {
@@ -112,11 +112,11 @@ public class DeleteRepositoryPolicyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the repository that is associated with the repository policy to delete.
+     * The name of the repository that's associated with the repository policy to delete.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository that is associated with the repository policy to delete.
+     *        The name of the repository that's associated with the repository policy to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

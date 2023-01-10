@@ -40,6 +40,8 @@ public class SettingsMarshaller {
             .marshallLocationName("kmsKey").build();
     private static final MarshallingInfo<StructuredPojo> EVIDENCEFINDERENABLEMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("evidenceFinderEnablement").build();
+    private static final MarshallingInfo<StructuredPojo> DEREGISTRATIONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deregistrationPolicy").build();
 
     private static final SettingsMarshaller instance = new SettingsMarshaller();
 
@@ -63,6 +65,7 @@ public class SettingsMarshaller {
             protocolMarshaller.marshall(settings.getDefaultProcessOwners(), DEFAULTPROCESSOWNERS_BINDING);
             protocolMarshaller.marshall(settings.getKmsKey(), KMSKEY_BINDING);
             protocolMarshaller.marshall(settings.getEvidenceFinderEnablement(), EVIDENCEFINDERENABLEMENT_BINDING);
+            protocolMarshaller.marshall(settings.getDeregistrationPolicy(), DEREGISTRATIONPOLICY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

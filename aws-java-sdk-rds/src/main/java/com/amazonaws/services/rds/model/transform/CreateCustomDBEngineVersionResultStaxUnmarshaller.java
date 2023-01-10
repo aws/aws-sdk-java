@@ -229,6 +229,22 @@ public class CreateCustomDBEngineVersionResultStaxUnmarshaller implements Unmars
                     createCustomDBEngineVersionResult.setCustomDBEngineVersionManifest(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SupportsCertificateRotationWithoutRestart", targetDepth)) {
+                    createCustomDBEngineVersionResult.setSupportsCertificateRotationWithoutRestart(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportedCACertificateIdentifiers", targetDepth)) {
+                    createCustomDBEngineVersionResult.withSupportedCACertificateIdentifiers(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("SupportedCACertificateIdentifiers/member", targetDepth)) {
+                    createCustomDBEngineVersionResult.withSupportedCACertificateIdentifiers(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createCustomDBEngineVersionResult;

@@ -357,6 +357,13 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * The identifier of the CA certificate for this DB instance.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      */
     private String cACertificateIdentifier;
     /**
@@ -738,6 +745,12 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      */
     private MasterUserSecret masterUserSecret;
+    /**
+     * <p>
+     * The details of the DB instance's server certificate.
+     * </p>
+     */
+    private CertificateDetails certificateDetails;
 
     /**
      * <p>
@@ -3167,9 +3180,22 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * The identifier of the CA certificate for this DB instance.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      * 
      * @param cACertificateIdentifier
-     *        The identifier of the CA certificate for this DB instance.
+     *        The identifier of the CA certificate for this DB instance.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to
+     *        encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS
+     *        to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public void setCACertificateIdentifier(String cACertificateIdentifier) {
@@ -3180,8 +3206,21 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * The identifier of the CA certificate for this DB instance.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      * 
-     * @return The identifier of the CA certificate for this DB instance.
+     * @return The identifier of the CA certificate for this DB instance.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to
+     *         encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS
+     *         to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public String getCACertificateIdentifier() {
@@ -3192,9 +3231,22 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * The identifier of the CA certificate for this DB instance.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      * 
      * @param cACertificateIdentifier
-     *        The identifier of the CA certificate for this DB instance.
+     *        The identifier of the CA certificate for this DB instance.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to
+     *        encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS
+     *        to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -6074,6 +6126,46 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The details of the DB instance's server certificate.
+     * </p>
+     * 
+     * @param certificateDetails
+     *        The details of the DB instance's server certificate.
+     */
+
+    public void setCertificateDetails(CertificateDetails certificateDetails) {
+        this.certificateDetails = certificateDetails;
+    }
+
+    /**
+     * <p>
+     * The details of the DB instance's server certificate.
+     * </p>
+     * 
+     * @return The details of the DB instance's server certificate.
+     */
+
+    public CertificateDetails getCertificateDetails() {
+        return this.certificateDetails;
+    }
+
+    /**
+     * <p>
+     * The details of the DB instance's server certificate.
+     * </p>
+     * 
+     * @param certificateDetails
+     *        The details of the DB instance's server certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withCertificateDetails(CertificateDetails certificateDetails) {
+        setCertificateDetails(certificateDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -6242,7 +6334,9 @@ public class DBInstance implements Serializable, Cloneable {
         if (getDBSystemId() != null)
             sb.append("DBSystemId: ").append(getDBSystemId()).append(",");
         if (getMasterUserSecret() != null)
-            sb.append("MasterUserSecret: ").append(getMasterUserSecret());
+            sb.append("MasterUserSecret: ").append(getMasterUserSecret()).append(",");
+        if (getCertificateDetails() != null)
+            sb.append("CertificateDetails: ").append(getCertificateDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -6582,6 +6676,10 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getMasterUserSecret() != null && other.getMasterUserSecret().equals(this.getMasterUserSecret()) == false)
             return false;
+        if (other.getCertificateDetails() == null ^ this.getCertificateDetails() == null)
+            return false;
+        if (other.getCertificateDetails() != null && other.getCertificateDetails().equals(this.getCertificateDetails()) == false)
+            return false;
         return true;
     }
 
@@ -6670,6 +6768,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStorageThroughput() == null) ? 0 : getStorageThroughput().hashCode());
         hashCode = prime * hashCode + ((getDBSystemId() == null) ? 0 : getDBSystemId().hashCode());
         hashCode = prime * hashCode + ((getMasterUserSecret() == null) ? 0 : getMasterUserSecret().hashCode());
+        hashCode = prime * hashCode + ((getCertificateDetails() == null) ? 0 : getCertificateDetails().hashCode());
         return hashCode;
     }
 

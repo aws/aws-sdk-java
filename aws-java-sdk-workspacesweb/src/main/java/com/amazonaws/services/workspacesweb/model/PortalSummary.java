@@ -30,6 +30,24 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The type of authentication integration points used when signing into the web portal. Defaults to
+     * <code>Standard</code>.
+     * </p>
+     * <p>
+     * <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call
+     * <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group
+     * access to your web portal is controlled through your identity provider.
+     * </p>
+     * <p>
+     * <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS
+     * Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources
+     * (including external identity provider integration), plus user and group access to your web portal, can be
+     * configured in the IAM Identity Center.
+     * </p>
+     */
+    private String authenticationType;
+    /**
+     * <p>
      * The ARN of the browser settings that is associated with the web portal.
      * </p>
      */
@@ -100,6 +118,157 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String userSettingsArn;
+
+    /**
+     * <p>
+     * The type of authentication integration points used when signing into the web portal. Defaults to
+     * <code>Standard</code>.
+     * </p>
+     * <p>
+     * <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call
+     * <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group
+     * access to your web portal is controlled through your identity provider.
+     * </p>
+     * <p>
+     * <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS
+     * Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources
+     * (including external identity provider integration), plus user and group access to your web portal, can be
+     * configured in the IAM Identity Center.
+     * </p>
+     * 
+     * @param authenticationType
+     *        The type of authentication integration points used when signing into the web portal. Defaults to
+     *        <code>Standard</code>.</p>
+     *        <p>
+     *        <code>Standard</code> web portals are authenticated directly through your identity provider. You need to
+     *        call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User
+     *        and group access to your web portal is controlled through your identity provider.
+     *        </p>
+     *        <p>
+     *        <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor
+     *        to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity
+     *        sources (including external identity provider integration), plus user and group access to your web portal,
+     *        can be configured in the IAM Identity Center.
+     * @see AuthenticationType
+     */
+
+    public void setAuthenticationType(String authenticationType) {
+        this.authenticationType = authenticationType;
+    }
+
+    /**
+     * <p>
+     * The type of authentication integration points used when signing into the web portal. Defaults to
+     * <code>Standard</code>.
+     * </p>
+     * <p>
+     * <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call
+     * <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group
+     * access to your web portal is controlled through your identity provider.
+     * </p>
+     * <p>
+     * <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS
+     * Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources
+     * (including external identity provider integration), plus user and group access to your web portal, can be
+     * configured in the IAM Identity Center.
+     * </p>
+     * 
+     * @return The type of authentication integration points used when signing into the web portal. Defaults to
+     *         <code>Standard</code>.</p>
+     *         <p>
+     *         <code>Standard</code> web portals are authenticated directly through your identity provider. You need to
+     *         call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User
+     *         and group access to your web portal is controlled through your identity provider.
+     *         </p>
+     *         <p>
+     *         <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor
+     *         to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity
+     *         sources (including external identity provider integration), plus user and group access to your web
+     *         portal, can be configured in the IAM Identity Center.
+     * @see AuthenticationType
+     */
+
+    public String getAuthenticationType() {
+        return this.authenticationType;
+    }
+
+    /**
+     * <p>
+     * The type of authentication integration points used when signing into the web portal. Defaults to
+     * <code>Standard</code>.
+     * </p>
+     * <p>
+     * <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call
+     * <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group
+     * access to your web portal is controlled through your identity provider.
+     * </p>
+     * <p>
+     * <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS
+     * Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources
+     * (including external identity provider integration), plus user and group access to your web portal, can be
+     * configured in the IAM Identity Center.
+     * </p>
+     * 
+     * @param authenticationType
+     *        The type of authentication integration points used when signing into the web portal. Defaults to
+     *        <code>Standard</code>.</p>
+     *        <p>
+     *        <code>Standard</code> web portals are authenticated directly through your identity provider. You need to
+     *        call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User
+     *        and group access to your web portal is controlled through your identity provider.
+     *        </p>
+     *        <p>
+     *        <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor
+     *        to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity
+     *        sources (including external identity provider integration), plus user and group access to your web portal,
+     *        can be configured in the IAM Identity Center.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationType
+     */
+
+    public PortalSummary withAuthenticationType(String authenticationType) {
+        setAuthenticationType(authenticationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of authentication integration points used when signing into the web portal. Defaults to
+     * <code>Standard</code>.
+     * </p>
+     * <p>
+     * <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call
+     * <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group
+     * access to your web portal is controlled through your identity provider.
+     * </p>
+     * <p>
+     * <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS
+     * Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources
+     * (including external identity provider integration), plus user and group access to your web portal, can be
+     * configured in the IAM Identity Center.
+     * </p>
+     * 
+     * @param authenticationType
+     *        The type of authentication integration points used when signing into the web portal. Defaults to
+     *        <code>Standard</code>.</p>
+     *        <p>
+     *        <code>Standard</code> web portals are authenticated directly through your identity provider. You need to
+     *        call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User
+     *        and group access to your web portal is controlled through your identity provider.
+     *        </p>
+     *        <p>
+     *        <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor
+     *        to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity
+     *        sources (including external identity provider integration), plus user and group access to your web portal,
+     *        can be configured in the IAM Identity Center.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationType
+     */
+
+    public PortalSummary withAuthenticationType(AuthenticationType authenticationType) {
+        this.authenticationType = authenticationType.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -650,6 +819,8 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAuthenticationType() != null)
+            sb.append("AuthenticationType: ").append(getAuthenticationType()).append(",");
         if (getBrowserSettingsArn() != null)
             sb.append("BrowserSettingsArn: ").append(getBrowserSettingsArn()).append(",");
         if (getBrowserType() != null)
@@ -688,6 +859,10 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof PortalSummary == false)
             return false;
         PortalSummary other = (PortalSummary) obj;
+        if (other.getAuthenticationType() == null ^ this.getAuthenticationType() == null)
+            return false;
+        if (other.getAuthenticationType() != null && other.getAuthenticationType().equals(this.getAuthenticationType()) == false)
+            return false;
         if (other.getBrowserSettingsArn() == null ^ this.getBrowserSettingsArn() == null)
             return false;
         if (other.getBrowserSettingsArn() != null && other.getBrowserSettingsArn().equals(this.getBrowserSettingsArn()) == false)
@@ -744,6 +919,7 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAuthenticationType() == null) ? 0 : getAuthenticationType().hashCode());
         hashCode = prime * hashCode + ((getBrowserSettingsArn() == null) ? 0 : getBrowserSettingsArn().hashCode());
         hashCode = prime * hashCode + ((getBrowserType() == null) ? 0 : getBrowserType().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());

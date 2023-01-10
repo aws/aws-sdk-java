@@ -84,13 +84,13 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
     private Integer controlSetsCount;
     /**
      * <p>
-     * Specifies when the framework was created.
+     * The time when the framework was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * Specifies when the framework was most recently updated.
+     * The time when the framework was most recently updated.
      * </p>
      */
     private java.util.Date lastUpdatedAt;
@@ -476,11 +476,11 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies when the framework was created.
+     * The time when the framework was created.
      * </p>
      * 
      * @param createdAt
-     *        Specifies when the framework was created.
+     *        The time when the framework was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -489,10 +489,10 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies when the framework was created.
+     * The time when the framework was created.
      * </p>
      * 
-     * @return Specifies when the framework was created.
+     * @return The time when the framework was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -501,11 +501,11 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies when the framework was created.
+     * The time when the framework was created.
      * </p>
      * 
      * @param createdAt
-     *        Specifies when the framework was created.
+     *        The time when the framework was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -516,11 +516,11 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies when the framework was most recently updated.
+     * The time when the framework was most recently updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        Specifies when the framework was most recently updated.
+     *        The time when the framework was most recently updated.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -529,10 +529,10 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies when the framework was most recently updated.
+     * The time when the framework was most recently updated.
      * </p>
      * 
-     * @return Specifies when the framework was most recently updated.
+     * @return The time when the framework was most recently updated.
      */
 
     public java.util.Date getLastUpdatedAt() {
@@ -541,11 +541,11 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies when the framework was most recently updated.
+     * The time when the framework was most recently updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        Specifies when the framework was most recently updated.
+     *        The time when the framework was most recently updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

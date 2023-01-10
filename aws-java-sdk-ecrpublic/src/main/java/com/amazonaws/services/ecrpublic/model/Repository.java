@@ -31,14 +31,15 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code>
-     * namespace, followed by the region of the repository, AWS account ID of the repository owner, repository
-     * namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     * namespace, followed by the region of the repository, Amazon Web Services account ID of the repository owner,
+     * repository namespace, and repository name. For example,
+     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      * </p>
      */
     private String repositoryArn;
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository.
+     * The Amazon Web Services account ID that's associated with the public registry that contains the repository.
      * </p>
      */
     private String registryId;
@@ -65,14 +66,15 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code>
-     * namespace, followed by the region of the repository, AWS account ID of the repository owner, repository
-     * namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     * namespace, followed by the region of the repository, Amazon Web Services account ID of the repository owner,
+     * repository namespace, and repository name. For example,
+     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      * </p>
      * 
      * @param repositoryArn
      *        The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the
-     *        <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS account ID of the
-     *        repository owner, repository namespace, and repository name. For example,
+     *        <code>arn:aws:ecr</code> namespace, followed by the region of the repository, Amazon Web Services account
+     *        ID of the repository owner, repository namespace, and repository name. For example,
      *        <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      */
 
@@ -83,13 +85,14 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code>
-     * namespace, followed by the region of the repository, AWS account ID of the repository owner, repository
-     * namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     * namespace, followed by the region of the repository, Amazon Web Services account ID of the repository owner,
+     * repository namespace, and repository name. For example,
+     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the
-     *         <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS account ID of the
-     *         repository owner, repository namespace, and repository name. For example,
+     *         <code>arn:aws:ecr</code> namespace, followed by the region of the repository, Amazon Web Services account
+     *         ID of the repository owner, repository namespace, and repository name. For example,
      *         <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      */
 
@@ -100,14 +103,15 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code>
-     * namespace, followed by the region of the repository, AWS account ID of the repository owner, repository
-     * namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     * namespace, followed by the region of the repository, Amazon Web Services account ID of the repository owner,
+     * repository namespace, and repository name. For example,
+     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      * </p>
      * 
      * @param repositoryArn
      *        The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the
-     *        <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS account ID of the
-     *        repository owner, repository namespace, and repository name. For example,
+     *        <code>arn:aws:ecr</code> namespace, followed by the region of the repository, Amazon Web Services account
+     *        ID of the repository owner, repository namespace, and repository name. For example,
      *        <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -119,11 +123,12 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository.
+     * The Amazon Web Services account ID that's associated with the public registry that contains the repository.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the public registry that contains the repository.
+     *        The Amazon Web Services account ID that's associated with the public registry that contains the
+     *        repository.
      */
 
     public void setRegistryId(String registryId) {
@@ -132,10 +137,11 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository.
+     * The Amazon Web Services account ID that's associated with the public registry that contains the repository.
      * </p>
      * 
-     * @return The AWS account ID associated with the public registry that contains the repository.
+     * @return The Amazon Web Services account ID that's associated with the public registry that contains the
+     *         repository.
      */
 
     public String getRegistryId() {
@@ -144,11 +150,12 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository.
+     * The Amazon Web Services account ID that's associated with the public registry that contains the repository.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the public registry that contains the repository.
+     *        The Amazon Web Services account ID that's associated with the public registry that contains the
+     *        repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,3 +1,62 @@
+# __1.12.381__ __2023-01-09__
+## __AWS Network Firewall__
+  - ### Features
+    - Network Firewall now supports the Suricata rule action reject, in addition to the actions pass, drop, and alert.
+
+## __AWS Resource Access Manager__
+  - ### Features
+    - Enabled FIPS aws-us-gov endpoints in SDK.
+
+## __Amazon Elastic Container Registry Public__
+  - ### Features
+    - This release for Amazon ECR Public makes several change to bring the SDK into sync with the API.
+
+## __Amazon Kendra Intelligent Ranking__
+  - ### Features
+    - Introducing Amazon Kendra Intelligent Ranking, a new set of Kendra APIs that leverages Kendra semantic ranking capabilities to improve the quality of search results from other search services (i.e. OpenSearch, ElasticSearch, Solr).
+
+## __Amazon WorkSpaces Web__
+  - ### Features
+    - This release adds support for a new portal authentication type: AWS IAM Identity Center (successor to AWS Single Sign-On).
+
+# __1.12.380__ __2023-01-06__
+## __AWS Audit Manager__
+  - ### Features
+    - This release introduces a new data retention option in your Audit Manager settings. You can now use the DeregistrationPolicy parameter to specify if you want to delete your data when you deregister Audit Manager.
+
+## __AWS Certificate Manager Private Certificate Authority__
+  - ### Features
+    - Added revocation parameter validation: bucket names must match S3 bucket naming rules and CNAMEs conform to RFC2396 restrictions on the use of special characters in URIs.
+
+# __1.12.379__ __2023-01-05__
+## __AWS App Runner__
+  - ### Features
+    - This release adds support of securely referencing secrets and configuration data that are stored in Secrets Manager and SSM Parameter Store by adding them as environment secrets in your App Runner service.
+
+## __Amazon Connect Service__
+  - ### Features
+    - Documentation update for a new Initiation Method value in DescribeContact API
+
+## __Amazon Lightsail__
+  - ### Features
+    - Documentation updates for Amazon Lightsail.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release adds support for specifying which certificate authority (CA) to use for a DB instance's server certificate during DB instance creation, as well as other CA enhancements.
+
+## __AmazonMWAA__
+  - ### Features
+    - MWAA supports Apache Airflow version 2.4.3.
+
+## __AmplifyBackend__
+  - ### Features
+    - Updated GetBackendAPIModels response to include ModelIntrospectionSchema json string
+
+## __EMR Serverless__
+  - ### Features
+    - Adds support for customized images. You can now provide runtime images when creating or updating EMR Serverless Applications.
+
 # __1.12.378__ __2023-01-04__
 ## __Amazon CloudWatch Logs__
   - ### Features

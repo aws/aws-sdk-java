@@ -64,6 +64,13 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private EvidenceFinderEnablement evidenceFinderEnablement;
+    /**
+     * <p>
+     * The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is
+     * handled when you deregister Audit Manager.
+     * </p>
+     */
+    private DeregistrationPolicy deregistrationPolicy;
 
     /**
      * <p>
@@ -348,6 +355,52 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is
+     * handled when you deregister Audit Manager.
+     * </p>
+     * 
+     * @param deregistrationPolicy
+     *        The deregistration policy for your Audit Manager data. You can use this attribute to determine how your
+     *        data is handled when you deregister Audit Manager.
+     */
+
+    public void setDeregistrationPolicy(DeregistrationPolicy deregistrationPolicy) {
+        this.deregistrationPolicy = deregistrationPolicy;
+    }
+
+    /**
+     * <p>
+     * The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is
+     * handled when you deregister Audit Manager.
+     * </p>
+     * 
+     * @return The deregistration policy for your Audit Manager data. You can use this attribute to determine how your
+     *         data is handled when you deregister Audit Manager.
+     */
+
+    public DeregistrationPolicy getDeregistrationPolicy() {
+        return this.deregistrationPolicy;
+    }
+
+    /**
+     * <p>
+     * The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is
+     * handled when you deregister Audit Manager.
+     * </p>
+     * 
+     * @param deregistrationPolicy
+     *        The deregistration policy for your Audit Manager data. You can use this attribute to determine how your
+     *        data is handled when you deregister Audit Manager.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Settings withDeregistrationPolicy(DeregistrationPolicy deregistrationPolicy) {
+        setDeregistrationPolicy(deregistrationPolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -370,7 +423,9 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
         if (getKmsKey() != null)
             sb.append("KmsKey: ").append(getKmsKey()).append(",");
         if (getEvidenceFinderEnablement() != null)
-            sb.append("EvidenceFinderEnablement: ").append(getEvidenceFinderEnablement());
+            sb.append("EvidenceFinderEnablement: ").append(getEvidenceFinderEnablement()).append(",");
+        if (getDeregistrationPolicy() != null)
+            sb.append("DeregistrationPolicy: ").append(getDeregistrationPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -410,6 +465,10 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEvidenceFinderEnablement() != null && other.getEvidenceFinderEnablement().equals(this.getEvidenceFinderEnablement()) == false)
             return false;
+        if (other.getDeregistrationPolicy() == null ^ this.getDeregistrationPolicy() == null)
+            return false;
+        if (other.getDeregistrationPolicy() != null && other.getDeregistrationPolicy().equals(this.getDeregistrationPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -424,6 +483,7 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDefaultProcessOwners() == null) ? 0 : getDefaultProcessOwners().hashCode());
         hashCode = prime * hashCode + ((getKmsKey() == null) ? 0 : getKmsKey().hashCode());
         hashCode = prime * hashCode + ((getEvidenceFinderEnablement() == null) ? 0 : getEvidenceFinderEnablement().hashCode());
+        hashCode = prime * hashCode + ((getDeregistrationPolicy() == null) ? 0 : getDeregistrationPolicy().hashCode());
         return hashCode;
     }
 

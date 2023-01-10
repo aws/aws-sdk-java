@@ -25,7 +25,7 @@ public class DescribeCertificateAuthorityResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">
+     * A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">
      * CertificateAuthority</a> structure that contains information about your private CA.
      * </p>
      */
@@ -33,12 +33,12 @@ public class DescribeCertificateAuthorityResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">
+     * A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">
      * CertificateAuthority</a> structure that contains information about your private CA.
      * </p>
      * 
      * @param certificateAuthority
-     *        A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">
+     *        A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">
      *        CertificateAuthority</a> structure that contains information about your private CA.
      */
 
@@ -48,11 +48,11 @@ public class DescribeCertificateAuthorityResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">
+     * A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">
      * CertificateAuthority</a> structure that contains information about your private CA.
      * </p>
      * 
-     * @return A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">
+     * @return A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">
      *         CertificateAuthority</a> structure that contains information about your private CA.
      */
 
@@ -62,12 +62,12 @@ public class DescribeCertificateAuthorityResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">
+     * A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">
      * CertificateAuthority</a> structure that contains information about your private CA.
      * </p>
      * 
      * @param certificateAuthority
-     *        A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">
+     *        A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">
      *        CertificateAuthority</a> structure that contains information about your private CA.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

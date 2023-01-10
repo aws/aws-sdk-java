@@ -54,7 +54,7 @@ public class ControlMappingSource implements Serializable, Cloneable, Structured
     private String sourceSetUpOption;
     /**
      * <p>
-     * Specifies one of the five types of data sources for evidence collection.
+     * Specifies one of the five data source types for evidence collection.
      * </p>
      */
     private String sourceType;
@@ -258,11 +258,11 @@ public class ControlMappingSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies one of the five types of data sources for evidence collection.
+     * Specifies one of the five data source types for evidence collection.
      * </p>
      * 
      * @param sourceType
-     *        Specifies one of the five types of data sources for evidence collection.
+     *        Specifies one of the five data source types for evidence collection.
      * @see SourceType
      */
 
@@ -272,10 +272,10 @@ public class ControlMappingSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies one of the five types of data sources for evidence collection.
+     * Specifies one of the five data source types for evidence collection.
      * </p>
      * 
-     * @return Specifies one of the five types of data sources for evidence collection.
+     * @return Specifies one of the five data source types for evidence collection.
      * @see SourceType
      */
 
@@ -285,11 +285,11 @@ public class ControlMappingSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies one of the five types of data sources for evidence collection.
+     * Specifies one of the five data source types for evidence collection.
      * </p>
      * 
      * @param sourceType
-     *        Specifies one of the five types of data sources for evidence collection.
+     *        Specifies one of the five data source types for evidence collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */
@@ -301,11 +301,11 @@ public class ControlMappingSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies one of the five types of data sources for evidence collection.
+     * Specifies one of the five data source types for evidence collection.
      * </p>
      * 
      * @param sourceType
-     *        Specifies one of the five types of data sources for evidence collection.
+     *        Specifies one of the five data source types for evidence collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */

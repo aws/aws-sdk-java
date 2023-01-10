@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The image requested does not exist in the specified repository.
+ * The image requested doesn't exist in the specified repository.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -42,7 +42,7 @@ public class AssessmentControlSet implements Serializable, Cloneable, Structured
     private String description;
     /**
      * <p>
-     * Specifies the current status of the control set.
+     * The current status of the control set.
      * </p>
      */
     private String status;
@@ -162,11 +162,11 @@ public class AssessmentControlSet implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies the current status of the control set.
+     * The current status of the control set.
      * </p>
      * 
      * @param status
-     *        Specifies the current status of the control set.
+     *        The current status of the control set.
      * @see ControlSetStatus
      */
 
@@ -176,10 +176,10 @@ public class AssessmentControlSet implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies the current status of the control set.
+     * The current status of the control set.
      * </p>
      * 
-     * @return Specifies the current status of the control set.
+     * @return The current status of the control set.
      * @see ControlSetStatus
      */
 
@@ -189,11 +189,11 @@ public class AssessmentControlSet implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies the current status of the control set.
+     * The current status of the control set.
      * </p>
      * 
      * @param status
-     *        Specifies the current status of the control set.
+     *        The current status of the control set.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ControlSetStatus
      */
@@ -205,11 +205,11 @@ public class AssessmentControlSet implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies the current status of the control set.
+     * The current status of the control set.
      * </p>
      * 
      * @param status
-     *        Specifies the current status of the control set.
+     *        The current status of the control set.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ControlSetStatus
      */

@@ -48,6 +48,10 @@ public class PortalSummaryJsonUnmarshaller implements Unmarshaller<PortalSummary
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("authenticationType", targetDepth)) {
+                    context.nextToken();
+                    portalSummary.setAuthenticationType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("browserSettingsArn", targetDepth)) {
                     context.nextToken();
                     portalSummary.setBrowserSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));

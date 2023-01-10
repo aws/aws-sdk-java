@@ -48,7 +48,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
     private String arn;
     /**
      * <p>
-     * The EMR release version associated with the application.
+     * The EMR release associated with the application.
      * </p>
      */
     private String releaseLabel;
@@ -211,11 +211,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The EMR release version associated with the application.
+     * The EMR release associated with the application.
      * </p>
      * 
      * @param releaseLabel
-     *        The EMR release version associated with the application.
+     *        The EMR release associated with the application.
      */
 
     public void setReleaseLabel(String releaseLabel) {
@@ -224,10 +224,10 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The EMR release version associated with the application.
+     * The EMR release associated with the application.
      * </p>
      * 
-     * @return The EMR release version associated with the application.
+     * @return The EMR release associated with the application.
      */
 
     public String getReleaseLabel() {
@@ -236,11 +236,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The EMR release version associated with the application.
+     * The EMR release associated with the application.
      * </p>
      * 
      * @param releaseLabel
-     *        The EMR release version associated with the application.
+     *        The EMR release associated with the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

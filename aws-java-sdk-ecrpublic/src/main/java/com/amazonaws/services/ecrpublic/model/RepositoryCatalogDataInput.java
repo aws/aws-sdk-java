@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public
+ * An object that contains the catalog data for a repository. This data is publicly visible in the Amazon ECR Public
  * Gallery.
  * </p>
  * 
@@ -39,33 +39,14 @@ public class RepositoryCatalogDataInput implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The system architecture that the images in the repository are compatible with. On the Amazon ECR Public Gallery,
-     * the following supported architectures will appear as badges on the repository and are used as search filters.
+     * the following supported architectures appear as badges on the repository and are used as search filters.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Linux</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Windows</code>
-     * </p>
-     * </li>
-     * </ul>
      * <note>
      * <p>
-     * If an unsupported tag is added to your repository catalog data, it will be associated with the repository and can
-     * be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
+     * If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be
+     * retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
      * </p>
      * </note>
-     */
-    private java.util.List<String> architectures;
-    /**
-     * <p>
-     * The operating systems that the images in the repository are compatible with. On the Amazon ECR Public Gallery,
-     * the following supported operating systems will appear as badges on the repository and are used as search filters.
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -88,12 +69,31 @@ public class RepositoryCatalogDataInput implements Serializable, Cloneable, Stru
      * </p>
      * </li>
      * </ul>
+     */
+    private java.util.List<String> architectures;
+    /**
+     * <p>
+     * The operating systems that the images in the repository are compatible with. On the Amazon ECR Public Gallery,
+     * the following supported operating systems appear as badges on the repository and are used as search filters.
+     * </p>
      * <note>
      * <p>
-     * If an unsupported tag is added to your repository catalog data, it will be associated with the repository and can
-     * be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
+     * If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be
+     * retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
      * </p>
      * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Linux</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Windows</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<String> operatingSystems;
     /**
@@ -109,14 +109,14 @@ public class RepositoryCatalogDataInput implements Serializable, Cloneable, Stru
     private java.nio.ByteBuffer logoImageBlob;
     /**
      * <p>
-     * A detailed description of the contents of the repository. It is publicly visible in the Amazon ECR Public
-     * Gallery. The text must be in markdown format.
+     * A detailed description of the contents of the repository. It's publicly visible in the Amazon ECR Public Gallery.
+     * The text must be in markdown format.
      * </p>
      */
     private String aboutText;
     /**
      * <p>
-     * Detailed information on how to use the contents of the repository. It is publicly visible in the Amazon ECR
+     * Detailed information about how to use the contents of the repository. It's publicly visible in the Amazon ECR
      * Public Gallery. The usage text provides context, support information, and additional usage details for users of
      * the repository. The text must be in markdown format.
      * </p>
@@ -172,230 +172,14 @@ public class RepositoryCatalogDataInput implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The system architecture that the images in the repository are compatible with. On the Amazon ECR Public Gallery,
-     * the following supported architectures will appear as badges on the repository and are used as search filters.
+     * the following supported architectures appear as badges on the repository and are used as search filters.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Linux</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Windows</code>
-     * </p>
-     * </li>
-     * </ul>
      * <note>
      * <p>
-     * If an unsupported tag is added to your repository catalog data, it will be associated with the repository and can
-     * be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
+     * If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be
+     * retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
      * </p>
      * </note>
-     * 
-     * @return The system architecture that the images in the repository are compatible with. On the Amazon ECR Public
-     *         Gallery, the following supported architectures will appear as badges on the repository and are used as
-     *         search filters.</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>Linux</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Windows</code>
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <note>
-     *         <p>
-     *         If an unsupported tag is added to your repository catalog data, it will be associated with the repository
-     *         and can be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
-     *         </p>
-     */
-
-    public java.util.List<String> getArchitectures() {
-        return architectures;
-    }
-
-    /**
-     * <p>
-     * The system architecture that the images in the repository are compatible with. On the Amazon ECR Public Gallery,
-     * the following supported architectures will appear as badges on the repository and are used as search filters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Linux</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Windows</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <note>
-     * <p>
-     * If an unsupported tag is added to your repository catalog data, it will be associated with the repository and can
-     * be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
-     * </p>
-     * </note>
-     * 
-     * @param architectures
-     *        The system architecture that the images in the repository are compatible with. On the Amazon ECR Public
-     *        Gallery, the following supported architectures will appear as badges on the repository and are used as
-     *        search filters.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Linux</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Windows</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        If an unsupported tag is added to your repository catalog data, it will be associated with the repository
-     *        and can be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
-     *        </p>
-     */
-
-    public void setArchitectures(java.util.Collection<String> architectures) {
-        if (architectures == null) {
-            this.architectures = null;
-            return;
-        }
-
-        this.architectures = new java.util.ArrayList<String>(architectures);
-    }
-
-    /**
-     * <p>
-     * The system architecture that the images in the repository are compatible with. On the Amazon ECR Public Gallery,
-     * the following supported architectures will appear as badges on the repository and are used as search filters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Linux</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Windows</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <note>
-     * <p>
-     * If an unsupported tag is added to your repository catalog data, it will be associated with the repository and can
-     * be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
-     * </p>
-     * </note>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setArchitectures(java.util.Collection)} or {@link #withArchitectures(java.util.Collection)} if you want
-     * to override the existing values.
-     * </p>
-     * 
-     * @param architectures
-     *        The system architecture that the images in the repository are compatible with. On the Amazon ECR Public
-     *        Gallery, the following supported architectures will appear as badges on the repository and are used as
-     *        search filters.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Linux</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Windows</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        If an unsupported tag is added to your repository catalog data, it will be associated with the repository
-     *        and can be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
-     *        </p>
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RepositoryCatalogDataInput withArchitectures(String... architectures) {
-        if (this.architectures == null) {
-            setArchitectures(new java.util.ArrayList<String>(architectures.length));
-        }
-        for (String ele : architectures) {
-            this.architectures.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The system architecture that the images in the repository are compatible with. On the Amazon ECR Public Gallery,
-     * the following supported architectures will appear as badges on the repository and are used as search filters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Linux</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Windows</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <note>
-     * <p>
-     * If an unsupported tag is added to your repository catalog data, it will be associated with the repository and can
-     * be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
-     * </p>
-     * </note>
-     * 
-     * @param architectures
-     *        The system architecture that the images in the repository are compatible with. On the Amazon ECR Public
-     *        Gallery, the following supported architectures will appear as badges on the repository and are used as
-     *        search filters.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Linux</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Windows</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        If an unsupported tag is added to your repository catalog data, it will be associated with the repository
-     *        and can be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
-     *        </p>
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RepositoryCatalogDataInput withArchitectures(java.util.Collection<String> architectures) {
-        setArchitectures(architectures);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The operating systems that the images in the repository are compatible with. On the Amazon ECR Public Gallery,
-     * the following supported operating systems will appear as badges on the repository and are used as search filters.
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -418,16 +202,15 @@ public class RepositoryCatalogDataInput implements Serializable, Cloneable, Stru
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * If an unsupported tag is added to your repository catalog data, it will be associated with the repository and can
-     * be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
-     * </p>
-     * </note>
      * 
-     * @return The operating systems that the images in the repository are compatible with. On the Amazon ECR Public
-     *         Gallery, the following supported operating systems will appear as badges on the repository and are used
-     *         as search filters.</p>
+     * @return The system architecture that the images in the repository are compatible with. On the Amazon ECR Public
+     *         Gallery, the following supported architectures appear as badges on the repository and are used as search
+     *         filters.</p> <note>
+     *         <p>
+     *         If an unsupported tag is added to your repository catalog data, it's associated with the repository and
+     *         can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
+     *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -449,23 +232,23 @@ public class RepositoryCatalogDataInput implements Serializable, Cloneable, Stru
      *         <code>x86-64</code>
      *         </p>
      *         </li>
-     *         </ul>
-     *         <note>
-     *         <p>
-     *         If an unsupported tag is added to your repository catalog data, it will be associated with the repository
-     *         and can be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
-     *         </p>
      */
 
-    public java.util.List<String> getOperatingSystems() {
-        return operatingSystems;
+    public java.util.List<String> getArchitectures() {
+        return architectures;
     }
 
     /**
      * <p>
-     * The operating systems that the images in the repository are compatible with. On the Amazon ECR Public Gallery,
-     * the following supported operating systems will appear as badges on the repository and are used as search filters.
+     * The system architecture that the images in the repository are compatible with. On the Amazon ECR Public Gallery,
+     * the following supported architectures appear as badges on the repository and are used as search filters.
      * </p>
+     * <note>
+     * <p>
+     * If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be
+     * retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
+     * </p>
+     * </note>
      * <ul>
      * <li>
      * <p>
@@ -488,17 +271,16 @@ public class RepositoryCatalogDataInput implements Serializable, Cloneable, Stru
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * If an unsupported tag is added to your repository catalog data, it will be associated with the repository and can
-     * be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
-     * </p>
-     * </note>
      * 
-     * @param operatingSystems
-     *        The operating systems that the images in the repository are compatible with. On the Amazon ECR Public
-     *        Gallery, the following supported operating systems will appear as badges on the repository and are used as
-     *        search filters.</p>
+     * @param architectures
+     *        The system architecture that the images in the repository are compatible with. On the Amazon ECR Public
+     *        Gallery, the following supported architectures appear as badges on the repository and are used as search
+     *        filters.</p> <note>
+     *        <p>
+     *        If an unsupported tag is added to your repository catalog data, it's associated with the repository and
+     *        can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
+     *        </p>
+     *        </note>
      *        <ul>
      *        <li>
      *        <p>
@@ -520,12 +302,264 @@ public class RepositoryCatalogDataInput implements Serializable, Cloneable, Stru
      *        <code>x86-64</code>
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
+     */
+
+    public void setArchitectures(java.util.Collection<String> architectures) {
+        if (architectures == null) {
+            this.architectures = null;
+            return;
+        }
+
+        this.architectures = new java.util.ArrayList<String>(architectures);
+    }
+
+    /**
+     * <p>
+     * The system architecture that the images in the repository are compatible with. On the Amazon ECR Public Gallery,
+     * the following supported architectures appear as badges on the repository and are used as search filters.
+     * </p>
+     * <note>
+     * <p>
+     * If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be
+     * retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
+     * </p>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ARM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARM 64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>x86</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>x86-64</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setArchitectures(java.util.Collection)} or {@link #withArchitectures(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param architectures
+     *        The system architecture that the images in the repository are compatible with. On the Amazon ECR Public
+     *        Gallery, the following supported architectures appear as badges on the repository and are used as search
+     *        filters.</p> <note>
      *        <p>
-     *        If an unsupported tag is added to your repository catalog data, it will be associated with the repository
-     *        and can be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
+     *        If an unsupported tag is added to your repository catalog data, it's associated with the repository and
+     *        can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
      *        </p>
+     *        </note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ARM</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ARM 64</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>x86</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>x86-64</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RepositoryCatalogDataInput withArchitectures(String... architectures) {
+        if (this.architectures == null) {
+            setArchitectures(new java.util.ArrayList<String>(architectures.length));
+        }
+        for (String ele : architectures) {
+            this.architectures.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The system architecture that the images in the repository are compatible with. On the Amazon ECR Public Gallery,
+     * the following supported architectures appear as badges on the repository and are used as search filters.
+     * </p>
+     * <note>
+     * <p>
+     * If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be
+     * retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
+     * </p>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ARM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARM 64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>x86</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>x86-64</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param architectures
+     *        The system architecture that the images in the repository are compatible with. On the Amazon ECR Public
+     *        Gallery, the following supported architectures appear as badges on the repository and are used as search
+     *        filters.</p> <note>
+     *        <p>
+     *        If an unsupported tag is added to your repository catalog data, it's associated with the repository and
+     *        can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
+     *        </p>
+     *        </note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ARM</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ARM 64</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>x86</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>x86-64</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RepositoryCatalogDataInput withArchitectures(java.util.Collection<String> architectures) {
+        setArchitectures(architectures);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operating systems that the images in the repository are compatible with. On the Amazon ECR Public Gallery,
+     * the following supported operating systems appear as badges on the repository and are used as search filters.
+     * </p>
+     * <note>
+     * <p>
+     * If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be
+     * retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
+     * </p>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Linux</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Windows</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The operating systems that the images in the repository are compatible with. On the Amazon ECR Public
+     *         Gallery, the following supported operating systems appear as badges on the repository and are used as
+     *         search filters.</p> <note>
+     *         <p>
+     *         If an unsupported tag is added to your repository catalog data, it's associated with the repository and
+     *         can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
+     *         </p>
+     *         </note>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Linux</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Windows</code>
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<String> getOperatingSystems() {
+        return operatingSystems;
+    }
+
+    /**
+     * <p>
+     * The operating systems that the images in the repository are compatible with. On the Amazon ECR Public Gallery,
+     * the following supported operating systems appear as badges on the repository and are used as search filters.
+     * </p>
+     * <note>
+     * <p>
+     * If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be
+     * retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
+     * </p>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Linux</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Windows</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param operatingSystems
+     *        The operating systems that the images in the repository are compatible with. On the Amazon ECR Public
+     *        Gallery, the following supported operating systems appear as badges on the repository and are used as
+     *        search filters.</p> <note>
+     *        <p>
+     *        If an unsupported tag is added to your repository catalog data, it's associated with the repository and
+     *        can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
+     *        </p>
+     *        </note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Linux</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Windows</code>
+     *        </p>
+     *        </li>
      */
 
     public void setOperatingSystems(java.util.Collection<String> operatingSystems) {
@@ -540,36 +574,26 @@ public class RepositoryCatalogDataInput implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The operating systems that the images in the repository are compatible with. On the Amazon ECR Public Gallery,
-     * the following supported operating systems will appear as badges on the repository and are used as search filters.
+     * the following supported operating systems appear as badges on the repository and are used as search filters.
      * </p>
+     * <note>
+     * <p>
+     * If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be
+     * retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
+     * </p>
+     * </note>
      * <ul>
      * <li>
      * <p>
-     * <code>ARM</code>
+     * <code>Linux</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ARM 64</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>x86</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>x86-64</code>
+     * <code>Windows</code>
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * If an unsupported tag is added to your repository catalog data, it will be associated with the repository and can
-     * be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
-     * </p>
-     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setOperatingSystems(java.util.Collection)} or {@link #withOperatingSystems(java.util.Collection)} if you
@@ -578,35 +602,24 @@ public class RepositoryCatalogDataInput implements Serializable, Cloneable, Stru
      * 
      * @param operatingSystems
      *        The operating systems that the images in the repository are compatible with. On the Amazon ECR Public
-     *        Gallery, the following supported operating systems will appear as badges on the repository and are used as
-     *        search filters.</p>
+     *        Gallery, the following supported operating systems appear as badges on the repository and are used as
+     *        search filters.</p> <note>
+     *        <p>
+     *        If an unsupported tag is added to your repository catalog data, it's associated with the repository and
+     *        can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
+     *        </p>
+     *        </note>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ARM</code>
+     *        <code>Linux</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ARM 64</code>
+     *        <code>Windows</code>
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        <code>x86</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>x86-64</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        If an unsupported tag is added to your repository catalog data, it will be associated with the repository
-     *        and can be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -623,68 +636,47 @@ public class RepositoryCatalogDataInput implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The operating systems that the images in the repository are compatible with. On the Amazon ECR Public Gallery,
-     * the following supported operating systems will appear as badges on the repository and are used as search filters.
+     * the following supported operating systems appear as badges on the repository and are used as search filters.
      * </p>
+     * <note>
+     * <p>
+     * If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be
+     * retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
+     * </p>
+     * </note>
      * <ul>
      * <li>
      * <p>
-     * <code>ARM</code>
+     * <code>Linux</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ARM 64</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>x86</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>x86-64</code>
+     * <code>Windows</code>
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * If an unsupported tag is added to your repository catalog data, it will be associated with the repository and can
-     * be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
-     * </p>
-     * </note>
      * 
      * @param operatingSystems
      *        The operating systems that the images in the repository are compatible with. On the Amazon ECR Public
-     *        Gallery, the following supported operating systems will appear as badges on the repository and are used as
-     *        search filters.</p>
+     *        Gallery, the following supported operating systems appear as badges on the repository and are used as
+     *        search filters.</p> <note>
+     *        <p>
+     *        If an unsupported tag is added to your repository catalog data, it's associated with the repository and
+     *        can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.
+     *        </p>
+     *        </note>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ARM</code>
+     *        <code>Linux</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ARM 64</code>
+     *        <code>Windows</code>
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        <code>x86</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>x86-64</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        If an unsupported tag is added to your repository catalog data, it will be associated with the repository
-     *        and can be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -786,12 +778,12 @@ public class RepositoryCatalogDataInput implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A detailed description of the contents of the repository. It is publicly visible in the Amazon ECR Public
-     * Gallery. The text must be in markdown format.
+     * A detailed description of the contents of the repository. It's publicly visible in the Amazon ECR Public Gallery.
+     * The text must be in markdown format.
      * </p>
      * 
      * @param aboutText
-     *        A detailed description of the contents of the repository. It is publicly visible in the Amazon ECR Public
+     *        A detailed description of the contents of the repository. It's publicly visible in the Amazon ECR Public
      *        Gallery. The text must be in markdown format.
      */
 
@@ -801,11 +793,11 @@ public class RepositoryCatalogDataInput implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A detailed description of the contents of the repository. It is publicly visible in the Amazon ECR Public
-     * Gallery. The text must be in markdown format.
+     * A detailed description of the contents of the repository. It's publicly visible in the Amazon ECR Public Gallery.
+     * The text must be in markdown format.
      * </p>
      * 
-     * @return A detailed description of the contents of the repository. It is publicly visible in the Amazon ECR Public
+     * @return A detailed description of the contents of the repository. It's publicly visible in the Amazon ECR Public
      *         Gallery. The text must be in markdown format.
      */
 
@@ -815,12 +807,12 @@ public class RepositoryCatalogDataInput implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A detailed description of the contents of the repository. It is publicly visible in the Amazon ECR Public
-     * Gallery. The text must be in markdown format.
+     * A detailed description of the contents of the repository. It's publicly visible in the Amazon ECR Public Gallery.
+     * The text must be in markdown format.
      * </p>
      * 
      * @param aboutText
-     *        A detailed description of the contents of the repository. It is publicly visible in the Amazon ECR Public
+     *        A detailed description of the contents of the repository. It's publicly visible in the Amazon ECR Public
      *        Gallery. The text must be in markdown format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -832,13 +824,13 @@ public class RepositoryCatalogDataInput implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Detailed information on how to use the contents of the repository. It is publicly visible in the Amazon ECR
+     * Detailed information about how to use the contents of the repository. It's publicly visible in the Amazon ECR
      * Public Gallery. The usage text provides context, support information, and additional usage details for users of
      * the repository. The text must be in markdown format.
      * </p>
      * 
      * @param usageText
-     *        Detailed information on how to use the contents of the repository. It is publicly visible in the Amazon
+     *        Detailed information about how to use the contents of the repository. It's publicly visible in the Amazon
      *        ECR Public Gallery. The usage text provides context, support information, and additional usage details for
      *        users of the repository. The text must be in markdown format.
      */
@@ -849,12 +841,12 @@ public class RepositoryCatalogDataInput implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Detailed information on how to use the contents of the repository. It is publicly visible in the Amazon ECR
+     * Detailed information about how to use the contents of the repository. It's publicly visible in the Amazon ECR
      * Public Gallery. The usage text provides context, support information, and additional usage details for users of
      * the repository. The text must be in markdown format.
      * </p>
      * 
-     * @return Detailed information on how to use the contents of the repository. It is publicly visible in the Amazon
+     * @return Detailed information about how to use the contents of the repository. It's publicly visible in the Amazon
      *         ECR Public Gallery. The usage text provides context, support information, and additional usage details
      *         for users of the repository. The text must be in markdown format.
      */
@@ -865,13 +857,13 @@ public class RepositoryCatalogDataInput implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Detailed information on how to use the contents of the repository. It is publicly visible in the Amazon ECR
+     * Detailed information about how to use the contents of the repository. It's publicly visible in the Amazon ECR
      * Public Gallery. The usage text provides context, support information, and additional usage details for users of
      * the repository. The text must be in markdown format.
      * </p>
      * 
      * @param usageText
-     *        Detailed information on how to use the contents of the repository. It is publicly visible in the Amazon
+     *        Detailed information about how to use the contents of the repository. It's publicly visible in the Amazon
      *        ECR Public Gallery. The usage text provides context, support information, and additional usage details for
      *        users of the repository. The text must be in markdown format.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -25,10 +25,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.
  * </p>
  * <p>
- * ACM Private CA API consumes the <code>Validity</code> data type differently in two distinct parameters of the
- * <code>IssueCertificate</code> action. The required parameter <code>IssueCertificate</code>:<code>Validity</code>
- * specifies the end of a certificate's validity period. The optional parameter <code>IssueCertificate</code>:
- * <code>ValidityNotBefore</code> specifies a customized starting time for the validity period.
+ * Amazon Web Services Private CA API consumes the <code>Validity</code> data type differently in two distinct
+ * parameters of the <code>IssueCertificate</code> action. The required parameter <code>IssueCertificate</code>:
+ * <code>Validity</code> specifies the end of a certificate's validity period. The optional parameter
+ * <code>IssueCertificate</code>:<code>ValidityNotBefore</code> specifies a customized starting time for the validity
+ * period.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/Validity" target="_top">AWS API
@@ -45,9 +46,9 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
     private Long value;
     /**
      * <p>
-     * Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported validity
-     * types include those listed below. Type definitions with values include a sample input value and the resulting
-     * output.
+     * Determines how <i>Amazon Web Services Private CA</i> interprets the <code>Value</code> parameter, an integer.
+     * Supported validity types include those listed below. Type definitions with values include a sample input value
+     * and the resulting output.
      * </p>
      * <p>
      * <code>END_DATE</code>: The specific date and time when the certificate will expire, expressed using UTCTime
@@ -151,9 +152,9 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported validity
-     * types include those listed below. Type definitions with values include a sample input value and the resulting
-     * output.
+     * Determines how <i>Amazon Web Services Private CA</i> interprets the <code>Value</code> parameter, an integer.
+     * Supported validity types include those listed below. Type definitions with values include a sample input value
+     * and the resulting output.
      * </p>
      * <p>
      * <code>END_DATE</code>: The specific date and time when the certificate will expire, expressed using UTCTime
@@ -214,9 +215,9 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param type
-     *        Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported
-     *        validity types include those listed below. Type definitions with values include a sample input value and
-     *        the resulting output. </p>
+     *        Determines how <i>Amazon Web Services Private CA</i> interprets the <code>Value</code> parameter, an
+     *        integer. Supported validity types include those listed below. Type definitions with values include a
+     *        sample input value and the resulting output. </p>
      *        <p>
      *        <code>END_DATE</code>: The specific date and time when the certificate will expire, expressed using
      *        UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format. When UTCTime is used, if the year field
@@ -283,9 +284,9 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported validity
-     * types include those listed below. Type definitions with values include a sample input value and the resulting
-     * output.
+     * Determines how <i>Amazon Web Services Private CA</i> interprets the <code>Value</code> parameter, an integer.
+     * Supported validity types include those listed below. Type definitions with values include a sample input value
+     * and the resulting output.
      * </p>
      * <p>
      * <code>END_DATE</code>: The specific date and time when the certificate will expire, expressed using UTCTime
@@ -345,9 +346,9 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      * validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.
      * </p>
      * 
-     * @return Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported
-     *         validity types include those listed below. Type definitions with values include a sample input value and
-     *         the resulting output. </p>
+     * @return Determines how <i>Amazon Web Services Private CA</i> interprets the <code>Value</code> parameter, an
+     *         integer. Supported validity types include those listed below. Type definitions with values include a
+     *         sample input value and the resulting output. </p>
      *         <p>
      *         <code>END_DATE</code>: The specific date and time when the certificate will expire, expressed using
      *         UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format. When UTCTime is used, if the year
@@ -414,9 +415,9 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported validity
-     * types include those listed below. Type definitions with values include a sample input value and the resulting
-     * output.
+     * Determines how <i>Amazon Web Services Private CA</i> interprets the <code>Value</code> parameter, an integer.
+     * Supported validity types include those listed below. Type definitions with values include a sample input value
+     * and the resulting output.
      * </p>
      * <p>
      * <code>END_DATE</code>: The specific date and time when the certificate will expire, expressed using UTCTime
@@ -477,9 +478,9 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param type
-     *        Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported
-     *        validity types include those listed below. Type definitions with values include a sample input value and
-     *        the resulting output. </p>
+     *        Determines how <i>Amazon Web Services Private CA</i> interprets the <code>Value</code> parameter, an
+     *        integer. Supported validity types include those listed below. Type definitions with values include a
+     *        sample input value and the resulting output. </p>
      *        <p>
      *        <code>END_DATE</code>: The specific date and time when the certificate will expire, expressed using
      *        UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format. When UTCTime is used, if the year field
@@ -548,9 +549,9 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported validity
-     * types include those listed below. Type definitions with values include a sample input value and the resulting
-     * output.
+     * Determines how <i>Amazon Web Services Private CA</i> interprets the <code>Value</code> parameter, an integer.
+     * Supported validity types include those listed below. Type definitions with values include a sample input value
+     * and the resulting output.
      * </p>
      * <p>
      * <code>END_DATE</code>: The specific date and time when the certificate will expire, expressed using UTCTime
@@ -611,9 +612,9 @@ public class Validity implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param type
-     *        Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported
-     *        validity types include those listed below. Type definitions with values include a sample input value and
-     *        the resulting output. </p>
+     *        Determines how <i>Amazon Web Services Private CA</i> interprets the <code>Value</code> parameter, an
+     *        integer. Supported validity types include those listed below. Type definitions with values include a
+     *        sample input value and the resulting output. </p>
      *        <p>
      *        <code>END_DATE</code>: The specific date and time when the certificate will expire, expressed using
      *        UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format. When UTCTime is used, if the year field

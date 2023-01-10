@@ -27,7 +27,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported
+     * The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported
      * resource is an Amazon ECR Public repository.
      * </p>
      */
@@ -35,13 +35,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported
+     * The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported
      * resource is an Amazon ECR Public repository.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-     *        supported resource is an Amazon ECR Public repository.
+     *        The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported
+     *        resource is an Amazon ECR Public repository.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -50,11 +50,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported
+     * The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported
      * resource is an Amazon ECR Public repository.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
+     * @return The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the
      *         supported resource is an Amazon ECR Public repository.
      */
 
@@ -64,13 +64,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported
+     * The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported
      * resource is an Amazon ECR Public repository.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-     *        supported resource is an Amazon ECR Public repository.
+     *        The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported
+     *        resource is an Amazon ECR Public repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

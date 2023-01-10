@@ -31,7 +31,7 @@ public class AuthorizationData implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * A base64-encoded string that contains authorization data for a public Amazon ECR registry. When the string is
-     * decoded, it is presented in the format <code>user:password</code> for public registry authentication using
+     * decoded, it's presented in the format <code>user:password</code> for public registry authentication using
      * <code>docker login</code>.
      * </p>
      */
@@ -47,13 +47,13 @@ public class AuthorizationData implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * A base64-encoded string that contains authorization data for a public Amazon ECR registry. When the string is
-     * decoded, it is presented in the format <code>user:password</code> for public registry authentication using
+     * decoded, it's presented in the format <code>user:password</code> for public registry authentication using
      * <code>docker login</code>.
      * </p>
      * 
      * @param authorizationToken
      *        A base64-encoded string that contains authorization data for a public Amazon ECR registry. When the string
-     *        is decoded, it is presented in the format <code>user:password</code> for public registry authentication
+     *        is decoded, it's presented in the format <code>user:password</code> for public registry authentication
      *        using <code>docker login</code>.
      */
 
@@ -64,12 +64,12 @@ public class AuthorizationData implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * A base64-encoded string that contains authorization data for a public Amazon ECR registry. When the string is
-     * decoded, it is presented in the format <code>user:password</code> for public registry authentication using
+     * decoded, it's presented in the format <code>user:password</code> for public registry authentication using
      * <code>docker login</code>.
      * </p>
      * 
      * @return A base64-encoded string that contains authorization data for a public Amazon ECR registry. When the
-     *         string is decoded, it is presented in the format <code>user:password</code> for public registry
+     *         string is decoded, it's presented in the format <code>user:password</code> for public registry
      *         authentication using <code>docker login</code>.
      */
 
@@ -80,13 +80,13 @@ public class AuthorizationData implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * A base64-encoded string that contains authorization data for a public Amazon ECR registry. When the string is
-     * decoded, it is presented in the format <code>user:password</code> for public registry authentication using
+     * decoded, it's presented in the format <code>user:password</code> for public registry authentication using
      * <code>docker login</code>.
      * </p>
      * 
      * @param authorizationToken
      *        A base64-encoded string that contains authorization data for a public Amazon ECR registry. When the string
-     *        is decoded, it is presented in the format <code>user:password</code> for public registry authentication
+     *        is decoded, it's presented in the format <code>user:password</code> for public registry authentication
      *        using <code>docker login</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

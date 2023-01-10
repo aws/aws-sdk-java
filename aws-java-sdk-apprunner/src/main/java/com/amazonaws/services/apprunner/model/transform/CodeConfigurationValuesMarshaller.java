@@ -39,6 +39,8 @@ public class CodeConfigurationValuesMarshaller {
             .marshallLocationName("Port").build();
     private static final MarshallingInfo<Map> RUNTIMEENVIRONMENTVARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuntimeEnvironmentVariables").build();
+    private static final MarshallingInfo<Map> RUNTIMEENVIRONMENTSECRETS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuntimeEnvironmentSecrets").build();
 
     private static final CodeConfigurationValuesMarshaller instance = new CodeConfigurationValuesMarshaller();
 
@@ -61,6 +63,7 @@ public class CodeConfigurationValuesMarshaller {
             protocolMarshaller.marshall(codeConfigurationValues.getStartCommand(), STARTCOMMAND_BINDING);
             protocolMarshaller.marshall(codeConfigurationValues.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(codeConfigurationValues.getRuntimeEnvironmentVariables(), RUNTIMEENVIRONMENTVARIABLES_BINDING);
+            protocolMarshaller.marshall(codeConfigurationValues.getRuntimeEnvironmentSecrets(), RUNTIMEENVIRONMENTSECRETS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

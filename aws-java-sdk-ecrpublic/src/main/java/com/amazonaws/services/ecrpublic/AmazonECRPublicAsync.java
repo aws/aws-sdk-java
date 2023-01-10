@@ -27,9 +27,9 @@ import com.amazonaws.services.ecrpublic.model.*;
  * <p>
  * <fullname>Amazon Elastic Container Registry Public</fullname>
  * <p>
- * Amazon Elastic Container Registry (Amazon ECR) is a managed container image registry service. Amazon ECR provides
- * both public and private registries to host your container images. You can use the familiar Docker CLI, or their
- * preferred client, to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry for
+ * Amazon Elastic Container Registry Public (Amazon ECR Public) is a managed container image registry service. Amazon
+ * ECR provides both public and private registries to host your container images. You can use the Docker CLI or your
+ * preferred client to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry for
  * your Docker or Open Container Initiative (OCI) images. Amazon ECR supports public repositories with this API. For
  * information about the Amazon ECR API for private repositories, see <a
  * href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/Welcome.html">Amazon Elastic Container Registry API
@@ -41,9 +41,9 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Checks the availability of one or more image layers within a repository in a public registry. When an image is
-     * pushed to a repository, each image layer is checked to verify if it has been uploaded before. If it has been
-     * uploaded, then the image layer is skipped.
+     * Checks the availability of one or more image layers that are within a repository in a public registry. When an
+     * image is pushed to a repository, each image layer is checked to verify if it has been uploaded before. If it has
+     * been uploaded, then the image layer is skipped.
      * </p>
      * <note>
      * <p>
@@ -63,9 +63,9 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Checks the availability of one or more image layers within a repository in a public registry. When an image is
-     * pushed to a repository, each image layer is checked to verify if it has been uploaded before. If it has been
-     * uploaded, then the image layer is skipped.
+     * Checks the availability of one or more image layers that are within a repository in a public registry. When an
+     * image is pushed to a repository, each image layer is checked to verify if it has been uploaded before. If it has
+     * been uploaded, then the image layer is skipped.
      * </p>
      * <note>
      * <p>
@@ -90,15 +90,15 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Deletes a list of specified images within a repository in a public registry. Images are specified with either an
-     * <code>imageTag</code> or <code>imageDigest</code>.
+     * Deletes a list of specified images that are within a repository in a public registry. Images are specified with
+     * either an <code>imageTag</code> or <code>imageDigest</code>.
      * </p>
      * <p>
      * You can remove a tag from an image by specifying the image's tag in your request. When you remove the last tag
      * from an image, the image is deleted from your repository.
      * </p>
      * <p>
-     * You can completely delete an image (and all of its tags) by specifying the image's digest in your request.
+     * You can completely delete an image (and all of its tags) by specifying the digest of the image in your request.
      * </p>
      * 
      * @param batchDeleteImageRequest
@@ -111,15 +111,15 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Deletes a list of specified images within a repository in a public registry. Images are specified with either an
-     * <code>imageTag</code> or <code>imageDigest</code>.
+     * Deletes a list of specified images that are within a repository in a public registry. Images are specified with
+     * either an <code>imageTag</code> or <code>imageDigest</code>.
      * </p>
      * <p>
      * You can remove a tag from an image by specifying the image's tag in your request. When you remove the last tag
      * from an image, the image is deleted from your repository.
      * </p>
      * <p>
-     * You can completely delete an image (and all of its tags) by specifying the image's digest in your request.
+     * You can completely delete an image (and all of its tags) by specifying the digest of the image in your request.
      * </p>
      * 
      * @param batchDeleteImageRequest
@@ -137,13 +137,13 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Informs Amazon ECR that the image layer upload has completed for a specified public registry, repository name,
-     * and upload ID. You can optionally provide a <code>sha256</code> digest of the image layer for data validation
+     * Informs Amazon ECR that the image layer upload is complete for a specified public registry, repository name, and
+     * upload ID. You can optionally provide a <code>sha256</code> digest of the image layer for data validation
      * purposes.
      * </p>
      * <p>
-     * When an image is pushed, the CompleteLayerUpload API is called once per each new image layer to verify that the
-     * upload has completed.
+     * When an image is pushed, the CompleteLayerUpload API is called once for each new image layer to verify that the
+     * upload is complete.
      * </p>
      * <note>
      * <p>
@@ -162,13 +162,13 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Informs Amazon ECR that the image layer upload has completed for a specified public registry, repository name,
-     * and upload ID. You can optionally provide a <code>sha256</code> digest of the image layer for data validation
+     * Informs Amazon ECR that the image layer upload is complete for a specified public registry, repository name, and
+     * upload ID. You can optionally provide a <code>sha256</code> digest of the image layer for data validation
      * purposes.
      * </p>
      * <p>
-     * When an image is pushed, the CompleteLayerUpload API is called once per each new image layer to verify that the
-     * upload has completed.
+     * When an image is pushed, the CompleteLayerUpload API is called once for each new image layer to verify that the
+     * upload is complete.
      * </p>
      * <note>
      * <p>
@@ -227,9 +227,9 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Deletes a repository in a public registry. If the repository contains images, you must either delete all images
-     * in the repository or use the <code>force</code> option which deletes all images on your behalf before deleting
-     * the repository.
+     * Deletes a repository in a public registry. If the repository contains images, you must either manually delete all
+     * images in the repository or use the <code>force</code> option. This option deletes all images on your behalf
+     * before deleting the repository.
      * </p>
      * 
      * @param deleteRepositoryRequest
@@ -242,9 +242,9 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Deletes a repository in a public registry. If the repository contains images, you must either delete all images
-     * in the repository or use the <code>force</code> option which deletes all images on your behalf before deleting
-     * the repository.
+     * Deletes a repository in a public registry. If the repository contains images, you must either manually delete all
+     * images in the repository or use the <code>force</code> option. This option deletes all images on your behalf
+     * before deleting the repository.
      * </p>
      * 
      * @param deleteRepositoryRequest
@@ -262,7 +262,7 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Deletes the repository policy associated with the specified repository.
+     * Deletes the repository policy that's associated with the specified repository.
      * </p>
      * 
      * @param deleteRepositoryPolicyRequest
@@ -275,7 +275,7 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Deletes the repository policy associated with the specified repository.
+     * Deletes the repository policy that's associated with the specified repository.
      * </p>
      * 
      * @param deleteRepositoryPolicyRequest
@@ -324,13 +324,13 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Returns metadata about the images in a repository in a public registry.
+     * Returns metadata that's related to the images in a repository in a public registry.
      * </p>
      * <note>
      * <p>
      * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
-     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may
-     * return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     * registry. The output of the <code>docker images</code> command shows the uncompressed image size. Therefore, it
+     * might return a larger image size than the image sizes that are returned by <a>DescribeImages</a>.
      * </p>
      * </note>
      * 
@@ -344,13 +344,13 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Returns metadata about the images in a repository in a public registry.
+     * Returns metadata that's related to the images in a repository in a public registry.
      * </p>
      * <note>
      * <p>
      * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
-     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may
-     * return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     * registry. The output of the <code>docker images</code> command shows the uncompressed image size. Therefore, it
+     * might return a larger image size than the image sizes that are returned by <a>DescribeImages</a>.
      * </p>
      * </note>
      * 
@@ -400,7 +400,7 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Describes repositories in a public registry.
+     * Describes repositories that are in a public registry.
      * </p>
      * 
      * @param describeRepositoriesRequest
@@ -413,7 +413,7 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Describes repositories in a public registry.
+     * Describes repositories that are in a public registry.
      * </p>
      * 
      * @param describeRepositoriesRequest
@@ -431,8 +431,8 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Retrieves an authorization token. An authorization token represents your IAM authentication credentials and can
-     * be used to access any Amazon ECR registry that your IAM principal has access to. The authorization token is valid
+     * Retrieves an authorization token. An authorization token represents your IAM authentication credentials. You can
+     * use it to access any Amazon ECR registry that your IAM principal has access to. The authorization token is valid
      * for 12 hours. This API requires the <code>ecr-public:GetAuthorizationToken</code> and
      * <code>sts:GetServiceBearerToken</code> permissions.
      * </p>
@@ -447,8 +447,8 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Retrieves an authorization token. An authorization token represents your IAM authentication credentials and can
-     * be used to access any Amazon ECR registry that your IAM principal has access to. The authorization token is valid
+     * Retrieves an authorization token. An authorization token represents your IAM authentication credentials. You can
+     * use it to access any Amazon ECR registry that your IAM principal has access to. The authorization token is valid
      * for 12 hours. This API requires the <code>ecr-public:GetAuthorizationToken</code> and
      * <code>sts:GetServiceBearerToken</code> permissions.
      * </p>
@@ -566,9 +566,8 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
      * Notifies Amazon ECR that you intend to upload an image layer.
      * </p>
      * <p>
-     * When an image is pushed, the InitiateLayerUpload API is called once per image layer that has not already been
-     * uploaded. Whether or not an image layer has been uploaded is determined by the BatchCheckLayerAvailability API
-     * action.
+     * When an image is pushed, the InitiateLayerUpload API is called once for each image layer that hasn't already been
+     * uploaded. Whether an image layer uploads is determined by the BatchCheckLayerAvailability API action.
      * </p>
      * <note>
      * <p>
@@ -590,9 +589,8 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
      * Notifies Amazon ECR that you intend to upload an image layer.
      * </p>
      * <p>
-     * When an image is pushed, the InitiateLayerUpload API is called once per image layer that has not already been
-     * uploaded. Whether or not an image layer has been uploaded is determined by the BatchCheckLayerAvailability API
-     * action.
+     * When an image is pushed, the InitiateLayerUpload API is called once for each image layer that hasn't already been
+     * uploaded. Whether an image layer uploads is determined by the BatchCheckLayerAvailability API action.
      * </p>
      * <note>
      * <p>
@@ -647,11 +645,11 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Creates or updates the image manifest and tags associated with an image.
+     * Creates or updates the image manifest and tags that are associated with an image.
      * </p>
      * <p>
      * When an image is pushed and all new image layers have been uploaded, the PutImage API is called once to create or
-     * update the image manifest and the tags associated with the image.
+     * update the image manifest and the tags that are associated with the image.
      * </p>
      * <note>
      * <p>
@@ -670,11 +668,11 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Creates or updates the image manifest and tags associated with an image.
+     * Creates or updates the image manifest and tags that are associated with an image.
      * </p>
      * <p>
      * When an image is pushed and all new image layers have been uploaded, the PutImage API is called once to create or
-     * update the image manifest and the tags associated with the image.
+     * update the image manifest and the tags that are associated with the image.
      * </p>
      * <note>
      * <p>
@@ -698,7 +696,7 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Create or updates the catalog data for a public registry.
+     * Create or update the catalog data for a public registry.
      * </p>
      * 
      * @param putRegistryCatalogDataRequest
@@ -711,7 +709,7 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
 
     /**
      * <p>
-     * Create or updates the catalog data for a public registry.
+     * Create or update the catalog data for a public registry.
      * </p>
      * 
      * @param putRegistryCatalogDataRequest
@@ -796,8 +794,8 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
     /**
      * <p>
      * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
-     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
-     * associated with that resource are deleted as well.
+     * resource aren't specified in the request parameters, they aren't changed. When a resource is deleted, the tags
+     * associated with that resource are also deleted.
      * </p>
      * 
      * @param tagResourceRequest
@@ -811,8 +809,8 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
     /**
      * <p>
      * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
-     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
-     * associated with that resource are deleted as well.
+     * resource aren't specified in the request parameters, they aren't changed. When a resource is deleted, the tags
+     * associated with that resource are also deleted.
      * </p>
      * 
      * @param tagResourceRequest
@@ -865,7 +863,7 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
      * </p>
      * <p>
      * When an image is pushed, each new image layer is uploaded in parts. The maximum size of each image layer part can
-     * be 20971520 bytes (or about 20MB). The UploadLayerPart API is called once per each new image layer part.
+     * be 20971520 bytes (about 20MB). The UploadLayerPart API is called once for each new image layer part.
      * </p>
      * <note>
      * <p>
@@ -888,7 +886,7 @@ public interface AmazonECRPublicAsync extends AmazonECRPublic {
      * </p>
      * <p>
      * When an image is pushed, each new image layer is uploaded in parts. The maximum size of each image layer part can
-     * be 20971520 bytes (or about 20MB). The UploadLayerPart API is called once per each new image layer part.
+     * be 20971520 bytes (about 20MB). The UploadLayerPart API is called once for each new image layer part.
      * </p>
      * <note>
      * <p>

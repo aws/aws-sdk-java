@@ -60,7 +60,7 @@ public class RepositoryCatalogData implements Serializable, Cloneable, Structure
     private java.util.List<String> operatingSystems;
     /**
      * <p>
-     * The URL containing the logo associated with the repository.
+     * The URL that contains the logo that's associated with the repository.
      * </p>
      */
     private String logoUrl;
@@ -80,7 +80,7 @@ public class RepositoryCatalogData implements Serializable, Cloneable, Structure
     private String usageText;
     /**
      * <p>
-     * Whether or not the repository is certified by AWS Marketplace.
+     * Indicates whether the repository is certified by Amazon Web Services Marketplace.
      * </p>
      */
     private Boolean marketplaceCertified;
@@ -347,11 +347,11 @@ public class RepositoryCatalogData implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The URL containing the logo associated with the repository.
+     * The URL that contains the logo that's associated with the repository.
      * </p>
      * 
      * @param logoUrl
-     *        The URL containing the logo associated with the repository.
+     *        The URL that contains the logo that's associated with the repository.
      */
 
     public void setLogoUrl(String logoUrl) {
@@ -360,10 +360,10 @@ public class RepositoryCatalogData implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The URL containing the logo associated with the repository.
+     * The URL that contains the logo that's associated with the repository.
      * </p>
      * 
-     * @return The URL containing the logo associated with the repository.
+     * @return The URL that contains the logo that's associated with the repository.
      */
 
     public String getLogoUrl() {
@@ -372,11 +372,11 @@ public class RepositoryCatalogData implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The URL containing the logo associated with the repository.
+     * The URL that contains the logo that's associated with the repository.
      * </p>
      * 
      * @param logoUrl
-     *        The URL containing the logo associated with the repository.
+     *        The URL that contains the logo that's associated with the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -479,11 +479,11 @@ public class RepositoryCatalogData implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Whether or not the repository is certified by AWS Marketplace.
+     * Indicates whether the repository is certified by Amazon Web Services Marketplace.
      * </p>
      * 
      * @param marketplaceCertified
-     *        Whether or not the repository is certified by AWS Marketplace.
+     *        Indicates whether the repository is certified by Amazon Web Services Marketplace.
      */
 
     public void setMarketplaceCertified(Boolean marketplaceCertified) {
@@ -492,10 +492,10 @@ public class RepositoryCatalogData implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Whether or not the repository is certified by AWS Marketplace.
+     * Indicates whether the repository is certified by Amazon Web Services Marketplace.
      * </p>
      * 
-     * @return Whether or not the repository is certified by AWS Marketplace.
+     * @return Indicates whether the repository is certified by Amazon Web Services Marketplace.
      */
 
     public Boolean getMarketplaceCertified() {
@@ -504,11 +504,11 @@ public class RepositoryCatalogData implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Whether or not the repository is certified by AWS Marketplace.
+     * Indicates whether the repository is certified by Amazon Web Services Marketplace.
      * </p>
      * 
      * @param marketplaceCertified
-     *        Whether or not the repository is certified by AWS Marketplace.
+     *        Indicates whether the repository is certified by Amazon Web Services Marketplace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -519,10 +519,10 @@ public class RepositoryCatalogData implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Whether or not the repository is certified by AWS Marketplace.
+     * Indicates whether the repository is certified by Amazon Web Services Marketplace.
      * </p>
      * 
-     * @return Whether or not the repository is certified by AWS Marketplace.
+     * @return Indicates whether the repository is certified by Amazon Web Services Marketplace.
      */
 
     public Boolean isMarketplaceCertified() {

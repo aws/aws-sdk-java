@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified layer upload does not contain any layer parts.
+ * The specified layer upload doesn't contain any layer parts.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

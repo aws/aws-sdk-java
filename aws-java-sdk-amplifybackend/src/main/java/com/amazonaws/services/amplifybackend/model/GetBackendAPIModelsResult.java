@@ -35,6 +35,12 @@ public class GetBackendAPIModelsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * Stringified JSON of the model introspection schema for an existing backend API resource.
+     * </p>
+     */
+    private String modelIntrospectionSchema;
 
     /**
      * <p>
@@ -136,6 +142,46 @@ public class GetBackendAPIModelsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * Stringified JSON of the model introspection schema for an existing backend API resource.
+     * </p>
+     * 
+     * @param modelIntrospectionSchema
+     *        Stringified JSON of the model introspection schema for an existing backend API resource.
+     */
+
+    public void setModelIntrospectionSchema(String modelIntrospectionSchema) {
+        this.modelIntrospectionSchema = modelIntrospectionSchema;
+    }
+
+    /**
+     * <p>
+     * Stringified JSON of the model introspection schema for an existing backend API resource.
+     * </p>
+     * 
+     * @return Stringified JSON of the model introspection schema for an existing backend API resource.
+     */
+
+    public String getModelIntrospectionSchema() {
+        return this.modelIntrospectionSchema;
+    }
+
+    /**
+     * <p>
+     * Stringified JSON of the model introspection schema for an existing backend API resource.
+     * </p>
+     * 
+     * @param modelIntrospectionSchema
+     *        Stringified JSON of the model introspection schema for an existing backend API resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetBackendAPIModelsResult withModelIntrospectionSchema(String modelIntrospectionSchema) {
+        setModelIntrospectionSchema(modelIntrospectionSchema);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -150,7 +196,9 @@ public class GetBackendAPIModelsResult extends com.amazonaws.AmazonWebServiceRes
         if (getModels() != null)
             sb.append("Models: ").append(getModels()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getModelIntrospectionSchema() != null)
+            sb.append("ModelIntrospectionSchema: ").append(getModelIntrospectionSchema());
         sb.append("}");
         return sb.toString();
     }
@@ -173,6 +221,10 @@ public class GetBackendAPIModelsResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getModelIntrospectionSchema() == null ^ this.getModelIntrospectionSchema() == null)
+            return false;
+        if (other.getModelIntrospectionSchema() != null && other.getModelIntrospectionSchema().equals(this.getModelIntrospectionSchema()) == false)
+            return false;
         return true;
     }
 
@@ -183,6 +235,7 @@ public class GetBackendAPIModelsResult extends com.amazonaws.AmazonWebServiceRes
 
         hashCode = prime * hashCode + ((getModels() == null) ? 0 : getModels().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getModelIntrospectionSchema() == null) ? 0 : getModelIntrospectionSchema().hashCode());
         return hashCode;
     }
 

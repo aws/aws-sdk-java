@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified image digest does not match the digest that Amazon ECR calculated for the image.
+ * The specified image digest doesn't match the digest that Amazon ECR calculated for the image.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

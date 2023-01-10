@@ -99,7 +99,6 @@ import java.util.concurrent.ExecutorService;
  * </p>
  * </li>
  * </ul>
- * <br />
  * </li>
  * <li>
  * <p>

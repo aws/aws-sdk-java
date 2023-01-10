@@ -27,14 +27,14 @@ public class BatchCheckLayerAvailabilityRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the image layers to check. If you do not
-     * specify a registry, the default public registry is assumed.
+     * The Amazon Web Services account ID, or registry alias, associated with the public registry that contains the
+     * image layers to check. If you do not specify a registry, the default public registry is assumed.
      * </p>
      */
     private String registryId;
     /**
      * <p>
-     * The name of the repository that is associated with the image layers to check.
+     * The name of the repository that's associated with the image layers to check.
      * </p>
      */
     private String repositoryName;
@@ -47,13 +47,13 @@ public class BatchCheckLayerAvailabilityRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the image layers to check. If you do not
-     * specify a registry, the default public registry is assumed.
+     * The Amazon Web Services account ID, or registry alias, associated with the public registry that contains the
+     * image layers to check. If you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the public registry that contains the image layers to check. If you do
-     *        not specify a registry, the default public registry is assumed.
+     *        The Amazon Web Services account ID, or registry alias, associated with the public registry that contains
+     *        the image layers to check. If you do not specify a registry, the default public registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -62,12 +62,12 @@ public class BatchCheckLayerAvailabilityRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the image layers to check. If you do not
-     * specify a registry, the default public registry is assumed.
+     * The Amazon Web Services account ID, or registry alias, associated with the public registry that contains the
+     * image layers to check. If you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the public registry that contains the image layers to check. If you do
-     *         not specify a registry, the default public registry is assumed.
+     * @return The Amazon Web Services account ID, or registry alias, associated with the public registry that contains
+     *         the image layers to check. If you do not specify a registry, the default public registry is assumed.
      */
 
     public String getRegistryId() {
@@ -76,13 +76,13 @@ public class BatchCheckLayerAvailabilityRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the image layers to check. If you do not
-     * specify a registry, the default public registry is assumed.
+     * The Amazon Web Services account ID, or registry alias, associated with the public registry that contains the
+     * image layers to check. If you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the public registry that contains the image layers to check. If you do
-     *        not specify a registry, the default public registry is assumed.
+     *        The Amazon Web Services account ID, or registry alias, associated with the public registry that contains
+     *        the image layers to check. If you do not specify a registry, the default public registry is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class BatchCheckLayerAvailabilityRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the repository that is associated with the image layers to check.
+     * The name of the repository that's associated with the image layers to check.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository that is associated with the image layers to check.
+     *        The name of the repository that's associated with the image layers to check.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -106,10 +106,10 @@ public class BatchCheckLayerAvailabilityRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the repository that is associated with the image layers to check.
+     * The name of the repository that's associated with the image layers to check.
      * </p>
      * 
-     * @return The name of the repository that is associated with the image layers to check.
+     * @return The name of the repository that's associated with the image layers to check.
      */
 
     public String getRepositoryName() {
@@ -118,11 +118,11 @@ public class BatchCheckLayerAvailabilityRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the repository that is associated with the image layers to check.
+     * The name of the repository that's associated with the image layers to check.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository that is associated with the image layers to check.
+     *        The name of the repository that's associated with the image layers to check.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

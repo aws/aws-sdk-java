@@ -99,7 +99,6 @@ import com.amazonaws.services.mwaa.model.*;
  * </p>
  * </li>
  * </ul>
- * <br />
  * </li>
  * <li>
  * <p>

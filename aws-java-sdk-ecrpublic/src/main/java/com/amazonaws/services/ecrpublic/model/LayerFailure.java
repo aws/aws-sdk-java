@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing an Amazon ECR image layer failure.
+ * An object that represents an Amazon ECR image layer failure.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/LayerFailure" target="_top">AWS API
@@ -30,13 +30,13 @@ public class LayerFailure implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The layer digest associated with the failure.
+     * The layer digest that's associated with the failure.
      * </p>
      */
     private String layerDigest;
     /**
      * <p>
-     * The failure code associated with the failure.
+     * The failure code that's associated with the failure.
      * </p>
      */
     private String failureCode;
@@ -49,11 +49,11 @@ public class LayerFailure implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The layer digest associated with the failure.
+     * The layer digest that's associated with the failure.
      * </p>
      * 
      * @param layerDigest
-     *        The layer digest associated with the failure.
+     *        The layer digest that's associated with the failure.
      */
 
     public void setLayerDigest(String layerDigest) {
@@ -62,10 +62,10 @@ public class LayerFailure implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The layer digest associated with the failure.
+     * The layer digest that's associated with the failure.
      * </p>
      * 
-     * @return The layer digest associated with the failure.
+     * @return The layer digest that's associated with the failure.
      */
 
     public String getLayerDigest() {
@@ -74,11 +74,11 @@ public class LayerFailure implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The layer digest associated with the failure.
+     * The layer digest that's associated with the failure.
      * </p>
      * 
      * @param layerDigest
-     *        The layer digest associated with the failure.
+     *        The layer digest that's associated with the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class LayerFailure implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The failure code associated with the failure.
+     * The failure code that's associated with the failure.
      * </p>
      * 
      * @param failureCode
-     *        The failure code associated with the failure.
+     *        The failure code that's associated with the failure.
      * @see LayerFailureCode
      */
 
@@ -103,10 +103,10 @@ public class LayerFailure implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The failure code associated with the failure.
+     * The failure code that's associated with the failure.
      * </p>
      * 
-     * @return The failure code associated with the failure.
+     * @return The failure code that's associated with the failure.
      * @see LayerFailureCode
      */
 
@@ -116,11 +116,11 @@ public class LayerFailure implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The failure code associated with the failure.
+     * The failure code that's associated with the failure.
      * </p>
      * 
      * @param failureCode
-     *        The failure code associated with the failure.
+     *        The failure code that's associated with the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LayerFailureCode
      */
@@ -132,11 +132,11 @@ public class LayerFailure implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The failure code associated with the failure.
+     * The failure code that's associated with the failure.
      * </p>
      * 
      * @param failureCode
-     *        The failure code associated with the failure.
+     *        The failure code that's associated with the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LayerFailureCode
      */

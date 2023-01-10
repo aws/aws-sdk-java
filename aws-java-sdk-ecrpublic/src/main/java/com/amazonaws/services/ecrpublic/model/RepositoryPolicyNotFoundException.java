@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified repository and registry combination does not have an associated repository policy.
+ * The specified repository and registry combination doesn't have an associated repository policy.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

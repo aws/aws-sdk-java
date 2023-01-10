@@ -30459,6 +30459,12 @@
       }, {
         "name" : "API",
         "value" : "API"
+      }, {
+        "name" : "DISCONNECT",
+        "value" : "DISCONNECT"
+      }, {
+        "name" : "MONITOR",
+        "value" : "MONITOR"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.connect.enum.ContactInitiationMethod",

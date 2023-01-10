@@ -25,7 +25,7 @@ public class BatchCheckLayerAvailabilityResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of image layer objects corresponding to the image layer references in the request.
+     * A list of image layer objects that correspond to the image layer references in the request.
      * </p>
      */
     private java.util.List<Layer> layers;
@@ -38,10 +38,10 @@ public class BatchCheckLayerAvailabilityResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of image layer objects corresponding to the image layer references in the request.
+     * A list of image layer objects that correspond to the image layer references in the request.
      * </p>
      * 
-     * @return A list of image layer objects corresponding to the image layer references in the request.
+     * @return A list of image layer objects that correspond to the image layer references in the request.
      */
 
     public java.util.List<Layer> getLayers() {
@@ -50,11 +50,11 @@ public class BatchCheckLayerAvailabilityResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of image layer objects corresponding to the image layer references in the request.
+     * A list of image layer objects that correspond to the image layer references in the request.
      * </p>
      * 
      * @param layers
-     *        A list of image layer objects corresponding to the image layer references in the request.
+     *        A list of image layer objects that correspond to the image layer references in the request.
      */
 
     public void setLayers(java.util.Collection<Layer> layers) {
@@ -68,7 +68,7 @@ public class BatchCheckLayerAvailabilityResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of image layer objects corresponding to the image layer references in the request.
+     * A list of image layer objects that correspond to the image layer references in the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class BatchCheckLayerAvailabilityResult extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param layers
-     *        A list of image layer objects corresponding to the image layer references in the request.
+     *        A list of image layer objects that correspond to the image layer references in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class BatchCheckLayerAvailabilityResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of image layer objects corresponding to the image layer references in the request.
+     * A list of image layer objects that correspond to the image layer references in the request.
      * </p>
      * 
      * @param layers
-     *        A list of image layer objects corresponding to the image layer references in the request.
+     *        A list of image layer objects that correspond to the image layer references in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

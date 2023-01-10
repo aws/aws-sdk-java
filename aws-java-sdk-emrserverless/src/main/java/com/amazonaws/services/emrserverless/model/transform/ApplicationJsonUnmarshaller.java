@@ -114,6 +114,15 @@ public class ApplicationJsonUnmarshaller implements Unmarshaller<Application, Js
                     context.nextToken();
                     application.setArchitecture(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("imageConfiguration", targetDepth)) {
+                    context.nextToken();
+                    application.setImageConfiguration(ImageConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("workerTypeSpecifications", targetDepth)) {
+                    context.nextToken();
+                    application.setWorkerTypeSpecifications(new MapUnmarshaller<String, WorkerTypeSpecification>(context.getUnmarshaller(String.class),
+                            WorkerTypeSpecificationJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

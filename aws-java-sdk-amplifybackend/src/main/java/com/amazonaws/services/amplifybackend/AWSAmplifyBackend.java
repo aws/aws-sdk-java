@@ -371,7 +371,7 @@ public interface AWSAmplifyBackend {
 
     /**
      * <p>
-     * Generates a model schema for existing backend API resource.
+     * Gets a model introspection schema for an existing backend API resource.
      * </p>
      * 
      * @param getBackendAPIModelsRequest

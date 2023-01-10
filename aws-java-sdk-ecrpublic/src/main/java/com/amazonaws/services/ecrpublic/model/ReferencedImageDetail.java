@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that describes the image tag details returned by a <a>DescribeImageTags</a> action.
+ * An object that describes the image tag details that are returned by a <a>DescribeImageTags</a> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/ReferencedImageDetail" target="_top">AWS
@@ -39,21 +39,21 @@ public class ReferencedImageDetail implements Serializable, Cloneable, Structure
      * The size, in bytes, of the image in the repository.
      * </p>
      * <p>
-     * If the image is a manifest list, this will be the max size of all manifests in the list.
+     * If the image is a manifest list, this is the max size of all manifests in the list.
      * </p>
      * <note>
      * <p>
      * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
-     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may
-     * return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might
+     * return a larger image size than the image sizes that are returned by <a>DescribeImages</a>.
      * </p>
      * </note>
      */
     private Long imageSizeInBytes;
     /**
      * <p>
-     * The date and time, expressed in standard JavaScript date format, at which the current image tag was pushed to the
-     * repository.
+     * The date and time, expressed in standard JavaScript date format, which the current image tag was pushed to the
+     * repository at.
      * </p>
      */
     private java.util.Date imagePushedAt;
@@ -115,26 +115,26 @@ public class ReferencedImageDetail implements Serializable, Cloneable, Structure
      * The size, in bytes, of the image in the repository.
      * </p>
      * <p>
-     * If the image is a manifest list, this will be the max size of all manifests in the list.
+     * If the image is a manifest list, this is the max size of all manifests in the list.
      * </p>
      * <note>
      * <p>
      * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
-     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may
-     * return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might
+     * return a larger image size than the image sizes that are returned by <a>DescribeImages</a>.
      * </p>
      * </note>
      * 
      * @param imageSizeInBytes
      *        The size, in bytes, of the image in the repository.</p>
      *        <p>
-     *        If the image is a manifest list, this will be the max size of all manifests in the list.
+     *        If the image is a manifest list, this is the max size of all manifests in the list.
      *        </p>
      *        <note>
      *        <p>
      *        Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2
      *        Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size,
-     *        so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     *        so it might return a larger image size than the image sizes that are returned by <a>DescribeImages</a>.
      *        </p>
      */
 
@@ -147,25 +147,25 @@ public class ReferencedImageDetail implements Serializable, Cloneable, Structure
      * The size, in bytes, of the image in the repository.
      * </p>
      * <p>
-     * If the image is a manifest list, this will be the max size of all manifests in the list.
+     * If the image is a manifest list, this is the max size of all manifests in the list.
      * </p>
      * <note>
      * <p>
      * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
-     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may
-     * return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might
+     * return a larger image size than the image sizes that are returned by <a>DescribeImages</a>.
      * </p>
      * </note>
      * 
      * @return The size, in bytes, of the image in the repository.</p>
      *         <p>
-     *         If the image is a manifest list, this will be the max size of all manifests in the list.
+     *         If the image is a manifest list, this is the max size of all manifests in the list.
      *         </p>
      *         <note>
      *         <p>
      *         Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2
      *         Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size,
-     *         so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     *         so it might return a larger image size than the image sizes that are returned by <a>DescribeImages</a>.
      *         </p>
      */
 
@@ -178,26 +178,26 @@ public class ReferencedImageDetail implements Serializable, Cloneable, Structure
      * The size, in bytes, of the image in the repository.
      * </p>
      * <p>
-     * If the image is a manifest list, this will be the max size of all manifests in the list.
+     * If the image is a manifest list, this is the max size of all manifests in the list.
      * </p>
      * <note>
      * <p>
      * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
-     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may
-     * return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might
+     * return a larger image size than the image sizes that are returned by <a>DescribeImages</a>.
      * </p>
      * </note>
      * 
      * @param imageSizeInBytes
      *        The size, in bytes, of the image in the repository.</p>
      *        <p>
-     *        If the image is a manifest list, this will be the max size of all manifests in the list.
+     *        If the image is a manifest list, this is the max size of all manifests in the list.
      *        </p>
      *        <note>
      *        <p>
      *        Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2
      *        Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size,
-     *        so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     *        so it might return a larger image size than the image sizes that are returned by <a>DescribeImages</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -209,13 +209,13 @@ public class ReferencedImageDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The date and time, expressed in standard JavaScript date format, at which the current image tag was pushed to the
-     * repository.
+     * The date and time, expressed in standard JavaScript date format, which the current image tag was pushed to the
+     * repository at.
      * </p>
      * 
      * @param imagePushedAt
-     *        The date and time, expressed in standard JavaScript date format, at which the current image tag was pushed
-     *        to the repository.
+     *        The date and time, expressed in standard JavaScript date format, which the current image tag was pushed to
+     *        the repository at.
      */
 
     public void setImagePushedAt(java.util.Date imagePushedAt) {
@@ -224,12 +224,12 @@ public class ReferencedImageDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The date and time, expressed in standard JavaScript date format, at which the current image tag was pushed to the
-     * repository.
+     * The date and time, expressed in standard JavaScript date format, which the current image tag was pushed to the
+     * repository at.
      * </p>
      * 
-     * @return The date and time, expressed in standard JavaScript date format, at which the current image tag was
-     *         pushed to the repository.
+     * @return The date and time, expressed in standard JavaScript date format, which the current image tag was pushed
+     *         to the repository at.
      */
 
     public java.util.Date getImagePushedAt() {
@@ -238,13 +238,13 @@ public class ReferencedImageDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The date and time, expressed in standard JavaScript date format, at which the current image tag was pushed to the
-     * repository.
+     * The date and time, expressed in standard JavaScript date format, which the current image tag was pushed to the
+     * repository at.
      * </p>
      * 
      * @param imagePushedAt
-     *        The date and time, expressed in standard JavaScript date format, at which the current image tag was pushed
-     *        to the repository.
+     *        The date and time, expressed in standard JavaScript date format, which the current image tag was pushed to
+     *        the repository at.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

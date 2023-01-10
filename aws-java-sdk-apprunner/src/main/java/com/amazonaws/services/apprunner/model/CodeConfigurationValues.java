@@ -61,10 +61,34 @@ public class CodeConfigurationValues implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The environment variables that are available to your running App Runner service. An array of key-value pairs.
-     * Keys with a prefix of <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.
      * </p>
      */
     private java.util.Map<String, String> runtimeEnvironmentVariables;
+    /**
+     * <p>
+     * An array of key-value pairs representing the secrets and parameters that get referenced to your service as an
+     * environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager
+     * secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web Services
+     * Region as the service that you're launching, you can use either the full ARN or name of the secret. If the
+     * parameter exists in a different Region, then the full ARN must be specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not
+     * supported.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     */
+    private java.util.Map<String, String> runtimeEnvironmentSecrets;
 
     /**
      * <p>
@@ -271,11 +295,10 @@ public class CodeConfigurationValues implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The environment variables that are available to your running App Runner service. An array of key-value pairs.
-     * Keys with a prefix of <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.
      * </p>
      * 
      * @return The environment variables that are available to your running App Runner service. An array of key-value
-     *         pairs. Keys with a prefix of <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.
+     *         pairs.
      */
 
     public java.util.Map<String, String> getRuntimeEnvironmentVariables() {
@@ -285,12 +308,11 @@ public class CodeConfigurationValues implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The environment variables that are available to your running App Runner service. An array of key-value pairs.
-     * Keys with a prefix of <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.
      * </p>
      * 
      * @param runtimeEnvironmentVariables
      *        The environment variables that are available to your running App Runner service. An array of key-value
-     *        pairs. Keys with a prefix of <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.
+     *        pairs.
      */
 
     public void setRuntimeEnvironmentVariables(java.util.Map<String, String> runtimeEnvironmentVariables) {
@@ -300,12 +322,11 @@ public class CodeConfigurationValues implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The environment variables that are available to your running App Runner service. An array of key-value pairs.
-     * Keys with a prefix of <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.
      * </p>
      * 
      * @param runtimeEnvironmentVariables
      *        The environment variables that are available to your running App Runner service. An array of key-value
-     *        pairs. Keys with a prefix of <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.
+     *        pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -343,6 +364,185 @@ public class CodeConfigurationValues implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * An array of key-value pairs representing the secrets and parameters that get referenced to your service as an
+     * environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager
+     * secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web Services
+     * Region as the service that you're launching, you can use either the full ARN or name of the secret. If the
+     * parameter exists in a different Region, then the full ARN must be specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not
+     * supported.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @return An array of key-value pairs representing the secrets and parameters that get referenced to your service
+     *         as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the
+     *         Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager
+     *         Parameter Store.</p> <note>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web
+     *         Services Region as the service that you're launching, you can use either the full ARN or name of the
+     *         secret. If the parameter exists in a different Region, then the full ARN must be specified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is
+     *         not supported.
+     *         </p>
+     *         </li>
+     *         </ul>
+     */
+
+    public java.util.Map<String, String> getRuntimeEnvironmentSecrets() {
+        return runtimeEnvironmentSecrets;
+    }
+
+    /**
+     * <p>
+     * An array of key-value pairs representing the secrets and parameters that get referenced to your service as an
+     * environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager
+     * secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web Services
+     * Region as the service that you're launching, you can use either the full ARN or name of the secret. If the
+     * parameter exists in a different Region, then the full ARN must be specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not
+     * supported.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param runtimeEnvironmentSecrets
+     *        An array of key-value pairs representing the secrets and parameters that get referenced to your service as
+     *        an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the
+     *        Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager
+     *        Parameter Store.</p> <note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web
+     *        Services Region as the service that you're launching, you can use either the full ARN or name of the
+     *        secret. If the parameter exists in a different Region, then the full ARN must be specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is
+     *        not supported.
+     *        </p>
+     *        </li>
+     *        </ul>
+     */
+
+    public void setRuntimeEnvironmentSecrets(java.util.Map<String, String> runtimeEnvironmentSecrets) {
+        this.runtimeEnvironmentSecrets = runtimeEnvironmentSecrets;
+    }
+
+    /**
+     * <p>
+     * An array of key-value pairs representing the secrets and parameters that get referenced to your service as an
+     * environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager
+     * secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web Services
+     * Region as the service that you're launching, you can use either the full ARN or name of the secret. If the
+     * parameter exists in a different Region, then the full ARN must be specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not
+     * supported.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param runtimeEnvironmentSecrets
+     *        An array of key-value pairs representing the secrets and parameters that get referenced to your service as
+     *        an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the
+     *        Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager
+     *        Parameter Store.</p> <note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web
+     *        Services Region as the service that you're launching, you can use either the full ARN or name of the
+     *        secret. If the parameter exists in a different Region, then the full ARN must be specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is
+     *        not supported.
+     *        </p>
+     *        </li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeConfigurationValues withRuntimeEnvironmentSecrets(java.util.Map<String, String> runtimeEnvironmentSecrets) {
+        setRuntimeEnvironmentSecrets(runtimeEnvironmentSecrets);
+        return this;
+    }
+
+    /**
+     * Add a single RuntimeEnvironmentSecrets entry
+     *
+     * @see CodeConfigurationValues#withRuntimeEnvironmentSecrets
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeConfigurationValues addRuntimeEnvironmentSecretsEntry(String key, String value) {
+        if (null == this.runtimeEnvironmentSecrets) {
+            this.runtimeEnvironmentSecrets = new java.util.HashMap<String, String>();
+        }
+        if (this.runtimeEnvironmentSecrets.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.runtimeEnvironmentSecrets.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into RuntimeEnvironmentSecrets.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeConfigurationValues clearRuntimeEnvironmentSecretsEntries() {
+        this.runtimeEnvironmentSecrets = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -363,7 +563,9 @@ public class CodeConfigurationValues implements Serializable, Cloneable, Structu
         if (getPort() != null)
             sb.append("Port: ").append(getPort()).append(",");
         if (getRuntimeEnvironmentVariables() != null)
-            sb.append("RuntimeEnvironmentVariables: ").append("***Sensitive Data Redacted***");
+            sb.append("RuntimeEnvironmentVariables: ").append("***Sensitive Data Redacted***").append(",");
+        if (getRuntimeEnvironmentSecrets() != null)
+            sb.append("RuntimeEnvironmentSecrets: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -398,6 +600,10 @@ public class CodeConfigurationValues implements Serializable, Cloneable, Structu
             return false;
         if (other.getRuntimeEnvironmentVariables() != null && other.getRuntimeEnvironmentVariables().equals(this.getRuntimeEnvironmentVariables()) == false)
             return false;
+        if (other.getRuntimeEnvironmentSecrets() == null ^ this.getRuntimeEnvironmentSecrets() == null)
+            return false;
+        if (other.getRuntimeEnvironmentSecrets() != null && other.getRuntimeEnvironmentSecrets().equals(this.getRuntimeEnvironmentSecrets()) == false)
+            return false;
         return true;
     }
 
@@ -411,6 +617,7 @@ public class CodeConfigurationValues implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getStartCommand() == null) ? 0 : getStartCommand().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getRuntimeEnvironmentVariables() == null) ? 0 : getRuntimeEnvironmentVariables().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeEnvironmentSecrets() == null) ? 0 : getRuntimeEnvironmentSecrets().hashCode());
         return hashCode;
     }
 

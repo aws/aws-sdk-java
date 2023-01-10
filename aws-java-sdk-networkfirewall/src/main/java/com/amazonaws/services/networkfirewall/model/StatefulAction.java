@@ -22,7 +22,8 @@ public enum StatefulAction {
 
     PASS("PASS"),
     DROP("DROP"),
-    ALERT("ALERT");
+    ALERT("ALERT"),
+    REJECT("REJECT");
 
     private String value;
 

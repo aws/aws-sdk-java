@@ -27,10 +27,10 @@ public class DescribeRegistriesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>DescribeRegistries</code> request where
-     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeRegistries</code>
+     * request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     * continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no
+     * more results to return, this value is <code>null</code>.
      * </p>
      * <note>
      * <p>
@@ -42,22 +42,22 @@ public class DescribeRegistriesRequest extends com.amazonaws.AmazonWebServiceReq
     private String nextToken;
     /**
      * <p>
-     * The maximum number of repository results returned by <code>DescribeRegistries</code> in paginated output. When
-     * this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results in a single
-     * page along with a <code>nextToken</code> response element. The remaining results of the initial request can be
-     * seen by sending another <code>DescribeRegistries</code> request with the returned <code>nextToken</code> value.
-     * This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRegistries</code> returns
-     * up to 100 results and a <code>nextToken</code> value, if applicable.
+     * The maximum number of repository results that's returned by <code>DescribeRegistries</code> in paginated output.
+     * When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results in a
+     * single page along with a <code>nextToken</code> response element. The remaining results of the initial request
+     * can be seen by sending another <code>DescribeRegistries</code> request with the returned <code>nextToken</code>
+     * value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeRegistries</code>
+     * returns up to 100 results and a <code>nextToken</code> value, if applicable.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>DescribeRegistries</code> request where
-     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeRegistries</code>
+     * request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     * continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no
+     * more results to return, this value is <code>null</code>.
      * </p>
      * <note>
      * <p>
@@ -67,10 +67,10 @@ public class DescribeRegistriesRequest extends com.amazonaws.AmazonWebServiceReq
      * </note>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous paginated <code>DescribeRegistries</code>
+     *        The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeRegistries</code>
      *        request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
      *        Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-     *        This value is <code>null</code> when there are no more results to return.</p> <note>
+     *        If there are no more results to return, this value is <code>null</code>.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.
@@ -83,10 +83,10 @@ public class DescribeRegistriesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>DescribeRegistries</code> request where
-     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeRegistries</code>
+     * request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     * continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no
+     * more results to return, this value is <code>null</code>.
      * </p>
      * <note>
      * <p>
@@ -95,10 +95,11 @@ public class DescribeRegistriesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </note>
      * 
-     * @return The <code>nextToken</code> value returned from a previous paginated <code>DescribeRegistries</code>
-     *         request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-     *         Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-     *         This value is <code>null</code> when there are no more results to return.</p> <note>
+     * @return The <code>nextToken</code> value that's returned from a previous paginated
+     *         <code>DescribeRegistries</code> request where <code>maxResults</code> was used and the results exceeded
+     *         the value of that parameter. Pagination continues from the end of the previous results that returned the
+     *         <code>nextToken</code> value. If there are no more results to return, this value is <code>null</code>
+     *         .</p> <note>
      *         <p>
      *         This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *         list and not for other programmatic purposes.
@@ -111,10 +112,10 @@ public class DescribeRegistriesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>DescribeRegistries</code> request where
-     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeRegistries</code>
+     * request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     * continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no
+     * more results to return, this value is <code>null</code>.
      * </p>
      * <note>
      * <p>
@@ -124,10 +125,10 @@ public class DescribeRegistriesRequest extends com.amazonaws.AmazonWebServiceReq
      * </note>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous paginated <code>DescribeRegistries</code>
+     *        The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeRegistries</code>
      *        request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
      *        Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-     *        This value is <code>null</code> when there are no more results to return.</p> <note>
+     *        If there are no more results to return, this value is <code>null</code>.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.
@@ -142,21 +143,21 @@ public class DescribeRegistriesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of repository results returned by <code>DescribeRegistries</code> in paginated output. When
-     * this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results in a single
-     * page along with a <code>nextToken</code> response element. The remaining results of the initial request can be
-     * seen by sending another <code>DescribeRegistries</code> request with the returned <code>nextToken</code> value.
-     * This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRegistries</code> returns
-     * up to 100 results and a <code>nextToken</code> value, if applicable.
+     * The maximum number of repository results that's returned by <code>DescribeRegistries</code> in paginated output.
+     * When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results in a
+     * single page along with a <code>nextToken</code> response element. The remaining results of the initial request
+     * can be seen by sending another <code>DescribeRegistries</code> request with the returned <code>nextToken</code>
+     * value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeRegistries</code>
+     * returns up to 100 results and a <code>nextToken</code> value, if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of repository results returned by <code>DescribeRegistries</code> in paginated output.
-     *        When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results
-     *        in a single page along with a <code>nextToken</code> response element. The remaining results of the
-     *        initial request can be seen by sending another <code>DescribeRegistries</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then
-     *        <code>DescribeRegistries</code> returns up to 100 results and a <code>nextToken</code> value, if
+     *        The maximum number of repository results that's returned by <code>DescribeRegistries</code> in paginated
+     *        output. When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code>
+     *        results in a single page along with a <code>nextToken</code> response element. The remaining results of
+     *        the initial request can be seen by sending another <code>DescribeRegistries</code> request with the
+     *        returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used,
+     *        then <code>DescribeRegistries</code> returns up to 100 results and a <code>nextToken</code> value, if
      *        applicable.
      */
 
@@ -166,21 +167,21 @@ public class DescribeRegistriesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of repository results returned by <code>DescribeRegistries</code> in paginated output. When
-     * this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results in a single
-     * page along with a <code>nextToken</code> response element. The remaining results of the initial request can be
-     * seen by sending another <code>DescribeRegistries</code> request with the returned <code>nextToken</code> value.
-     * This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRegistries</code> returns
-     * up to 100 results and a <code>nextToken</code> value, if applicable.
+     * The maximum number of repository results that's returned by <code>DescribeRegistries</code> in paginated output.
+     * When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results in a
+     * single page along with a <code>nextToken</code> response element. The remaining results of the initial request
+     * can be seen by sending another <code>DescribeRegistries</code> request with the returned <code>nextToken</code>
+     * value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeRegistries</code>
+     * returns up to 100 results and a <code>nextToken</code> value, if applicable.
      * </p>
      * 
-     * @return The maximum number of repository results returned by <code>DescribeRegistries</code> in paginated output.
-     *         When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results
-     *         in a single page along with a <code>nextToken</code> response element. The remaining results of the
-     *         initial request can be seen by sending another <code>DescribeRegistries</code> request with the returned
-     *         <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then
-     *         <code>DescribeRegistries</code> returns up to 100 results and a <code>nextToken</code> value, if
-     *         applicable.
+     * @return The maximum number of repository results that's returned by <code>DescribeRegistries</code> in paginated
+     *         output. When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code>
+     *         results in a single page along with a <code>nextToken</code> response element. The remaining results of
+     *         the initial request can be seen by sending another <code>DescribeRegistries</code> request with the
+     *         returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't
+     *         used, then <code>DescribeRegistries</code> returns up to 100 results and a <code>nextToken</code> value,
+     *         if applicable.
      */
 
     public Integer getMaxResults() {
@@ -189,21 +190,21 @@ public class DescribeRegistriesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of repository results returned by <code>DescribeRegistries</code> in paginated output. When
-     * this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results in a single
-     * page along with a <code>nextToken</code> response element. The remaining results of the initial request can be
-     * seen by sending another <code>DescribeRegistries</code> request with the returned <code>nextToken</code> value.
-     * This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRegistries</code> returns
-     * up to 100 results and a <code>nextToken</code> value, if applicable.
+     * The maximum number of repository results that's returned by <code>DescribeRegistries</code> in paginated output.
+     * When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results in a
+     * single page along with a <code>nextToken</code> response element. The remaining results of the initial request
+     * can be seen by sending another <code>DescribeRegistries</code> request with the returned <code>nextToken</code>
+     * value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeRegistries</code>
+     * returns up to 100 results and a <code>nextToken</code> value, if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of repository results returned by <code>DescribeRegistries</code> in paginated output.
-     *        When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results
-     *        in a single page along with a <code>nextToken</code> response element. The remaining results of the
-     *        initial request can be seen by sending another <code>DescribeRegistries</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then
-     *        <code>DescribeRegistries</code> returns up to 100 results and a <code>nextToken</code> value, if
+     *        The maximum number of repository results that's returned by <code>DescribeRegistries</code> in paginated
+     *        output. When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code>
+     *        results in a single page along with a <code>nextToken</code> response element. The remaining results of
+     *        the initial request can be seen by sending another <code>DescribeRegistries</code> request with the
+     *        returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used,
+     *        then <code>DescribeRegistries</code> returns up to 100 results and a <code>nextToken</code> value, if
      *        applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

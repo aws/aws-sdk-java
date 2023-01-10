@@ -72,7 +72,7 @@ public class AssessmentControl implements Serializable, Cloneable, StructuredPoj
     private java.util.List<String> evidenceSources;
     /**
      * <p>
-     * The amount of evidence that's generated for the control.
+     * The amount of evidence that's collected for the control.
      * </p>
      */
     private Integer evidenceCount;
@@ -463,11 +463,11 @@ public class AssessmentControl implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The amount of evidence that's generated for the control.
+     * The amount of evidence that's collected for the control.
      * </p>
      * 
      * @param evidenceCount
-     *        The amount of evidence that's generated for the control.
+     *        The amount of evidence that's collected for the control.
      */
 
     public void setEvidenceCount(Integer evidenceCount) {
@@ -476,10 +476,10 @@ public class AssessmentControl implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The amount of evidence that's generated for the control.
+     * The amount of evidence that's collected for the control.
      * </p>
      * 
-     * @return The amount of evidence that's generated for the control.
+     * @return The amount of evidence that's collected for the control.
      */
 
     public Integer getEvidenceCount() {
@@ -488,11 +488,11 @@ public class AssessmentControl implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The amount of evidence that's generated for the control.
+     * The amount of evidence that's collected for the control.
      * </p>
      * 
      * @param evidenceCount
-     *        The amount of evidence that's generated for the control.
+     *        The amount of evidence that's collected for the control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -32,8 +32,8 @@ public class DescribeImageTagsResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results
-     * of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, this value can be used to retrieve
-     * the next page of results. This value is <code>null</code> when there are no more results to return.
+     * of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve
+     * the next page of results. If there are no more results to return, this value is <code>null</code>.
      * </p>
      */
     private String nextToken;
@@ -111,15 +111,15 @@ public class DescribeImageTagsResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results
-     * of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, this value can be used to retrieve
-     * the next page of results. This value is <code>null</code> when there are no more results to return.
+     * of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve
+     * the next page of results. If there are no more results to return, this value is <code>null</code>.
      * </p>
      * 
      * @param nextToken
      *        The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the
-     *        results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, this value can be used
-     *        to retrieve the next page of results. This value is <code>null</code> when there are no more results to
-     *        return.
+     *        results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value
+     *        to retrieve the next page of results. If there are no more results to return, this value is
+     *        <code>null</code>.
      */
 
     public void setNextToken(String nextToken) {
@@ -129,14 +129,14 @@ public class DescribeImageTagsResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results
-     * of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, this value can be used to retrieve
-     * the next page of results. This value is <code>null</code> when there are no more results to return.
+     * of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve
+     * the next page of results. If there are no more results to return, this value is <code>null</code>.
      * </p>
      * 
      * @return The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the
-     *         results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, this value can be
-     *         used to retrieve the next page of results. This value is <code>null</code> when there are no more results
-     *         to return.
+     *         results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this
+     *         value to retrieve the next page of results. If there are no more results to return, this value is
+     *         <code>null</code>.
      */
 
     public String getNextToken() {
@@ -146,15 +146,15 @@ public class DescribeImageTagsResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results
-     * of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, this value can be used to retrieve
-     * the next page of results. This value is <code>null</code> when there are no more results to return.
+     * of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve
+     * the next page of results. If there are no more results to return, this value is <code>null</code>.
      * </p>
      * 
      * @param nextToken
      *        The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the
-     *        results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, this value can be used
-     *        to retrieve the next page of results. This value is <code>null</code> when there are no more results to
-     *        return.
+     *        results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value
+     *        to retrieve the next page of results. If there are no more results to return, this value is
+     *        <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

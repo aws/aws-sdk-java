@@ -239,6 +239,8 @@ public class AWSEMRServerlessClient extends AmazonWebServiceClient implements AW
      * @return Result of the CreateApplication operation returned by the service.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
      * @throws InternalServerException
      *         Request processing failed because of an error or failure with the service.
      * @throws ConflictException

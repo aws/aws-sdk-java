@@ -33,6 +33,8 @@ public class CreatePortalRequestMarshaller {
 
     private static final MarshallingInfo<Map> ADDITIONALENCRYPTIONCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalEncryptionContext").build();
+    private static final MarshallingInfo<String> AUTHENTICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authenticationType").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -60,6 +62,7 @@ public class CreatePortalRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createPortalRequest.getAdditionalEncryptionContext(), ADDITIONALENCRYPTIONCONTEXT_BINDING);
+            protocolMarshaller.marshall(createPortalRequest.getAuthenticationType(), AUTHENTICATIONTYPE_BINDING);
             protocolMarshaller.marshall(createPortalRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createPortalRequest.getCustomerManagedKey(), CUSTOMERMANAGEDKEY_BINDING);
             protocolMarshaller.marshall(createPortalRequest.getDisplayName(), DISPLAYNAME_BINDING);

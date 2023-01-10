@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The layer part size is not valid, or the first byte specified is not consecutive to the last byte of a previous layer
+ * The layer part size isn't valid, or the first byte specified isn't consecutive to the last byte of a previous layer
  * part upload.
  * </p>
  */
@@ -26,7 +26,7 @@ public class InvalidLayerPartException extends com.amazonaws.services.ecrpublic.
 
     /**
      * <p>
-     * The AWS account ID associated with the layer part.
+     * The Amazon Web Services account ID that's associated with the layer part.
      * </p>
      */
     private String registryId;
@@ -38,7 +38,7 @@ public class InvalidLayerPartException extends com.amazonaws.services.ecrpublic.
     private String repositoryName;
     /**
      * <p>
-     * The upload ID associated with the layer part.
+     * The upload ID that's associated with the layer part.
      * </p>
      */
     private String uploadId;
@@ -61,11 +61,11 @@ public class InvalidLayerPartException extends com.amazonaws.services.ecrpublic.
 
     /**
      * <p>
-     * The AWS account ID associated with the layer part.
+     * The Amazon Web Services account ID that's associated with the layer part.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the layer part.
+     *        The Amazon Web Services account ID that's associated with the layer part.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("registryId")
@@ -75,10 +75,10 @@ public class InvalidLayerPartException extends com.amazonaws.services.ecrpublic.
 
     /**
      * <p>
-     * The AWS account ID associated with the layer part.
+     * The Amazon Web Services account ID that's associated with the layer part.
      * </p>
      * 
-     * @return The AWS account ID associated with the layer part.
+     * @return The Amazon Web Services account ID that's associated with the layer part.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("registryId")
@@ -88,11 +88,11 @@ public class InvalidLayerPartException extends com.amazonaws.services.ecrpublic.
 
     /**
      * <p>
-     * The AWS account ID associated with the layer part.
+     * The Amazon Web Services account ID that's associated with the layer part.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the layer part.
+     *        The Amazon Web Services account ID that's associated with the layer part.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +145,11 @@ public class InvalidLayerPartException extends com.amazonaws.services.ecrpublic.
 
     /**
      * <p>
-     * The upload ID associated with the layer part.
+     * The upload ID that's associated with the layer part.
      * </p>
      * 
      * @param uploadId
-     *        The upload ID associated with the layer part.
+     *        The upload ID that's associated with the layer part.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("uploadId")
@@ -159,10 +159,10 @@ public class InvalidLayerPartException extends com.amazonaws.services.ecrpublic.
 
     /**
      * <p>
-     * The upload ID associated with the layer part.
+     * The upload ID that's associated with the layer part.
      * </p>
      * 
-     * @return The upload ID associated with the layer part.
+     * @return The upload ID that's associated with the layer part.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("uploadId")
@@ -172,11 +172,11 @@ public class InvalidLayerPartException extends com.amazonaws.services.ecrpublic.
 
     /**
      * <p>
-     * The upload ID associated with the layer part.
+     * The upload ID that's associated with the layer part.
      * </p>
      * 
      * @param uploadId
-     *        The upload ID associated with the layer part.
+     *        The upload ID that's associated with the layer part.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

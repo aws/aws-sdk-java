@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the image tag details for an image.
+ * An object that represents the image tag details for an image.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/ImageTagDetail" target="_top">AWS API
@@ -30,13 +30,13 @@ public class ImageTagDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag associated with the image.
+     * The tag that's associated with the image.
      * </p>
      */
     private String imageTag;
     /**
      * <p>
-     * The time stamp indicating when the image tag was created.
+     * The time stamp that indicates when the image tag was created.
      * </p>
      */
     private java.util.Date createdAt;
@@ -49,11 +49,11 @@ public class ImageTagDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag associated with the image.
+     * The tag that's associated with the image.
      * </p>
      * 
      * @param imageTag
-     *        The tag associated with the image.
+     *        The tag that's associated with the image.
      */
 
     public void setImageTag(String imageTag) {
@@ -62,10 +62,10 @@ public class ImageTagDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag associated with the image.
+     * The tag that's associated with the image.
      * </p>
      * 
-     * @return The tag associated with the image.
+     * @return The tag that's associated with the image.
      */
 
     public String getImageTag() {
@@ -74,11 +74,11 @@ public class ImageTagDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag associated with the image.
+     * The tag that's associated with the image.
      * </p>
      * 
      * @param imageTag
-     *        The tag associated with the image.
+     *        The tag that's associated with the image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class ImageTagDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time stamp indicating when the image tag was created.
+     * The time stamp that indicates when the image tag was created.
      * </p>
      * 
      * @param createdAt
-     *        The time stamp indicating when the image tag was created.
+     *        The time stamp that indicates when the image tag was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -102,10 +102,10 @@ public class ImageTagDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time stamp indicating when the image tag was created.
+     * The time stamp that indicates when the image tag was created.
      * </p>
      * 
-     * @return The time stamp indicating when the image tag was created.
+     * @return The time stamp that indicates when the image tag was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -114,11 +114,11 @@ public class ImageTagDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time stamp indicating when the image tag was created.
+     * The time stamp that indicates when the image tag was created.
      * </p>
      * 
      * @param createdAt
-     *        The time stamp indicating when the image tag was created.
+     *        The time stamp that indicates when the image tag was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

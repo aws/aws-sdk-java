@@ -30,8 +30,8 @@ public class Registry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID associated with the registry. If you do not specify a registry, the default public registry is
-     * assumed.
+     * The Amazon Web Services account ID that's associated with the registry. If you do not specify a registry, the
+     * default public registry is assumed.
      * </p>
      */
     private String registryId;
@@ -49,27 +49,27 @@ public class Registry implements Serializable, Cloneable, StructuredPojo {
     private String registryUri;
     /**
      * <p>
-     * Whether the account is verified. This indicates whether the account is an AWS Marketplace vendor. If an account
-     * is verified, each public repository will received a verified account badge on the Amazon ECR Public Gallery.
+     * Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is verified,
+     * each public repository receives a verified account badge on the Amazon ECR Public Gallery.
      * </p>
      */
     private Boolean verified;
     /**
      * <p>
-     * An array of objects representing the aliases for a public registry.
+     * An array of objects that represents the aliases for a public registry.
      * </p>
      */
     private java.util.List<RegistryAlias> aliases;
 
     /**
      * <p>
-     * The AWS account ID associated with the registry. If you do not specify a registry, the default public registry is
-     * assumed.
+     * The Amazon Web Services account ID that's associated with the registry. If you do not specify a registry, the
+     * default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry. If you do not specify a registry, the default public
-     *        registry is assumed.
+     *        The Amazon Web Services account ID that's associated with the registry. If you do not specify a registry,
+     *        the default public registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -78,12 +78,12 @@ public class Registry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID associated with the registry. If you do not specify a registry, the default public registry is
-     * assumed.
+     * The Amazon Web Services account ID that's associated with the registry. If you do not specify a registry, the
+     * default public registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the registry. If you do not specify a registry, the default public
-     *         registry is assumed.
+     * @return The Amazon Web Services account ID that's associated with the registry. If you do not specify a registry,
+     *         the default public registry is assumed.
      */
 
     public String getRegistryId() {
@@ -92,13 +92,13 @@ public class Registry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID associated with the registry. If you do not specify a registry, the default public registry is
-     * assumed.
+     * The Amazon Web Services account ID that's associated with the registry. If you do not specify a registry, the
+     * default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry. If you do not specify a registry, the default public
-     *        registry is assumed.
+     *        The Amazon Web Services account ID that's associated with the registry. If you do not specify a registry,
+     *        the default public registry is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,14 +189,13 @@ public class Registry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the account is verified. This indicates whether the account is an AWS Marketplace vendor. If an account
-     * is verified, each public repository will received a verified account badge on the Amazon ECR Public Gallery.
+     * Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is verified,
+     * each public repository receives a verified account badge on the Amazon ECR Public Gallery.
      * </p>
      * 
      * @param verified
-     *        Whether the account is verified. This indicates whether the account is an AWS Marketplace vendor. If an
-     *        account is verified, each public repository will received a verified account badge on the Amazon ECR
-     *        Public Gallery.
+     *        Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is
+     *        verified, each public repository receives a verified account badge on the Amazon ECR Public Gallery.
      */
 
     public void setVerified(Boolean verified) {
@@ -205,13 +204,12 @@ public class Registry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the account is verified. This indicates whether the account is an AWS Marketplace vendor. If an account
-     * is verified, each public repository will received a verified account badge on the Amazon ECR Public Gallery.
+     * Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is verified,
+     * each public repository receives a verified account badge on the Amazon ECR Public Gallery.
      * </p>
      * 
-     * @return Whether the account is verified. This indicates whether the account is an AWS Marketplace vendor. If an
-     *         account is verified, each public repository will received a verified account badge on the Amazon ECR
-     *         Public Gallery.
+     * @return Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is
+     *         verified, each public repository receives a verified account badge on the Amazon ECR Public Gallery.
      */
 
     public Boolean getVerified() {
@@ -220,14 +218,13 @@ public class Registry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the account is verified. This indicates whether the account is an AWS Marketplace vendor. If an account
-     * is verified, each public repository will received a verified account badge on the Amazon ECR Public Gallery.
+     * Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is verified,
+     * each public repository receives a verified account badge on the Amazon ECR Public Gallery.
      * </p>
      * 
      * @param verified
-     *        Whether the account is verified. This indicates whether the account is an AWS Marketplace vendor. If an
-     *        account is verified, each public repository will received a verified account badge on the Amazon ECR
-     *        Public Gallery.
+     *        Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is
+     *        verified, each public repository receives a verified account badge on the Amazon ECR Public Gallery.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,13 +235,12 @@ public class Registry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the account is verified. This indicates whether the account is an AWS Marketplace vendor. If an account
-     * is verified, each public repository will received a verified account badge on the Amazon ECR Public Gallery.
+     * Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is verified,
+     * each public repository receives a verified account badge on the Amazon ECR Public Gallery.
      * </p>
      * 
-     * @return Whether the account is verified. This indicates whether the account is an AWS Marketplace vendor. If an
-     *         account is verified, each public repository will received a verified account badge on the Amazon ECR
-     *         Public Gallery.
+     * @return Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is
+     *         verified, each public repository receives a verified account badge on the Amazon ECR Public Gallery.
      */
 
     public Boolean isVerified() {
@@ -253,10 +249,10 @@ public class Registry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects representing the aliases for a public registry.
+     * An array of objects that represents the aliases for a public registry.
      * </p>
      * 
-     * @return An array of objects representing the aliases for a public registry.
+     * @return An array of objects that represents the aliases for a public registry.
      */
 
     public java.util.List<RegistryAlias> getAliases() {
@@ -265,11 +261,11 @@ public class Registry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects representing the aliases for a public registry.
+     * An array of objects that represents the aliases for a public registry.
      * </p>
      * 
      * @param aliases
-     *        An array of objects representing the aliases for a public registry.
+     *        An array of objects that represents the aliases for a public registry.
      */
 
     public void setAliases(java.util.Collection<RegistryAlias> aliases) {
@@ -283,7 +279,7 @@ public class Registry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects representing the aliases for a public registry.
+     * An array of objects that represents the aliases for a public registry.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -292,7 +288,7 @@ public class Registry implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param aliases
-     *        An array of objects representing the aliases for a public registry.
+     *        An array of objects that represents the aliases for a public registry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,11 +304,11 @@ public class Registry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects representing the aliases for a public registry.
+     * An array of objects that represents the aliases for a public registry.
      * </p>
      * 
      * @param aliases
-     *        An array of objects representing the aliases for a public registry.
+     *        An array of objects that represents the aliases for a public registry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

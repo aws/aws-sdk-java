@@ -29,13 +29,6 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The domain name to manage (e.g., <code>example.com</code>).
      * </p>
-     * <note>
-     * <p>
-     * You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or
-     * another domain name registrar. If you have already registered your domain, you can enter its name in this
-     * parameter to manage the DNS records for that domain using Lightsail.
-     * </p>
-     * </note>
      */
     private String domainName;
     /**
@@ -52,21 +45,9 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The domain name to manage (e.g., <code>example.com</code>).
      * </p>
-     * <note>
-     * <p>
-     * You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or
-     * another domain name registrar. If you have already registered your domain, you can enter its name in this
-     * parameter to manage the DNS records for that domain using Lightsail.
-     * </p>
-     * </note>
      * 
      * @param domainName
-     *        The domain name to manage (e.g., <code>example.com</code>).</p> <note>
-     *        <p>
-     *        You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route
-     *        53 or another domain name registrar. If you have already registered your domain, you can enter its name in
-     *        this parameter to manage the DNS records for that domain using Lightsail.
-     *        </p>
+     *        The domain name to manage (e.g., <code>example.com</code>).
      */
 
     public void setDomainName(String domainName) {
@@ -77,20 +58,8 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The domain name to manage (e.g., <code>example.com</code>).
      * </p>
-     * <note>
-     * <p>
-     * You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or
-     * another domain name registrar. If you have already registered your domain, you can enter its name in this
-     * parameter to manage the DNS records for that domain using Lightsail.
-     * </p>
-     * </note>
      * 
-     * @return The domain name to manage (e.g., <code>example.com</code>).</p> <note>
-     *         <p>
-     *         You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route
-     *         53 or another domain name registrar. If you have already registered your domain, you can enter its name
-     *         in this parameter to manage the DNS records for that domain using Lightsail.
-     *         </p>
+     * @return The domain name to manage (e.g., <code>example.com</code>).
      */
 
     public String getDomainName() {
@@ -101,21 +70,9 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The domain name to manage (e.g., <code>example.com</code>).
      * </p>
-     * <note>
-     * <p>
-     * You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or
-     * another domain name registrar. If you have already registered your domain, you can enter its name in this
-     * parameter to manage the DNS records for that domain using Lightsail.
-     * </p>
-     * </note>
      * 
      * @param domainName
-     *        The domain name to manage (e.g., <code>example.com</code>).</p> <note>
-     *        <p>
-     *        You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route
-     *        53 or another domain name registrar. If you have already registered your domain, you can enter its name in
-     *        this parameter to manage the DNS records for that domain using Lightsail.
-     *        </p>
+     *        The domain name to manage (e.g., <code>example.com</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

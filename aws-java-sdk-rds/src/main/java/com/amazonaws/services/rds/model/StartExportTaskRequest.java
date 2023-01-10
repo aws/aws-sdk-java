@@ -54,53 +54,53 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web
      * Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
-     * operation must be authorized to execute the following operations. These can be set in the Amazon Web Services KMS
-     * key policy:
+     * operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key
+     * policy:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * GrantOperation.Encrypt
+     * kms:Encrypt
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.Decrypt
+     * kms:Decrypt
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.GenerateDataKey
+     * kms:GenerateDataKey
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.GenerateDataKeyWithoutPlaintext
+     * kms:GenerateDataKeyWithoutPlaintext
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.ReEncryptFrom
+     * kms:ReEncryptFrom
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.ReEncryptTo
+     * kms:ReEncryptTo
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.CreateGrant
+     * kms:CreateGrant
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.DescribeKey
+     * kms:DescribeKey
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.RetireGrant
+     * kms:RetireGrant
      * </p>
      * </li>
      * </ul>
@@ -315,53 +315,53 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web
      * Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
-     * operation must be authorized to execute the following operations. These can be set in the Amazon Web Services KMS
-     * key policy:
+     * operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key
+     * policy:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * GrantOperation.Encrypt
+     * kms:Encrypt
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.Decrypt
+     * kms:Decrypt
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.GenerateDataKey
+     * kms:GenerateDataKey
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.GenerateDataKeyWithoutPlaintext
+     * kms:GenerateDataKeyWithoutPlaintext
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.ReEncryptFrom
+     * kms:ReEncryptFrom
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.ReEncryptTo
+     * kms:ReEncryptTo
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.CreateGrant
+     * kms:CreateGrant
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.DescribeKey
+     * kms:DescribeKey
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.RetireGrant
+     * kms:RetireGrant
      * </p>
      * </li>
      * </ul>
@@ -369,52 +369,52 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * @param kmsKeyId
      *        The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon
      *        Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The
-     *        caller of this operation must be authorized to execute the following operations. These can be set in the
+     *        caller of this operation must be authorized to run the following operations. These can be set in the
      *        Amazon Web Services KMS key policy:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        GrantOperation.Encrypt
+     *        kms:Encrypt
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        GrantOperation.Decrypt
+     *        kms:Decrypt
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        GrantOperation.GenerateDataKey
+     *        kms:GenerateDataKey
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        GrantOperation.GenerateDataKeyWithoutPlaintext
+     *        kms:GenerateDataKeyWithoutPlaintext
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        GrantOperation.ReEncryptFrom
+     *        kms:ReEncryptFrom
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        GrantOperation.ReEncryptTo
+     *        kms:ReEncryptTo
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        GrantOperation.CreateGrant
+     *        kms:CreateGrant
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        GrantOperation.DescribeKey
+     *        kms:DescribeKey
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        GrantOperation.RetireGrant
+     *        kms:RetireGrant
      *        </p>
      *        </li>
      */
@@ -427,105 +427,105 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web
      * Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
-     * operation must be authorized to execute the following operations. These can be set in the Amazon Web Services KMS
-     * key policy:
+     * operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key
+     * policy:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * GrantOperation.Encrypt
+     * kms:Encrypt
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.Decrypt
+     * kms:Decrypt
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.GenerateDataKey
+     * kms:GenerateDataKey
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.GenerateDataKeyWithoutPlaintext
+     * kms:GenerateDataKeyWithoutPlaintext
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.ReEncryptFrom
+     * kms:ReEncryptFrom
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.ReEncryptTo
+     * kms:ReEncryptTo
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.CreateGrant
+     * kms:CreateGrant
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.DescribeKey
+     * kms:DescribeKey
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.RetireGrant
+     * kms:RetireGrant
      * </p>
      * </li>
      * </ul>
      * 
      * @return The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The
      *         Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
-     *         The caller of this operation must be authorized to execute the following operations. These can be set in
-     *         the Amazon Web Services KMS key policy:</p>
+     *         The caller of this operation must be authorized to run the following operations. These can be set in the
+     *         Amazon Web Services KMS key policy:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         GrantOperation.Encrypt
+     *         kms:Encrypt
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         GrantOperation.Decrypt
+     *         kms:Decrypt
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         GrantOperation.GenerateDataKey
+     *         kms:GenerateDataKey
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         GrantOperation.GenerateDataKeyWithoutPlaintext
+     *         kms:GenerateDataKeyWithoutPlaintext
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         GrantOperation.ReEncryptFrom
+     *         kms:ReEncryptFrom
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         GrantOperation.ReEncryptTo
+     *         kms:ReEncryptTo
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         GrantOperation.CreateGrant
+     *         kms:CreateGrant
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         GrantOperation.DescribeKey
+     *         kms:DescribeKey
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         GrantOperation.RetireGrant
+     *         kms:RetireGrant
      *         </p>
      *         </li>
      */
@@ -538,53 +538,53 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web
      * Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
-     * operation must be authorized to execute the following operations. These can be set in the Amazon Web Services KMS
-     * key policy:
+     * operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key
+     * policy:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * GrantOperation.Encrypt
+     * kms:Encrypt
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.Decrypt
+     * kms:Decrypt
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.GenerateDataKey
+     * kms:GenerateDataKey
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.GenerateDataKeyWithoutPlaintext
+     * kms:GenerateDataKeyWithoutPlaintext
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.ReEncryptFrom
+     * kms:ReEncryptFrom
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.ReEncryptTo
+     * kms:ReEncryptTo
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.CreateGrant
+     * kms:CreateGrant
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.DescribeKey
+     * kms:DescribeKey
      * </p>
      * </li>
      * <li>
      * <p>
-     * GrantOperation.RetireGrant
+     * kms:RetireGrant
      * </p>
      * </li>
      * </ul>
@@ -592,52 +592,52 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * @param kmsKeyId
      *        The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon
      *        Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The
-     *        caller of this operation must be authorized to execute the following operations. These can be set in the
+     *        caller of this operation must be authorized to run the following operations. These can be set in the
      *        Amazon Web Services KMS key policy:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        GrantOperation.Encrypt
+     *        kms:Encrypt
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        GrantOperation.Decrypt
+     *        kms:Decrypt
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        GrantOperation.GenerateDataKey
+     *        kms:GenerateDataKey
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        GrantOperation.GenerateDataKeyWithoutPlaintext
+     *        kms:GenerateDataKeyWithoutPlaintext
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        GrantOperation.ReEncryptFrom
+     *        kms:ReEncryptFrom
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        GrantOperation.ReEncryptTo
+     *        kms:ReEncryptTo
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        GrantOperation.CreateGrant
+     *        kms:CreateGrant
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        GrantOperation.DescribeKey
+     *        kms:DescribeKey
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        GrantOperation.RetireGrant
+     *        kms:RetireGrant
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

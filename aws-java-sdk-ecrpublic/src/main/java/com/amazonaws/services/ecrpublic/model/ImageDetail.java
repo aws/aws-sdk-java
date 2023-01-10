@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that describes an image returned by a <a>DescribeImages</a> operation.
+ * An object that describes an image that's returned by a <a>DescribeImages</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/ImageDetail" target="_top">AWS API
@@ -30,13 +30,13 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry to which this image belongs.
+     * The Amazon Web Services account ID that's associated with the public registry where this image belongs.
      * </p>
      */
     private String registryId;
     /**
      * <p>
-     * The name of the repository to which this image belongs.
+     * The name of the repository where this image belongs.
      * </p>
      */
     private String repositoryName;
@@ -48,7 +48,7 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
     private String imageDigest;
     /**
      * <p>
-     * The list of tags associated with this image.
+     * The list of tags that's associated with this image.
      * </p>
      */
     private java.util.List<String> imageTags;
@@ -57,21 +57,21 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
      * The size, in bytes, of the image in the repository.
      * </p>
      * <p>
-     * If the image is a manifest list, this will be the max size of all manifests in the list.
+     * If the image is a manifest list, this is the max size of all manifests in the list.
      * </p>
      * <note>
      * <p>
      * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
-     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may
-     * return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might
+     * return a larger image size than the image sizes that are returned by <a>DescribeImages</a>.
      * </p>
      * </note>
      */
     private Long imageSizeInBytes;
     /**
      * <p>
-     * The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the
-     * repository.
+     * The date and time, expressed in standard JavaScript date format, that the current image was pushed to the
+     * repository at.
      * </p>
      */
     private java.util.Date imagePushedAt;
@@ -90,11 +90,11 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry to which this image belongs.
+     * The Amazon Web Services account ID that's associated with the public registry where this image belongs.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the public registry to which this image belongs.
+     *        The Amazon Web Services account ID that's associated with the public registry where this image belongs.
      */
 
     public void setRegistryId(String registryId) {
@@ -103,10 +103,10 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry to which this image belongs.
+     * The Amazon Web Services account ID that's associated with the public registry where this image belongs.
      * </p>
      * 
-     * @return The AWS account ID associated with the public registry to which this image belongs.
+     * @return The Amazon Web Services account ID that's associated with the public registry where this image belongs.
      */
 
     public String getRegistryId() {
@@ -115,11 +115,11 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry to which this image belongs.
+     * The Amazon Web Services account ID that's associated with the public registry where this image belongs.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the public registry to which this image belongs.
+     *        The Amazon Web Services account ID that's associated with the public registry where this image belongs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +130,11 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the repository to which this image belongs.
+     * The name of the repository where this image belongs.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository to which this image belongs.
+     *        The name of the repository where this image belongs.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -143,10 +143,10 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the repository to which this image belongs.
+     * The name of the repository where this image belongs.
      * </p>
      * 
-     * @return The name of the repository to which this image belongs.
+     * @return The name of the repository where this image belongs.
      */
 
     public String getRepositoryName() {
@@ -155,11 +155,11 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the repository to which this image belongs.
+     * The name of the repository where this image belongs.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository to which this image belongs.
+     *        The name of the repository where this image belongs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,10 +210,10 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of tags associated with this image.
+     * The list of tags that's associated with this image.
      * </p>
      * 
-     * @return The list of tags associated with this image.
+     * @return The list of tags that's associated with this image.
      */
 
     public java.util.List<String> getImageTags() {
@@ -222,11 +222,11 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of tags associated with this image.
+     * The list of tags that's associated with this image.
      * </p>
      * 
      * @param imageTags
-     *        The list of tags associated with this image.
+     *        The list of tags that's associated with this image.
      */
 
     public void setImageTags(java.util.Collection<String> imageTags) {
@@ -240,7 +240,7 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of tags associated with this image.
+     * The list of tags that's associated with this image.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -249,7 +249,7 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param imageTags
-     *        The list of tags associated with this image.
+     *        The list of tags that's associated with this image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -265,11 +265,11 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of tags associated with this image.
+     * The list of tags that's associated with this image.
      * </p>
      * 
      * @param imageTags
-     *        The list of tags associated with this image.
+     *        The list of tags that's associated with this image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,26 +283,26 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
      * The size, in bytes, of the image in the repository.
      * </p>
      * <p>
-     * If the image is a manifest list, this will be the max size of all manifests in the list.
+     * If the image is a manifest list, this is the max size of all manifests in the list.
      * </p>
      * <note>
      * <p>
      * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
-     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may
-     * return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might
+     * return a larger image size than the image sizes that are returned by <a>DescribeImages</a>.
      * </p>
      * </note>
      * 
      * @param imageSizeInBytes
      *        The size, in bytes, of the image in the repository.</p>
      *        <p>
-     *        If the image is a manifest list, this will be the max size of all manifests in the list.
+     *        If the image is a manifest list, this is the max size of all manifests in the list.
      *        </p>
      *        <note>
      *        <p>
      *        Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2
      *        Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size,
-     *        so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     *        so it might return a larger image size than the image sizes that are returned by <a>DescribeImages</a>.
      *        </p>
      */
 
@@ -315,25 +315,25 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
      * The size, in bytes, of the image in the repository.
      * </p>
      * <p>
-     * If the image is a manifest list, this will be the max size of all manifests in the list.
+     * If the image is a manifest list, this is the max size of all manifests in the list.
      * </p>
      * <note>
      * <p>
      * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
-     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may
-     * return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might
+     * return a larger image size than the image sizes that are returned by <a>DescribeImages</a>.
      * </p>
      * </note>
      * 
      * @return The size, in bytes, of the image in the repository.</p>
      *         <p>
-     *         If the image is a manifest list, this will be the max size of all manifests in the list.
+     *         If the image is a manifest list, this is the max size of all manifests in the list.
      *         </p>
      *         <note>
      *         <p>
      *         Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2
      *         Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size,
-     *         so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     *         so it might return a larger image size than the image sizes that are returned by <a>DescribeImages</a>.
      *         </p>
      */
 
@@ -346,26 +346,26 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
      * The size, in bytes, of the image in the repository.
      * </p>
      * <p>
-     * If the image is a manifest list, this will be the max size of all manifests in the list.
+     * If the image is a manifest list, this is the max size of all manifests in the list.
      * </p>
      * <note>
      * <p>
      * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
-     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may
-     * return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might
+     * return a larger image size than the image sizes that are returned by <a>DescribeImages</a>.
      * </p>
      * </note>
      * 
      * @param imageSizeInBytes
      *        The size, in bytes, of the image in the repository.</p>
      *        <p>
-     *        If the image is a manifest list, this will be the max size of all manifests in the list.
+     *        If the image is a manifest list, this is the max size of all manifests in the list.
      *        </p>
      *        <note>
      *        <p>
      *        Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2
      *        Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size,
-     *        so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     *        so it might return a larger image size than the image sizes that are returned by <a>DescribeImages</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -377,13 +377,13 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the
-     * repository.
+     * The date and time, expressed in standard JavaScript date format, that the current image was pushed to the
+     * repository at.
      * </p>
      * 
      * @param imagePushedAt
-     *        The date and time, expressed in standard JavaScript date format, at which the current image was pushed to
-     *        the repository.
+     *        The date and time, expressed in standard JavaScript date format, that the current image was pushed to the
+     *        repository at.
      */
 
     public void setImagePushedAt(java.util.Date imagePushedAt) {
@@ -392,12 +392,12 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the
-     * repository.
+     * The date and time, expressed in standard JavaScript date format, that the current image was pushed to the
+     * repository at.
      * </p>
      * 
-     * @return The date and time, expressed in standard JavaScript date format, at which the current image was pushed to
-     *         the repository.
+     * @return The date and time, expressed in standard JavaScript date format, that the current image was pushed to the
+     *         repository at.
      */
 
     public java.util.Date getImagePushedAt() {
@@ -406,13 +406,13 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the
-     * repository.
+     * The date and time, expressed in standard JavaScript date format, that the current image was pushed to the
+     * repository at.
      * </p>
      * 
      * @param imagePushedAt
-     *        The date and time, expressed in standard JavaScript date format, at which the current image was pushed to
-     *        the repository.
+     *        The date and time, expressed in standard JavaScript date format, that the current image was pushed to the
+     *        repository at.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

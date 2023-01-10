@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing an Amazon ECR image failure.
+ * An object that represents an Amazon ECR image failure.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/ImageFailure" target="_top">AWS API
@@ -30,13 +30,13 @@ public class ImageFailure implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image ID associated with the failure.
+     * The image ID that's associated with the failure.
      * </p>
      */
     private ImageIdentifier imageId;
     /**
      * <p>
-     * The code associated with the failure.
+     * The code that's associated with the failure.
      * </p>
      */
     private String failureCode;
@@ -49,11 +49,11 @@ public class ImageFailure implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image ID associated with the failure.
+     * The image ID that's associated with the failure.
      * </p>
      * 
      * @param imageId
-     *        The image ID associated with the failure.
+     *        The image ID that's associated with the failure.
      */
 
     public void setImageId(ImageIdentifier imageId) {
@@ -62,10 +62,10 @@ public class ImageFailure implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image ID associated with the failure.
+     * The image ID that's associated with the failure.
      * </p>
      * 
-     * @return The image ID associated with the failure.
+     * @return The image ID that's associated with the failure.
      */
 
     public ImageIdentifier getImageId() {
@@ -74,11 +74,11 @@ public class ImageFailure implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image ID associated with the failure.
+     * The image ID that's associated with the failure.
      * </p>
      * 
      * @param imageId
-     *        The image ID associated with the failure.
+     *        The image ID that's associated with the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class ImageFailure implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The code associated with the failure.
+     * The code that's associated with the failure.
      * </p>
      * 
      * @param failureCode
-     *        The code associated with the failure.
+     *        The code that's associated with the failure.
      * @see ImageFailureCode
      */
 
@@ -103,10 +103,10 @@ public class ImageFailure implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The code associated with the failure.
+     * The code that's associated with the failure.
      * </p>
      * 
-     * @return The code associated with the failure.
+     * @return The code that's associated with the failure.
      * @see ImageFailureCode
      */
 
@@ -116,11 +116,11 @@ public class ImageFailure implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The code associated with the failure.
+     * The code that's associated with the failure.
      * </p>
      * 
      * @param failureCode
-     *        The code associated with the failure.
+     *        The code that's associated with the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageFailureCode
      */
@@ -132,11 +132,11 @@ public class ImageFailure implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The code associated with the failure.
+     * The code that's associated with the failure.
      * </p>
      * 
      * @param failureCode
-     *        The code associated with the failure.
+     *        The code that's associated with the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageFailureCode
      */

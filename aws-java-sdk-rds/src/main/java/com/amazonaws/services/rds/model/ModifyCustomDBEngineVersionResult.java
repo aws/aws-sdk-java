@@ -229,6 +229,26 @@ public class ModifyCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private String customDBEngineVersionManifest;
+    /**
+     * <p>
+     * A value that indicates whether the engine version supports rotating the server certificate without rebooting the
+     * DB instance.
+     * </p>
+     */
+    private Boolean supportsCertificateRotationWithoutRestart;
+    /**
+     * <p>
+     * A list of the supported CA certificate identifiers.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> supportedCACertificateIdentifiers;
 
     /**
      * <p>
@@ -1939,6 +1959,191 @@ public class ModifyCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * A value that indicates whether the engine version supports rotating the server certificate without rebooting the
+     * DB instance.
+     * </p>
+     * 
+     * @param supportsCertificateRotationWithoutRestart
+     *        A value that indicates whether the engine version supports rotating the server certificate without
+     *        rebooting the DB instance.
+     */
+
+    public void setSupportsCertificateRotationWithoutRestart(Boolean supportsCertificateRotationWithoutRestart) {
+        this.supportsCertificateRotationWithoutRestart = supportsCertificateRotationWithoutRestart;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the engine version supports rotating the server certificate without rebooting the
+     * DB instance.
+     * </p>
+     * 
+     * @return A value that indicates whether the engine version supports rotating the server certificate without
+     *         rebooting the DB instance.
+     */
+
+    public Boolean getSupportsCertificateRotationWithoutRestart() {
+        return this.supportsCertificateRotationWithoutRestart;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the engine version supports rotating the server certificate without rebooting the
+     * DB instance.
+     * </p>
+     * 
+     * @param supportsCertificateRotationWithoutRestart
+     *        A value that indicates whether the engine version supports rotating the server certificate without
+     *        rebooting the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyCustomDBEngineVersionResult withSupportsCertificateRotationWithoutRestart(Boolean supportsCertificateRotationWithoutRestart) {
+        setSupportsCertificateRotationWithoutRestart(supportsCertificateRotationWithoutRestart);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the engine version supports rotating the server certificate without rebooting the
+     * DB instance.
+     * </p>
+     * 
+     * @return A value that indicates whether the engine version supports rotating the server certificate without
+     *         rebooting the DB instance.
+     */
+
+    public Boolean isSupportsCertificateRotationWithoutRestart() {
+        return this.supportsCertificateRotationWithoutRestart;
+    }
+
+    /**
+     * <p>
+     * A list of the supported CA certificate identifiers.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @return A list of the supported CA certificate identifiers.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to
+     *         encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS
+     *         to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     */
+
+    public java.util.List<String> getSupportedCACertificateIdentifiers() {
+        if (supportedCACertificateIdentifiers == null) {
+            supportedCACertificateIdentifiers = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return supportedCACertificateIdentifiers;
+    }
+
+    /**
+     * <p>
+     * A list of the supported CA certificate identifiers.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param supportedCACertificateIdentifiers
+     *        A list of the supported CA certificate identifiers.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to
+     *        encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS
+     *        to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     */
+
+    public void setSupportedCACertificateIdentifiers(java.util.Collection<String> supportedCACertificateIdentifiers) {
+        if (supportedCACertificateIdentifiers == null) {
+            this.supportedCACertificateIdentifiers = null;
+            return;
+        }
+
+        this.supportedCACertificateIdentifiers = new com.amazonaws.internal.SdkInternalList<String>(supportedCACertificateIdentifiers);
+    }
+
+    /**
+     * <p>
+     * A list of the supported CA certificate identifiers.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedCACertificateIdentifiers(java.util.Collection)} or
+     * {@link #withSupportedCACertificateIdentifiers(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedCACertificateIdentifiers
+     *        A list of the supported CA certificate identifiers.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to
+     *        encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS
+     *        to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyCustomDBEngineVersionResult withSupportedCACertificateIdentifiers(String... supportedCACertificateIdentifiers) {
+        if (this.supportedCACertificateIdentifiers == null) {
+            setSupportedCACertificateIdentifiers(new com.amazonaws.internal.SdkInternalList<String>(supportedCACertificateIdentifiers.length));
+        }
+        for (String ele : supportedCACertificateIdentifiers) {
+            this.supportedCACertificateIdentifiers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the supported CA certificate identifiers.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param supportedCACertificateIdentifiers
+     *        A list of the supported CA certificate identifiers.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to
+     *        encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS
+     *        to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyCustomDBEngineVersionResult withSupportedCACertificateIdentifiers(java.util.Collection<String> supportedCACertificateIdentifiers) {
+        setSupportedCACertificateIdentifiers(supportedCACertificateIdentifiers);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2007,7 +2212,11 @@ public class ModifyCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
         if (getSupportsBabelfish() != null)
             sb.append("SupportsBabelfish: ").append(getSupportsBabelfish()).append(",");
         if (getCustomDBEngineVersionManifest() != null)
-            sb.append("CustomDBEngineVersionManifest: ").append(getCustomDBEngineVersionManifest());
+            sb.append("CustomDBEngineVersionManifest: ").append(getCustomDBEngineVersionManifest()).append(",");
+        if (getSupportsCertificateRotationWithoutRestart() != null)
+            sb.append("SupportsCertificateRotationWithoutRestart: ").append(getSupportsCertificateRotationWithoutRestart()).append(",");
+        if (getSupportedCACertificateIdentifiers() != null)
+            sb.append("SupportedCACertificateIdentifiers: ").append(getSupportedCACertificateIdentifiers());
         sb.append("}");
         return sb.toString();
     }
@@ -2142,6 +2351,16 @@ public class ModifyCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
         if (other.getCustomDBEngineVersionManifest() != null
                 && other.getCustomDBEngineVersionManifest().equals(this.getCustomDBEngineVersionManifest()) == false)
             return false;
+        if (other.getSupportsCertificateRotationWithoutRestart() == null ^ this.getSupportsCertificateRotationWithoutRestart() == null)
+            return false;
+        if (other.getSupportsCertificateRotationWithoutRestart() != null
+                && other.getSupportsCertificateRotationWithoutRestart().equals(this.getSupportsCertificateRotationWithoutRestart()) == false)
+            return false;
+        if (other.getSupportedCACertificateIdentifiers() == null ^ this.getSupportedCACertificateIdentifiers() == null)
+            return false;
+        if (other.getSupportedCACertificateIdentifiers() != null
+                && other.getSupportedCACertificateIdentifiers().equals(this.getSupportedCACertificateIdentifiers()) == false)
+            return false;
         return true;
     }
 
@@ -2179,6 +2398,9 @@ public class ModifyCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
         hashCode = prime * hashCode + ((getSupportsBabelfish() == null) ? 0 : getSupportsBabelfish().hashCode());
         hashCode = prime * hashCode + ((getCustomDBEngineVersionManifest() == null) ? 0 : getCustomDBEngineVersionManifest().hashCode());
+        hashCode = prime * hashCode
+                + ((getSupportsCertificateRotationWithoutRestart() == null) ? 0 : getSupportsCertificateRotationWithoutRestart().hashCode());
+        hashCode = prime * hashCode + ((getSupportedCACertificateIdentifiers() == null) ? 0 : getSupportedCACertificateIdentifiers().hashCode());
         return hashCode;
     }
 

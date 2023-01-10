@@ -229,6 +229,22 @@ public class DBEngineVersionStaxUnmarshaller implements Unmarshaller<DBEngineVer
                     dBEngineVersion.setCustomDBEngineVersionManifest(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SupportsCertificateRotationWithoutRestart", targetDepth)) {
+                    dBEngineVersion.setSupportsCertificateRotationWithoutRestart(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportedCACertificateIdentifiers", targetDepth)) {
+                    dBEngineVersion.withSupportedCACertificateIdentifiers(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("SupportedCACertificateIdentifiers/member", targetDepth)) {
+                    dBEngineVersion.withSupportedCACertificateIdentifiers(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBEngineVersion;

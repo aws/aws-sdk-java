@@ -323,6 +323,10 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             request.addParameter("MasterUserSecretKmsKeyId", StringUtils.fromString(createDBInstanceRequest.getMasterUserSecretKmsKeyId()));
         }
 
+        if (createDBInstanceRequest.getCACertificateIdentifier() != null) {
+            request.addParameter("CACertificateIdentifier", StringUtils.fromString(createDBInstanceRequest.getCACertificateIdentifier()));
+        }
+
         return request;
     }
 

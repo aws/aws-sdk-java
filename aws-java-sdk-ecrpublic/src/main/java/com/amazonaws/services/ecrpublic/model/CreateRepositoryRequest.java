@@ -28,8 +28,8 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository name
-     * may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group
-     * the repository into a category (such as <code>project-a/nginx-web-app</code>).
+     * can be specified on its own (for example <code>nginx-web-app</code>) or prepended with a namespace to group the
+     * repository into a category (for example <code>project-a/nginx-web-app</code>).
      * </p>
      */
     private String repositoryName;
@@ -41,9 +41,9 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     private RepositoryCatalogDataInput catalogData;
     /**
      * <p>
-     * The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a
-     * key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
-     * characters, and tag values can have a maximum length of 256 characters.
+     * The metadata that you apply to each repository to help categorize and organize your repositories. Each tag
+     * consists of a key and an optional value. You define both of them. Tag keys can have a maximum character length of
+     * 128 characters, and tag values can have a maximum length of 256 characters.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -51,14 +51,14 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository name
-     * may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group
-     * the repository into a category (such as <code>project-a/nginx-web-app</code>).
+     * can be specified on its own (for example <code>nginx-web-app</code>) or prepended with a namespace to group the
+     * repository into a category (for example <code>project-a/nginx-web-app</code>).
      * </p>
      * 
      * @param repositoryName
      *        The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository
-     *        name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a
-     *        namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).
+     *        name can be specified on its own (for example <code>nginx-web-app</code>) or prepended with a namespace to
+     *        group the repository into a category (for example <code>project-a/nginx-web-app</code>).
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -68,13 +68,13 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository name
-     * may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group
-     * the repository into a category (such as <code>project-a/nginx-web-app</code>).
+     * can be specified on its own (for example <code>nginx-web-app</code>) or prepended with a namespace to group the
+     * repository into a category (for example <code>project-a/nginx-web-app</code>).
      * </p>
      * 
      * @return The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The
-     *         repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended
-     *         with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).
+     *         repository name can be specified on its own (for example <code>nginx-web-app</code>) or prepended with a
+     *         namespace to group the repository into a category (for example <code>project-a/nginx-web-app</code>).
      */
 
     public String getRepositoryName() {
@@ -84,14 +84,14 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository name
-     * may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group
-     * the repository into a category (such as <code>project-a/nginx-web-app</code>).
+     * can be specified on its own (for example <code>nginx-web-app</code>) or prepended with a namespace to group the
+     * repository into a category (for example <code>project-a/nginx-web-app</code>).
      * </p>
      * 
      * @param repositoryName
      *        The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository
-     *        name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a
-     *        namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).
+     *        name can be specified on its own (for example <code>nginx-web-app</code>) or prepended with a namespace to
+     *        group the repository into a category (for example <code>project-a/nginx-web-app</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,14 +142,14 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a
-     * key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
-     * characters, and tag values can have a maximum length of 256 characters.
+     * The metadata that you apply to each repository to help categorize and organize your repositories. Each tag
+     * consists of a key and an optional value. You define both of them. Tag keys can have a maximum character length of
+     * 128 characters, and tag values can have a maximum length of 256 characters.
      * </p>
      * 
-     * @return The metadata that you apply to the repository to help you categorize and organize them. Each tag consists
-     *         of a key and an optional value, both of which you define. Tag keys can have a maximum character length of
-     *         128 characters, and tag values can have a maximum length of 256 characters.
+     * @return The metadata that you apply to each repository to help categorize and organize your repositories. Each
+     *         tag consists of a key and an optional value. You define both of them. Tag keys can have a maximum
+     *         character length of 128 characters, and tag values can have a maximum length of 256 characters.
      */
 
     public java.util.List<Tag> getTags() {
@@ -158,15 +158,15 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a
-     * key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
-     * characters, and tag values can have a maximum length of 256 characters.
+     * The metadata that you apply to each repository to help categorize and organize your repositories. Each tag
+     * consists of a key and an optional value. You define both of them. Tag keys can have a maximum character length of
+     * 128 characters, and tag values can have a maximum length of 256 characters.
      * </p>
      * 
      * @param tags
-     *        The metadata that you apply to the repository to help you categorize and organize them. Each tag consists
-     *        of a key and an optional value, both of which you define. Tag keys can have a maximum character length of
-     *        128 characters, and tag values can have a maximum length of 256 characters.
+     *        The metadata that you apply to each repository to help categorize and organize your repositories. Each tag
+     *        consists of a key and an optional value. You define both of them. Tag keys can have a maximum character
+     *        length of 128 characters, and tag values can have a maximum length of 256 characters.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -180,9 +180,9 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a
-     * key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
-     * characters, and tag values can have a maximum length of 256 characters.
+     * The metadata that you apply to each repository to help categorize and organize your repositories. Each tag
+     * consists of a key and an optional value. You define both of them. Tag keys can have a maximum character length of
+     * 128 characters, and tag values can have a maximum length of 256 characters.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -191,9 +191,9 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param tags
-     *        The metadata that you apply to the repository to help you categorize and organize them. Each tag consists
-     *        of a key and an optional value, both of which you define. Tag keys can have a maximum character length of
-     *        128 characters, and tag values can have a maximum length of 256 characters.
+     *        The metadata that you apply to each repository to help categorize and organize your repositories. Each tag
+     *        consists of a key and an optional value. You define both of them. Tag keys can have a maximum character
+     *        length of 128 characters, and tag values can have a maximum length of 256 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,15 +209,15 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a
-     * key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
-     * characters, and tag values can have a maximum length of 256 characters.
+     * The metadata that you apply to each repository to help categorize and organize your repositories. Each tag
+     * consists of a key and an optional value. You define both of them. Tag keys can have a maximum character length of
+     * 128 characters, and tag values can have a maximum length of 256 characters.
      * </p>
      * 
      * @param tags
-     *        The metadata that you apply to the repository to help you categorize and organize them. Each tag consists
-     *        of a key and an optional value, both of which you define. Tag keys can have a maximum character length of
-     *        128 characters, and tag values can have a maximum length of 256 characters.
+     *        The metadata that you apply to each repository to help categorize and organize your repositories. Each tag
+     *        consists of a key and an optional value. You define both of them. Tag keys can have a maximum character
+     *        length of 128 characters, and tag values can have a maximum length of 256 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

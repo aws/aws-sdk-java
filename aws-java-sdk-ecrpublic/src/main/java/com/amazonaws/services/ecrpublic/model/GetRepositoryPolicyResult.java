@@ -25,30 +25,30 @@ public class GetRepositoryPolicyResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The registry ID associated with the request.
+     * The registry ID that's associated with the request.
      * </p>
      */
     private String registryId;
     /**
      * <p>
-     * The repository name associated with the request.
+     * The repository name that's associated with the request.
      * </p>
      */
     private String repositoryName;
     /**
      * <p>
-     * The repository policy text associated with the repository. The policy text will be in JSON format.
+     * The repository policy text that's associated with the repository. The policy text will be in JSON format.
      * </p>
      */
     private String policyText;
 
     /**
      * <p>
-     * The registry ID associated with the request.
+     * The registry ID that's associated with the request.
      * </p>
      * 
      * @param registryId
-     *        The registry ID associated with the request.
+     *        The registry ID that's associated with the request.
      */
 
     public void setRegistryId(String registryId) {
@@ -57,10 +57,10 @@ public class GetRepositoryPolicyResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The registry ID associated with the request.
+     * The registry ID that's associated with the request.
      * </p>
      * 
-     * @return The registry ID associated with the request.
+     * @return The registry ID that's associated with the request.
      */
 
     public String getRegistryId() {
@@ -69,11 +69,11 @@ public class GetRepositoryPolicyResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The registry ID associated with the request.
+     * The registry ID that's associated with the request.
      * </p>
      * 
      * @param registryId
-     *        The registry ID associated with the request.
+     *        The registry ID that's associated with the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class GetRepositoryPolicyResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The repository name associated with the request.
+     * The repository name that's associated with the request.
      * </p>
      * 
      * @param repositoryName
-     *        The repository name associated with the request.
+     *        The repository name that's associated with the request.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -97,10 +97,10 @@ public class GetRepositoryPolicyResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The repository name associated with the request.
+     * The repository name that's associated with the request.
      * </p>
      * 
-     * @return The repository name associated with the request.
+     * @return The repository name that's associated with the request.
      */
 
     public String getRepositoryName() {
@@ -109,11 +109,11 @@ public class GetRepositoryPolicyResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The repository name associated with the request.
+     * The repository name that's associated with the request.
      * </p>
      * 
      * @param repositoryName
-     *        The repository name associated with the request.
+     *        The repository name that's associated with the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +124,11 @@ public class GetRepositoryPolicyResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The repository policy text associated with the repository. The policy text will be in JSON format.
+     * The repository policy text that's associated with the repository. The policy text will be in JSON format.
      * </p>
      * 
      * @param policyText
-     *        The repository policy text associated with the repository. The policy text will be in JSON format.
+     *        The repository policy text that's associated with the repository. The policy text will be in JSON format.
      */
 
     public void setPolicyText(String policyText) {
@@ -137,10 +137,10 @@ public class GetRepositoryPolicyResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The repository policy text associated with the repository. The policy text will be in JSON format.
+     * The repository policy text that's associated with the repository. The policy text will be in JSON format.
      * </p>
      * 
-     * @return The repository policy text associated with the repository. The policy text will be in JSON format.
+     * @return The repository policy text that's associated with the repository. The policy text will be in JSON format.
      */
 
     public String getPolicyText() {
@@ -149,11 +149,11 @@ public class GetRepositoryPolicyResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The repository policy text associated with the repository. The policy text will be in JSON format.
+     * The repository policy text that's associated with the repository. The policy text will be in JSON format.
      * </p>
      * 
      * @param policyText
-     *        The repository policy text associated with the repository. The policy text will be in JSON format.
+     *        The repository policy text that's associated with the repository. The policy text will be in JSON format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -67,7 +67,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Example: <code>my-cluster2</code>
      * </p>
      * <p>
-     * Valid for: Aurora DB clusters only
+     * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      */
     private String newDBClusterIdentifier;
@@ -938,7 +938,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Example: <code>my-cluster2</code>
      * </p>
      * <p>
-     * Valid for: Aurora DB clusters only
+     * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      * 
      * @param newDBClusterIdentifier
@@ -968,7 +968,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        Example: <code>my-cluster2</code>
      *        </p>
      *        <p>
-     *        Valid for: Aurora DB clusters only
+     *        Valid for: Aurora DB clusters and Multi-AZ DB clusters
      */
 
     public void setNewDBClusterIdentifier(String newDBClusterIdentifier) {
@@ -1004,7 +1004,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Example: <code>my-cluster2</code>
      * </p>
      * <p>
-     * Valid for: Aurora DB clusters only
+     * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      * 
      * @return The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a
@@ -1033,7 +1033,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         Example: <code>my-cluster2</code>
      *         </p>
      *         <p>
-     *         Valid for: Aurora DB clusters only
+     *         Valid for: Aurora DB clusters and Multi-AZ DB clusters
      */
 
     public String getNewDBClusterIdentifier() {
@@ -1069,7 +1069,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Example: <code>my-cluster2</code>
      * </p>
      * <p>
-     * Valid for: Aurora DB clusters only
+     * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      * 
      * @param newDBClusterIdentifier
@@ -1099,7 +1099,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        Example: <code>my-cluster2</code>
      *        </p>
      *        <p>
-     *        Valid for: Aurora DB clusters only
+     *        Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

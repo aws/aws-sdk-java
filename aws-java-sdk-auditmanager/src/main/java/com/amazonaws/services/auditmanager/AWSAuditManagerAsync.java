@@ -59,7 +59,7 @@ import com.amazonaws.services.auditmanager.model.*;
  * <li>
  * <p>
  * <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/CommonParameters.html">Common parameters</a>:
- * Parameters that all Query operations can use.
+ * Parameters that all operations can use.
  * </p>
  * </li>
  * <li>
@@ -79,7 +79,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Associates an evidence folder to an assessment report in a Audit Manager assessment.
+     * Associates an evidence folder to an assessment report in an Audit Manager assessment.
      * </p>
      * 
      * @param associateAssessmentReportEvidenceFolderRequest
@@ -95,7 +95,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Associates an evidence folder to an assessment report in a Audit Manager assessment.
+     * Associates an evidence folder to an assessment report in an Audit Manager assessment.
      * </p>
      * 
      * @param associateAssessmentReportEvidenceFolderRequest
@@ -720,58 +720,16 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
      * </p>
      * <note>
      * <p>
-     * When you deregister your account from Audit Manager, your data isn’t deleted. If you want to delete your resource
-     * data, you must perform that task separately before you deregister your account. Either, you can do this in the
-     * Audit Manager console. Or, you can use one of the delete API operations that are provided by Audit Manager.
+     * Before you deregister, you can use the <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateSettings.html">UpdateSettings</a>
+     * API operation to set your preferred data retention policy. By default, Audit Manager retains your data. If you
+     * want to delete your data, you can use the <code>DeregistrationPolicy</code> attribute to request the deletion of
+     * your data.
      * </p>
      * <p>
-     * To delete your Audit Manager resource data, see the following instructions:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessment.html">DeleteAssessment
-     * </a> (see also: <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-assessment.html">Deleting an
-     * assessment</a> in the <i>Audit Manager User Guide</i>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFramework.html">
-     * DeleteAssessmentFramework</a> (see also: <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-custom-framework.html">Deleting a custom
-     * framework</a> in the <i>Audit Manager User Guide</i>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFrameworkShare.html">
-     * DeleteAssessmentFrameworkShare</a> (see also: <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/deleting-shared-framework-requests.html"
-     * >Deleting a share request</a> in the <i>Audit Manager User Guide</i>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentReport.html">
-     * DeleteAssessmentReport</a> (see also: <a href=
-     * "https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#delete-assessment-report-steps"
-     * >Deleting an assessment report</a> in the <i>Audit Manager User Guide</i>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteControl.html">DeleteControl</a>
-     * (see also: <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-controls.html">Deleting a
-     * custom control</a> in the <i>Audit Manager User Guide</i>)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * At this time, Audit Manager doesn't provide an option to delete evidence. All available delete operations are
-     * listed above.
+     * For more information about data retention, see <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/data-protection.html">Data Protection</a> in the
+     * <i>Audit Manager User Guide</i>.
      * </p>
      * </note>
      * 
@@ -789,58 +747,16 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
      * </p>
      * <note>
      * <p>
-     * When you deregister your account from Audit Manager, your data isn’t deleted. If you want to delete your resource
-     * data, you must perform that task separately before you deregister your account. Either, you can do this in the
-     * Audit Manager console. Or, you can use one of the delete API operations that are provided by Audit Manager.
+     * Before you deregister, you can use the <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateSettings.html">UpdateSettings</a>
+     * API operation to set your preferred data retention policy. By default, Audit Manager retains your data. If you
+     * want to delete your data, you can use the <code>DeregistrationPolicy</code> attribute to request the deletion of
+     * your data.
      * </p>
      * <p>
-     * To delete your Audit Manager resource data, see the following instructions:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessment.html">DeleteAssessment
-     * </a> (see also: <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-assessment.html">Deleting an
-     * assessment</a> in the <i>Audit Manager User Guide</i>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFramework.html">
-     * DeleteAssessmentFramework</a> (see also: <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-custom-framework.html">Deleting a custom
-     * framework</a> in the <i>Audit Manager User Guide</i>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFrameworkShare.html">
-     * DeleteAssessmentFrameworkShare</a> (see also: <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/deleting-shared-framework-requests.html"
-     * >Deleting a share request</a> in the <i>Audit Manager User Guide</i>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentReport.html">
-     * DeleteAssessmentReport</a> (see also: <a href=
-     * "https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#delete-assessment-report-steps"
-     * >Deleting an assessment report</a> in the <i>Audit Manager User Guide</i>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteControl.html">DeleteControl</a>
-     * (see also: <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-controls.html">Deleting a
-     * custom control</a> in the <i>Audit Manager User Guide</i>)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * At this time, Audit Manager doesn't provide an option to delete evidence. All available delete operations are
-     * listed above.
+     * For more information about data retention, see <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/data-protection.html">Data Protection</a> in the
+     * <i>Audit Manager User Guide</i>.
      * </p>
      * </note>
      * 
@@ -864,7 +780,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
      * <p>
      * When you remove a delegated administrator from your Audit Manager settings, you continue to have access to the
      * evidence that you previously collected under that account. This is also the case when you deregister a delegated
-     * administrator from Organizations. However, Audit Manager will stop collecting and attaching evidence to that
+     * administrator from Organizations. However, Audit Manager stops collecting and attaching evidence to that
      * delegated administrator account moving forward.
      * </p>
      * <important>
@@ -877,12 +793,12 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
      * automatically deletes the event data store that was created in their account when they enabled evidence finder.
      * If this task isn’t completed, the event data store remains in their account. In this case, we recommend that the
      * original delegated administrator goes to CloudTrail Lake and manually <a
-     * href="https://docs.aws.amazon.com/userguide/awscloudtrail/latest/userguide/query-eds-disable-termination.html"
-     * >deletes the event data store</a>.
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-eds-disable-termination.html">deletes the
+     * event data store</a>.
      * </p>
      * <p>
      * This cleanup task is necessary to ensure that you don't end up with multiple event data stores. Audit Manager
-     * will ignore an unused event data store after you remove or change a delegated administrator account. However, the
+     * ignores an unused event data store after you remove or change a delegated administrator account. However, the
      * unused event data store continues to incur storage costs from CloudTrail Lake if you don't delete it.
      * </p>
      * </important>
@@ -938,8 +854,9 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
      * </li>
      * </ul>
      * <p>
-     * At this time, Audit Manager doesn't provide an option to delete evidence. All available delete operations are
-     * listed above.
+     * At this time, Audit Manager doesn't provide an option to delete evidence for a specific delegated administrator.
+     * Instead, when your management account deregisters Audit Manager, we perform a cleanup for the current delegated
+     * administrator account at the time of deregistration.
      * </p>
      * 
      * @param deregisterOrganizationAdminAccountRequest
@@ -959,7 +876,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
      * <p>
      * When you remove a delegated administrator from your Audit Manager settings, you continue to have access to the
      * evidence that you previously collected under that account. This is also the case when you deregister a delegated
-     * administrator from Organizations. However, Audit Manager will stop collecting and attaching evidence to that
+     * administrator from Organizations. However, Audit Manager stops collecting and attaching evidence to that
      * delegated administrator account moving forward.
      * </p>
      * <important>
@@ -972,12 +889,12 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
      * automatically deletes the event data store that was created in their account when they enabled evidence finder.
      * If this task isn’t completed, the event data store remains in their account. In this case, we recommend that the
      * original delegated administrator goes to CloudTrail Lake and manually <a
-     * href="https://docs.aws.amazon.com/userguide/awscloudtrail/latest/userguide/query-eds-disable-termination.html"
-     * >deletes the event data store</a>.
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-eds-disable-termination.html">deletes the
+     * event data store</a>.
      * </p>
      * <p>
      * This cleanup task is necessary to ensure that you don't end up with multiple event data stores. Audit Manager
-     * will ignore an unused event data store after you remove or change a delegated administrator account. However, the
+     * ignores an unused event data store after you remove or change a delegated administrator account. However, the
      * unused event data store continues to incur storage costs from CloudTrail Lake if you don't delete it.
      * </p>
      * </important>
@@ -1033,8 +950,9 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
      * </li>
      * </ul>
      * <p>
-     * At this time, Audit Manager doesn't provide an option to delete evidence. All available delete operations are
-     * listed above.
+     * At this time, Audit Manager doesn't provide an option to delete evidence for a specific delegated administrator.
+     * Instead, when your management account deregisters Audit Manager, we perform a cleanup for the current delegated
+     * administrator account at the time of deregistration.
      * </p>
      * 
      * @param deregisterOrganizationAdminAccountRequest
@@ -1438,8 +1356,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns a list of evidence folders that are associated with a specified control of an assessment in Audit
-     * Manager.
+     * Returns a list of evidence folders that are associated with a specified control in an Audit Manager assessment.
      * </p>
      * 
      * @param getEvidenceFoldersByAssessmentControlRequest
@@ -1455,8 +1372,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns a list of evidence folders that are associated with a specified control of an assessment in Audit
-     * Manager.
+     * Returns a list of evidence folders that are associated with a specified control in an Audit Manager assessment.
      * </p>
      * 
      * @param getEvidenceFoldersByAssessmentControlRequest

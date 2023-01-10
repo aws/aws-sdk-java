@@ -62,6 +62,17 @@ public class StatefulRule implements Serializable, Cloneable, StructuredPojo {
      * <code>DROP</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful rule, and sends a TCP reset packet
+     * back to sender of the packet. A TCP reset packet is a packet with no payload and a <code>RST</code> bit contained
+     * in the TCP header flags. Also sends an alert log mesage if alert logging is configured in the <a>Firewall</a>
+     * <a>LoggingConfiguration</a>.
+     * </p>
+     * <p>
+     * <code>REJECT</code> isn't currently available for use with IMAP and FTP protocols.
+     * </p>
+     * </li>
      * </ul>
      */
     private String action;
@@ -110,6 +121,17 @@ public class StatefulRule implements Serializable, Cloneable, StructuredPojo {
      * <code>DROP</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful rule, and sends a TCP reset packet
+     * back to sender of the packet. A TCP reset packet is a packet with no payload and a <code>RST</code> bit contained
+     * in the TCP header flags. Also sends an alert log mesage if alert logging is configured in the <a>Firewall</a>
+     * <a>LoggingConfiguration</a>.
+     * </p>
+     * <p>
+     * <code>REJECT</code> isn't currently available for use with IMAP and FTP protocols.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param action
@@ -140,6 +162,17 @@ public class StatefulRule implements Serializable, Cloneable, StructuredPojo {
      *        You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule
      *        with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the
      *        action to <code>DROP</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful rule, and sends a TCP reset
+     *        packet back to sender of the packet. A TCP reset packet is a packet with no payload and a <code>RST</code>
+     *        bit contained in the TCP header flags. Also sends an alert log mesage if alert logging is configured in
+     *        the <a>Firewall</a> <a>LoggingConfiguration</a>.
+     *        </p>
+     *        <p>
+     *        <code>REJECT</code> isn't currently available for use with IMAP and FTP protocols.
      *        </p>
      *        </li>
      * @see StatefulAction
@@ -181,6 +214,17 @@ public class StatefulRule implements Serializable, Cloneable, StructuredPojo {
      * <code>DROP</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful rule, and sends a TCP reset packet
+     * back to sender of the packet. A TCP reset packet is a packet with no payload and a <code>RST</code> bit contained
+     * in the TCP header flags. Also sends an alert log mesage if alert logging is configured in the <a>Firewall</a>
+     * <a>LoggingConfiguration</a>.
+     * </p>
+     * <p>
+     * <code>REJECT</code> isn't currently available for use with IMAP and FTP protocols.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the
@@ -210,6 +254,17 @@ public class StatefulRule implements Serializable, Cloneable, StructuredPojo {
      *         You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule
      *         with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change
      *         the action to <code>DROP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful rule, and sends a TCP reset
+     *         packet back to sender of the packet. A TCP reset packet is a packet with no payload and a
+     *         <code>RST</code> bit contained in the TCP header flags. Also sends an alert log mesage if alert logging
+     *         is configured in the <a>Firewall</a> <a>LoggingConfiguration</a>.
+     *         </p>
+     *         <p>
+     *         <code>REJECT</code> isn't currently available for use with IMAP and FTP protocols.
      *         </p>
      *         </li>
      * @see StatefulAction
@@ -251,6 +306,17 @@ public class StatefulRule implements Serializable, Cloneable, StructuredPojo {
      * <code>DROP</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful rule, and sends a TCP reset packet
+     * back to sender of the packet. A TCP reset packet is a packet with no payload and a <code>RST</code> bit contained
+     * in the TCP header flags. Also sends an alert log mesage if alert logging is configured in the <a>Firewall</a>
+     * <a>LoggingConfiguration</a>.
+     * </p>
+     * <p>
+     * <code>REJECT</code> isn't currently available for use with IMAP and FTP protocols.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param action
@@ -281,6 +347,17 @@ public class StatefulRule implements Serializable, Cloneable, StructuredPojo {
      *        You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule
      *        with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the
      *        action to <code>DROP</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful rule, and sends a TCP reset
+     *        packet back to sender of the packet. A TCP reset packet is a packet with no payload and a <code>RST</code>
+     *        bit contained in the TCP header flags. Also sends an alert log mesage if alert logging is configured in
+     *        the <a>Firewall</a> <a>LoggingConfiguration</a>.
+     *        </p>
+     *        <p>
+     *        <code>REJECT</code> isn't currently available for use with IMAP and FTP protocols.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -324,6 +401,17 @@ public class StatefulRule implements Serializable, Cloneable, StructuredPojo {
      * <code>DROP</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful rule, and sends a TCP reset packet
+     * back to sender of the packet. A TCP reset packet is a packet with no payload and a <code>RST</code> bit contained
+     * in the TCP header flags. Also sends an alert log mesage if alert logging is configured in the <a>Firewall</a>
+     * <a>LoggingConfiguration</a>.
+     * </p>
+     * <p>
+     * <code>REJECT</code> isn't currently available for use with IMAP and FTP protocols.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param action
@@ -354,6 +442,17 @@ public class StatefulRule implements Serializable, Cloneable, StructuredPojo {
      *        You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule
      *        with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the
      *        action to <code>DROP</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful rule, and sends a TCP reset
+     *        packet back to sender of the packet. A TCP reset packet is a packet with no payload and a <code>RST</code>
+     *        bit contained in the TCP header flags. Also sends an alert log mesage if alert logging is configured in
+     *        the <a>Firewall</a> <a>LoggingConfiguration</a>.
+     *        </p>
+     *        <p>
+     *        <code>REJECT</code> isn't currently available for use with IMAP and FTP protocols.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

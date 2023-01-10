@@ -90,7 +90,7 @@ public class JobRunSummary implements Serializable, Cloneable, StructuredPojo {
     private String stateDetails;
     /**
      * <p>
-     * The EMR release version associated with the application your job is running on.
+     * The EMR release associated with the application your job is running on.
      * </p>
      */
     private String releaseLabel;
@@ -522,11 +522,11 @@ public class JobRunSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The EMR release version associated with the application your job is running on.
+     * The EMR release associated with the application your job is running on.
      * </p>
      * 
      * @param releaseLabel
-     *        The EMR release version associated with the application your job is running on.
+     *        The EMR release associated with the application your job is running on.
      */
 
     public void setReleaseLabel(String releaseLabel) {
@@ -535,10 +535,10 @@ public class JobRunSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The EMR release version associated with the application your job is running on.
+     * The EMR release associated with the application your job is running on.
      * </p>
      * 
-     * @return The EMR release version associated with the application your job is running on.
+     * @return The EMR release associated with the application your job is running on.
      */
 
     public String getReleaseLabel() {
@@ -547,11 +547,11 @@ public class JobRunSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The EMR release version associated with the application your job is running on.
+     * The EMR release associated with the application your job is running on.
      * </p>
      * 
      * @param releaseLabel
-     *        The EMR release version associated with the application your job is running on.
+     *        The EMR release associated with the application your job is running on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

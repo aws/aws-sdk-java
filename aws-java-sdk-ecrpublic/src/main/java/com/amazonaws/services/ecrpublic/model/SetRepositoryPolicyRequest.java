@@ -27,8 +27,8 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the repository. If you do not specify a registry,
-     * the default public registry is assumed.
+     * The Amazon Web Services account ID that's associated with the registry that contains the repository. If you do
+     * not specify a registry, the default public registry is assumed.
      * </p>
      */
     private String registryId;
@@ -48,22 +48,21 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
     private String policyText;
     /**
      * <p>
-     * If the policy you are attempting to set on a repository policy would prevent you from setting another policy in
-     * the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
-     * repository lock outs.
+     * If the policy that you want to set on a repository policy would prevent you from setting another policy in the
+     * future, you must force the <a>SetRepositoryPolicy</a> operation. This prevents accidental repository lockouts.
      * </p>
      */
     private Boolean force;
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the repository. If you do not specify a registry,
-     * the default public registry is assumed.
+     * The Amazon Web Services account ID that's associated with the registry that contains the repository. If you do
+     * not specify a registry, the default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the repository. If you do not specify a
-     *        registry, the default public registry is assumed.
+     *        The Amazon Web Services account ID that's associated with the registry that contains the repository. If
+     *        you do not specify a registry, the default public registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -72,12 +71,12 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the repository. If you do not specify a registry,
-     * the default public registry is assumed.
+     * The Amazon Web Services account ID that's associated with the registry that contains the repository. If you do
+     * not specify a registry, the default public registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the registry that contains the repository. If you do not specify a
-     *         registry, the default public registry is assumed.
+     * @return The Amazon Web Services account ID that's associated with the registry that contains the repository. If
+     *         you do not specify a registry, the default public registry is assumed.
      */
 
     public String getRegistryId() {
@@ -86,13 +85,13 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the repository. If you do not specify a registry,
-     * the default public registry is assumed.
+     * The Amazon Web Services account ID that's associated with the registry that contains the repository. If you do
+     * not specify a registry, the default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the repository. If you do not specify a
-     *        registry, the default public registry is assumed.
+     *        The Amazon Web Services account ID that's associated with the registry that contains the repository. If
+     *        you do not specify a registry, the default public registry is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,15 +194,14 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If the policy you are attempting to set on a repository policy would prevent you from setting another policy in
-     * the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
-     * repository lock outs.
+     * If the policy that you want to set on a repository policy would prevent you from setting another policy in the
+     * future, you must force the <a>SetRepositoryPolicy</a> operation. This prevents accidental repository lockouts.
      * </p>
      * 
      * @param force
-     *        If the policy you are attempting to set on a repository policy would prevent you from setting another
-     *        policy in the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent
-     *        accidental repository lock outs.
+     *        If the policy that you want to set on a repository policy would prevent you from setting another policy in
+     *        the future, you must force the <a>SetRepositoryPolicy</a> operation. This prevents accidental repository
+     *        lockouts.
      */
 
     public void setForce(Boolean force) {
@@ -212,14 +210,13 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If the policy you are attempting to set on a repository policy would prevent you from setting another policy in
-     * the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
-     * repository lock outs.
+     * If the policy that you want to set on a repository policy would prevent you from setting another policy in the
+     * future, you must force the <a>SetRepositoryPolicy</a> operation. This prevents accidental repository lockouts.
      * </p>
      * 
-     * @return If the policy you are attempting to set on a repository policy would prevent you from setting another
-     *         policy in the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to
-     *         prevent accidental repository lock outs.
+     * @return If the policy that you want to set on a repository policy would prevent you from setting another policy
+     *         in the future, you must force the <a>SetRepositoryPolicy</a> operation. This prevents accidental
+     *         repository lockouts.
      */
 
     public Boolean getForce() {
@@ -228,15 +225,14 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If the policy you are attempting to set on a repository policy would prevent you from setting another policy in
-     * the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
-     * repository lock outs.
+     * If the policy that you want to set on a repository policy would prevent you from setting another policy in the
+     * future, you must force the <a>SetRepositoryPolicy</a> operation. This prevents accidental repository lockouts.
      * </p>
      * 
      * @param force
-     *        If the policy you are attempting to set on a repository policy would prevent you from setting another
-     *        policy in the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent
-     *        accidental repository lock outs.
+     *        If the policy that you want to set on a repository policy would prevent you from setting another policy in
+     *        the future, you must force the <a>SetRepositoryPolicy</a> operation. This prevents accidental repository
+     *        lockouts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,14 +243,13 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If the policy you are attempting to set on a repository policy would prevent you from setting another policy in
-     * the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
-     * repository lock outs.
+     * If the policy that you want to set on a repository policy would prevent you from setting another policy in the
+     * future, you must force the <a>SetRepositoryPolicy</a> operation. This prevents accidental repository lockouts.
      * </p>
      * 
-     * @return If the policy you are attempting to set on a repository policy would prevent you from setting another
-     *         policy in the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to
-     *         prevent accidental repository lock outs.
+     * @return If the policy that you want to set on a repository policy would prevent you from setting another policy
+     *         in the future, you must force the <a>SetRepositoryPolicy</a> operation. This prevents accidental
+     *         repository lockouts.
      */
 
     public Boolean isForce() {

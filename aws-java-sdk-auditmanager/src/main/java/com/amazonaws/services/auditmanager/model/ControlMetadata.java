@@ -54,13 +54,13 @@ public class ControlMetadata implements Serializable, Cloneable, StructuredPojo 
     private String controlSources;
     /**
      * <p>
-     * Specifies when the control was created.
+     * The time when the control was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * Specifies when the control was most recently updated.
+     * The time when the control was most recently updated.
      * </p>
      */
     private java.util.Date lastUpdatedAt;
@@ -227,11 +227,11 @@ public class ControlMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies when the control was created.
+     * The time when the control was created.
      * </p>
      * 
      * @param createdAt
-     *        Specifies when the control was created.
+     *        The time when the control was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -240,10 +240,10 @@ public class ControlMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies when the control was created.
+     * The time when the control was created.
      * </p>
      * 
-     * @return Specifies when the control was created.
+     * @return The time when the control was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -252,11 +252,11 @@ public class ControlMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies when the control was created.
+     * The time when the control was created.
      * </p>
      * 
      * @param createdAt
-     *        Specifies when the control was created.
+     *        The time when the control was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,11 +267,11 @@ public class ControlMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies when the control was most recently updated.
+     * The time when the control was most recently updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        Specifies when the control was most recently updated.
+     *        The time when the control was most recently updated.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -280,10 +280,10 @@ public class ControlMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies when the control was most recently updated.
+     * The time when the control was most recently updated.
      * </p>
      * 
-     * @return Specifies when the control was most recently updated.
+     * @return The time when the control was most recently updated.
      */
 
     public java.util.Date getLastUpdatedAt() {
@@ -292,11 +292,11 @@ public class ControlMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies when the control was most recently updated.
+     * The time when the control was most recently updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        Specifies when the control was most recently updated.
+     *        The time when the control was most recently updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,18 +25,18 @@ public class GetEvidenceResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The evidence that the <code>GetEvidenceResponse</code> API returned.
+     * The evidence that the <code>GetEvidence</code> API returned.
      * </p>
      */
     private Evidence evidence;
 
     /**
      * <p>
-     * The evidence that the <code>GetEvidenceResponse</code> API returned.
+     * The evidence that the <code>GetEvidence</code> API returned.
      * </p>
      * 
      * @param evidence
-     *        The evidence that the <code>GetEvidenceResponse</code> API returned.
+     *        The evidence that the <code>GetEvidence</code> API returned.
      */
 
     public void setEvidence(Evidence evidence) {
@@ -45,10 +45,10 @@ public class GetEvidenceResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The evidence that the <code>GetEvidenceResponse</code> API returned.
+     * The evidence that the <code>GetEvidence</code> API returned.
      * </p>
      * 
-     * @return The evidence that the <code>GetEvidenceResponse</code> API returned.
+     * @return The evidence that the <code>GetEvidence</code> API returned.
      */
 
     public Evidence getEvidence() {
@@ -57,11 +57,11 @@ public class GetEvidenceResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The evidence that the <code>GetEvidenceResponse</code> API returned.
+     * The evidence that the <code>GetEvidence</code> API returned.
      * </p>
      * 
      * @param evidence
-     *        The evidence that the <code>GetEvidenceResponse</code> API returned.
+     *        The evidence that the <code>GetEvidence</code> API returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

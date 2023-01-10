@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An ACM Private CA quota has been exceeded. See the exception message returned to determine the quota that was
- * exceeded.
+ * An Amazon Web Services Private CA quota has been exceeded. See the exception message returned to determine the quota
+ * that was exceeded.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

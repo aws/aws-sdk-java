@@ -25,19 +25,18 @@ public class UpdateAssessmentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated assessment.
+     * The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.
      * </p>
      */
     private Assessment assessment;
 
     /**
      * <p>
-     * The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated assessment.
+     * The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.
      * </p>
      * 
      * @param assessment
-     *        The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated
-     *        assessment.
+     *        The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.
      */
 
     public void setAssessment(Assessment assessment) {
@@ -46,10 +45,10 @@ public class UpdateAssessmentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated assessment.
+     * The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.
      * </p>
      * 
-     * @return The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated
+     * @return The response object for the <code>UpdateAssessment</code> API. This is the name of the updated
      *         assessment.
      */
 
@@ -59,12 +58,11 @@ public class UpdateAssessmentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated assessment.
+     * The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.
      * </p>
      * 
      * @param assessment
-     *        The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated
-     *        assessment.
+     *        The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

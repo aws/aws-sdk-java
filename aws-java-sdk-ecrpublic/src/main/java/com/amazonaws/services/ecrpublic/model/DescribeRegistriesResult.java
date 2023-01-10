@@ -25,25 +25,25 @@ public class DescribeRegistriesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An object containing the details for a public registry.
+     * An object that contains the details for a public registry.
      * </p>
      */
     private java.util.List<Registry> registries;
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the
-     * results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to
-     * retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results
+     * of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve
+     * the next page of results. If there are no more results, this value is <code>null</code>.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An object containing the details for a public registry.
+     * An object that contains the details for a public registry.
      * </p>
      * 
-     * @return An object containing the details for a public registry.
+     * @return An object that contains the details for a public registry.
      */
 
     public java.util.List<Registry> getRegistries() {
@@ -52,11 +52,11 @@ public class DescribeRegistriesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An object containing the details for a public registry.
+     * An object that contains the details for a public registry.
      * </p>
      * 
      * @param registries
-     *        An object containing the details for a public registry.
+     *        An object that contains the details for a public registry.
      */
 
     public void setRegistries(java.util.Collection<Registry> registries) {
@@ -70,7 +70,7 @@ public class DescribeRegistriesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An object containing the details for a public registry.
+     * An object that contains the details for a public registry.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class DescribeRegistriesResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param registries
-     *        An object containing the details for a public registry.
+     *        An object that contains the details for a public registry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class DescribeRegistriesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An object containing the details for a public registry.
+     * An object that contains the details for a public registry.
      * </p>
      * 
      * @param registries
-     *        An object containing the details for a public registry.
+     *        An object that contains the details for a public registry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,16 +110,15 @@ public class DescribeRegistriesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the
-     * results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to
-     * retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results
+     * of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve
+     * the next page of results. If there are no more results, this value is <code>null</code>.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When
-     *        the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can
-     *        be used to retrieve the next page of results. This value is <code>null</code> when there are no more
-     *        results to return.
+     *        The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the
+     *        results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this
+     *        value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.
      */
 
     public void setNextToken(String nextToken) {
@@ -128,15 +127,15 @@ public class DescribeRegistriesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the
-     * results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to
-     * retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results
+     * of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve
+     * the next page of results. If there are no more results, this value is <code>null</code>.
      * </p>
      * 
-     * @return The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When
-     *         the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can
-     *         be used to retrieve the next page of results. This value is <code>null</code> when there are no more
-     *         results to return.
+     * @return The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the
+     *         results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this
+     *         value to retrieve the next page of results. If there are no more results, this value is <code>null</code>
+     *         .
      */
 
     public String getNextToken() {
@@ -145,16 +144,15 @@ public class DescribeRegistriesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the
-     * results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to
-     * retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results
+     * of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve
+     * the next page of results. If there are no more results, this value is <code>null</code>.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When
-     *        the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can
-     *        be used to retrieve the next page of results. This value is <code>null</code> when there are no more
-     *        results to return.
+     *        The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the
+     *        results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this
+     *        value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

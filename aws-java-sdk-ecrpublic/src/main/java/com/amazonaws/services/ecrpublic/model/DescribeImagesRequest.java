@@ -27,8 +27,8 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository in which to describe images.
-     * If you do not specify a registry, the default public registry is assumed.
+     * The Amazon Web Services account ID that's associated with the public registry that contains the repository where
+     * images are described. If you do not specify a registry, the default public registry is assumed.
      * </p>
      */
     private String registryId;
@@ -46,36 +46,36 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<ImageIdentifier> imageIds;
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where
-     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return. This option cannot be used when you specify images with
-     * <code>imageIds</code>.
+     * The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeImages</code> request
+     * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
+     * from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results
+     * to return, this value is <code>null</code>. If you specify images with <code>imageIds</code>, you can't use this
+     * option.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this
-     * parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page
-     * along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
+     * The maximum number of repository results that's returned by <code>DescribeImages</code> in paginated output. When
+     * this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page
+     * along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by
      * sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100
-     * results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images
-     * with <code>imageIds</code>.
+     * can be between 1 and 1000. If this parameter isn't used, then <code>DescribeImages</code> returns up to 100
+     * results and a <code>nextToken</code> value, if applicable. If you specify images with <code>imageIds</code>, you
+     * can't use this option.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository in which to describe images.
-     * If you do not specify a registry, the default public registry is assumed.
+     * The Amazon Web Services account ID that's associated with the public registry that contains the repository where
+     * images are described. If you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the public registry that contains the repository in which to describe
-     *        images. If you do not specify a registry, the default public registry is assumed.
+     *        The Amazon Web Services account ID that's associated with the public registry that contains the repository
+     *        where images are described. If you do not specify a registry, the default public registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -84,12 +84,13 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository in which to describe images.
-     * If you do not specify a registry, the default public registry is assumed.
+     * The Amazon Web Services account ID that's associated with the public registry that contains the repository where
+     * images are described. If you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the public registry that contains the repository in which to describe
-     *         images. If you do not specify a registry, the default public registry is assumed.
+     * @return The Amazon Web Services account ID that's associated with the public registry that contains the
+     *         repository where images are described. If you do not specify a registry, the default public registry is
+     *         assumed.
      */
 
     public String getRegistryId() {
@@ -98,13 +99,13 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository in which to describe images.
-     * If you do not specify a registry, the default public registry is assumed.
+     * The Amazon Web Services account ID that's associated with the public registry that contains the repository where
+     * images are described. If you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the public registry that contains the repository in which to describe
-     *        images. If you do not specify a registry, the default public registry is assumed.
+     *        The Amazon Web Services account ID that's associated with the public registry that contains the repository
+     *        where images are described. If you do not specify a registry, the default public registry is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,19 +226,19 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where
-     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return. This option cannot be used when you specify images with
-     * <code>imageIds</code>.
+     * The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeImages</code> request
+     * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
+     * from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results
+     * to return, this value is <code>null</code>. If you specify images with <code>imageIds</code>, you can't use this
+     * option.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request
-     *        where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *        continues from the end of the previous results that returned the <code>nextToken</code> value. This value
-     *        is <code>null</code> when there are no more results to return. This option cannot be used when you specify
-     *        images with <code>imageIds</code>.
+     *        The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeImages</code>
+     *        request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
+     *        Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
+     *        If there are no more results to return, this value is <code>null</code>. If you specify images with
+     *        <code>imageIds</code>, you can't use this option.
      */
 
     public void setNextToken(String nextToken) {
@@ -246,18 +247,18 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where
-     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return. This option cannot be used when you specify images with
-     * <code>imageIds</code>.
+     * The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeImages</code> request
+     * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
+     * from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results
+     * to return, this value is <code>null</code>. If you specify images with <code>imageIds</code>, you can't use this
+     * option.
      * </p>
      * 
-     * @return The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request
-     *         where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *         continues from the end of the previous results that returned the <code>nextToken</code> value. This value
-     *         is <code>null</code> when there are no more results to return. This option cannot be used when you
-     *         specify images with <code>imageIds</code>.
+     * @return The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeImages</code>
+     *         request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
+     *         Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
+     *         If there are no more results to return, this value is <code>null</code>. If you specify images with
+     *         <code>imageIds</code>, you can't use this option.
      */
 
     public String getNextToken() {
@@ -266,19 +267,19 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where
-     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return. This option cannot be used when you specify images with
-     * <code>imageIds</code>.
+     * The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeImages</code> request
+     * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
+     * from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results
+     * to return, this value is <code>null</code>. If you specify images with <code>imageIds</code>, you can't use this
+     * option.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request
-     *        where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *        continues from the end of the previous results that returned the <code>nextToken</code> value. This value
-     *        is <code>null</code> when there are no more results to return. This option cannot be used when you specify
-     *        images with <code>imageIds</code>.
+     *        The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeImages</code>
+     *        request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
+     *        Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
+     *        If there are no more results to return, this value is <code>null</code>. If you specify images with
+     *        <code>imageIds</code>, you can't use this option.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,23 +290,23 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this
-     * parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page
-     * along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
+     * The maximum number of repository results that's returned by <code>DescribeImages</code> in paginated output. When
+     * this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page
+     * along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by
      * sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100
-     * results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images
-     * with <code>imageIds</code>.
+     * can be between 1 and 1000. If this parameter isn't used, then <code>DescribeImages</code> returns up to 100
+     * results and a <code>nextToken</code> value, if applicable. If you specify images with <code>imageIds</code>, you
+     * can't use this option.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When
-     *        this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a
-     *        single page along with a <code>nextToken</code> response element. The remaining results of the initial
-     *        request can be seen by sending another <code>DescribeImages</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then
+     *        The maximum number of repository results that's returned by <code>DescribeImages</code> in paginated
+     *        output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code>
+     *        results in a single page along with a <code>nextToken</code> response element. You can see the remaining
+     *        results of the initial request by sending another <code>DescribeImages</code> request with the returned
+     *        <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used, then
      *        <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.
-     *        This option cannot be used when you specify images with <code>imageIds</code>.
+     *        If you specify images with <code>imageIds</code>, you can't use this option.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -314,22 +315,22 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this
-     * parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page
-     * along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
+     * The maximum number of repository results that's returned by <code>DescribeImages</code> in paginated output. When
+     * this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page
+     * along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by
      * sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100
-     * results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images
-     * with <code>imageIds</code>.
+     * can be between 1 and 1000. If this parameter isn't used, then <code>DescribeImages</code> returns up to 100
+     * results and a <code>nextToken</code> value, if applicable. If you specify images with <code>imageIds</code>, you
+     * can't use this option.
      * </p>
      * 
-     * @return The maximum number of repository results returned by <code>DescribeImages</code> in paginated output.
-     *         When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in
-     *         a single page along with a <code>nextToken</code> response element. The remaining results of the initial
-     *         request can be seen by sending another <code>DescribeImages</code> request with the returned
-     *         <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then
+     * @return The maximum number of repository results that's returned by <code>DescribeImages</code> in paginated
+     *         output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code>
+     *         results in a single page along with a <code>nextToken</code> response element. You can see the remaining
+     *         results of the initial request by sending another <code>DescribeImages</code> request with the returned
+     *         <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used, then
      *         <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.
-     *         This option cannot be used when you specify images with <code>imageIds</code>.
+     *         If you specify images with <code>imageIds</code>, you can't use this option.
      */
 
     public Integer getMaxResults() {
@@ -338,23 +339,23 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this
-     * parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page
-     * along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
+     * The maximum number of repository results that's returned by <code>DescribeImages</code> in paginated output. When
+     * this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page
+     * along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by
      * sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100
-     * results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images
-     * with <code>imageIds</code>.
+     * can be between 1 and 1000. If this parameter isn't used, then <code>DescribeImages</code> returns up to 100
+     * results and a <code>nextToken</code> value, if applicable. If you specify images with <code>imageIds</code>, you
+     * can't use this option.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When
-     *        this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a
-     *        single page along with a <code>nextToken</code> response element. The remaining results of the initial
-     *        request can be seen by sending another <code>DescribeImages</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then
+     *        The maximum number of repository results that's returned by <code>DescribeImages</code> in paginated
+     *        output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code>
+     *        results in a single page along with a <code>nextToken</code> response element. You can see the remaining
+     *        results of the initial request by sending another <code>DescribeImages</code> request with the returned
+     *        <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used, then
      *        <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.
-     *        This option cannot be used when you specify images with <code>imageIds</code>.
+     *        If you specify images with <code>imageIds</code>, you can't use this option.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

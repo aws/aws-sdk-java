@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A record that contains the information needed to demonstrate compliance with the requirements specified by a control.
- * Examples of evidence include change activity triggered by a user, or a system configuration snapshot.
+ * Examples of evidence include change activity invoked by a user, or a system configuration snapshot.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Evidence" target="_top">AWS API

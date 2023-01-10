@@ -27,8 +27,8 @@ public class GetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository. If you do not specify a
-     * registry, the default public registry is assumed.
+     * The Amazon Web Services account ID that's associated with the public registry that contains the repository. If
+     * you do not specify a registry, the default public registry is assumed.
      * </p>
      */
     private String registryId;
@@ -41,13 +41,13 @@ public class GetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository. If you do not specify a
-     * registry, the default public registry is assumed.
+     * The Amazon Web Services account ID that's associated with the public registry that contains the repository. If
+     * you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the public registry that contains the repository. If you do not specify
-     *        a registry, the default public registry is assumed.
+     *        The Amazon Web Services account ID that's associated with the public registry that contains the
+     *        repository. If you do not specify a registry, the default public registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -56,12 +56,12 @@ public class GetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository. If you do not specify a
-     * registry, the default public registry is assumed.
+     * The Amazon Web Services account ID that's associated with the public registry that contains the repository. If
+     * you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the public registry that contains the repository. If you do not
-     *         specify a registry, the default public registry is assumed.
+     * @return The Amazon Web Services account ID that's associated with the public registry that contains the
+     *         repository. If you do not specify a registry, the default public registry is assumed.
      */
 
     public String getRegistryId() {
@@ -70,13 +70,13 @@ public class GetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID associated with the public registry that contains the repository. If you do not specify a
-     * registry, the default public registry is assumed.
+     * The Amazon Web Services account ID that's associated with the public registry that contains the repository. If
+     * you do not specify a registry, the default public registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the public registry that contains the repository. If you do not specify
-     *        a registry, the default public registry is assumed.
+     *        The Amazon Web Services account ID that's associated with the public registry that contains the
+     *        repository. If you do not specify a registry, the default public registry is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

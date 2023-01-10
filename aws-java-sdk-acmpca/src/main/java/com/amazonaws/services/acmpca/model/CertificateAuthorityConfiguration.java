@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also
  * includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must
  * specify this information when you call the <a
- * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+ * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html"
  * >CreateCertificateAuthority</a> action.
  * </p>
  * 

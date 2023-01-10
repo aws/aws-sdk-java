@@ -64,14 +64,16 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
      * Audit Manager.
      * </p>
-     * <p>
-     * Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re using
-     * Audit Manager as a delegated administrator, keep in mind that this action applies to all member accounts in your
-     * organization.
-     * </p>
      * </important>
      */
     private Boolean evidenceFinderEnabled;
+    /**
+     * <p>
+     * The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is
+     * handled when you deregister Audit Manager.
+     * </p>
+     */
+    private DeregistrationPolicy deregistrationPolicy;
 
     /**
      * <p>
@@ -278,11 +280,6 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
      * Audit Manager.
      * </p>
-     * <p>
-     * Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re using
-     * Audit Manager as a delegated administrator, keep in mind that this action applies to all member accounts in your
-     * organization.
-     * </p>
      * </important>
      * 
      * @param evidenceFinderEnabled
@@ -296,11 +293,6 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        >deregister</a> and then <a
      *        href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html"
      *        >re-register</a> Audit Manager.
-     *        </p>
-     *        <p>
-     *        Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re
-     *        using Audit Manager as a delegated administrator, keep in mind that this action applies to all member
-     *        accounts in your organization.
      *        </p>
      */
 
@@ -323,11 +315,6 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
      * Audit Manager.
      * </p>
-     * <p>
-     * Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re using
-     * Audit Manager as a delegated administrator, keep in mind that this action applies to all member accounts in your
-     * organization.
-     * </p>
      * </important>
      * 
      * @return Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable
@@ -340,11 +327,6 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
      *         >deregister</a> and then <a
      *         href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html"
      *         >re-register</a> Audit Manager.
-     *         </p>
-     *         <p>
-     *         Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re
-     *         using Audit Manager as a delegated administrator, keep in mind that this action applies to all member
-     *         accounts in your organization.
      *         </p>
      */
 
@@ -367,11 +349,6 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
      * Audit Manager.
      * </p>
-     * <p>
-     * Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re using
-     * Audit Manager as a delegated administrator, keep in mind that this action applies to all member accounts in your
-     * organization.
-     * </p>
      * </important>
      * 
      * @param evidenceFinderEnabled
@@ -385,11 +362,6 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        >deregister</a> and then <a
      *        href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html"
      *        >re-register</a> Audit Manager.
-     *        </p>
-     *        <p>
-     *        Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re
-     *        using Audit Manager as a delegated administrator, keep in mind that this action applies to all member
-     *        accounts in your organization.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -414,11 +386,6 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
      * Audit Manager.
      * </p>
-     * <p>
-     * Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re using
-     * Audit Manager as a delegated administrator, keep in mind that this action applies to all member accounts in your
-     * organization.
-     * </p>
      * </important>
      * 
      * @return Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable
@@ -432,15 +399,56 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
      *         href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html"
      *         >re-register</a> Audit Manager.
      *         </p>
-     *         <p>
-     *         Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re
-     *         using Audit Manager as a delegated administrator, keep in mind that this action applies to all member
-     *         accounts in your organization.
-     *         </p>
      */
 
     public Boolean isEvidenceFinderEnabled() {
         return this.evidenceFinderEnabled;
+    }
+
+    /**
+     * <p>
+     * The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is
+     * handled when you deregister Audit Manager.
+     * </p>
+     * 
+     * @param deregistrationPolicy
+     *        The deregistration policy for your Audit Manager data. You can use this attribute to determine how your
+     *        data is handled when you deregister Audit Manager.
+     */
+
+    public void setDeregistrationPolicy(DeregistrationPolicy deregistrationPolicy) {
+        this.deregistrationPolicy = deregistrationPolicy;
+    }
+
+    /**
+     * <p>
+     * The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is
+     * handled when you deregister Audit Manager.
+     * </p>
+     * 
+     * @return The deregistration policy for your Audit Manager data. You can use this attribute to determine how your
+     *         data is handled when you deregister Audit Manager.
+     */
+
+    public DeregistrationPolicy getDeregistrationPolicy() {
+        return this.deregistrationPolicy;
+    }
+
+    /**
+     * <p>
+     * The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is
+     * handled when you deregister Audit Manager.
+     * </p>
+     * 
+     * @param deregistrationPolicy
+     *        The deregistration policy for your Audit Manager data. You can use this attribute to determine how your
+     *        data is handled when you deregister Audit Manager.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSettingsRequest withDeregistrationPolicy(DeregistrationPolicy deregistrationPolicy) {
+        setDeregistrationPolicy(deregistrationPolicy);
+        return this;
     }
 
     /**
@@ -464,7 +472,9 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getKmsKey() != null)
             sb.append("KmsKey: ").append(getKmsKey()).append(",");
         if (getEvidenceFinderEnabled() != null)
-            sb.append("EvidenceFinderEnabled: ").append(getEvidenceFinderEnabled());
+            sb.append("EvidenceFinderEnabled: ").append(getEvidenceFinderEnabled()).append(",");
+        if (getDeregistrationPolicy() != null)
+            sb.append("DeregistrationPolicy: ").append(getDeregistrationPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -500,6 +510,10 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getEvidenceFinderEnabled() != null && other.getEvidenceFinderEnabled().equals(this.getEvidenceFinderEnabled()) == false)
             return false;
+        if (other.getDeregistrationPolicy() == null ^ this.getDeregistrationPolicy() == null)
+            return false;
+        if (other.getDeregistrationPolicy() != null && other.getDeregistrationPolicy().equals(this.getDeregistrationPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -513,6 +527,7 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDefaultProcessOwners() == null) ? 0 : getDefaultProcessOwners().hashCode());
         hashCode = prime * hashCode + ((getKmsKey() == null) ? 0 : getKmsKey().hashCode());
         hashCode = prime * hashCode + ((getEvidenceFinderEnabled() == null) ? 0 : getEvidenceFinderEnabled().hashCode());
+        hashCode = prime * hashCode + ((getDeregistrationPolicy() == null) ? 0 : getDeregistrationPolicy().hashCode());
         return hashCode;
     }
 
