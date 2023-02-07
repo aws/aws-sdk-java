@@ -36,7 +36,7 @@ public class ListWithAutoConstructFlag<T> extends ArrayList<T> {
           super(c);
     }
 
-    public  ListWithAutoConstructFlag(int initialCapacity) {
+    public ListWithAutoConstructFlag(int initialCapacity) {
         super(initialCapacity);
     }
 

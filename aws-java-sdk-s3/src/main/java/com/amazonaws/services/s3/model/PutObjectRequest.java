@@ -248,7 +248,7 @@ public class PutObjectRequest extends AbstractPutObjectRequest implements Serial
 
     @Override
     @SuppressWarnings("unchecked")
-    public PutObjectRequest  withFile(File file) {
+    public PutObjectRequest withFile(File file) {
         return super.withFile(file);
     }
 
@@ -260,7 +260,7 @@ public class PutObjectRequest extends AbstractPutObjectRequest implements Serial
 
     @Override
     @SuppressWarnings("unchecked")
-    public PutObjectRequest  withCannedAcl(CannedAccessControlList cannedAcl) {
+    public PutObjectRequest withCannedAcl(CannedAccessControlList cannedAcl) {
         return super.withCannedAcl(cannedAcl);
     }
 
@@ -273,7 +273,7 @@ public class PutObjectRequest extends AbstractPutObjectRequest implements Serial
 
     @Override
     @SuppressWarnings("unchecked")
-    public PutObjectRequest  withInputStream(InputStream inputStream) {
+    public PutObjectRequest withInputStream(InputStream inputStream) {
         return super.withInputStream(inputStream);
     }
 
