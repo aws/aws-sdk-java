@@ -379,11 +379,15 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
     private synchronized QueueBuffer getQBuffer(String qUrl) {
         QueueBuffer toReturn = buffers.get(qUrl);
         if (null == toReturn) {
-            QueueBufferConfig config = new QueueBufferConfig(bufferConfigExemplar);
+            QueueBufferConfig config = createQueueBufferConfig(bufferConfigExemplar);
             toReturn = new QueueBuffer(config, qUrl, realSQS);
             buffers.put(qUrl, toReturn);
         }
         return toReturn;
+    }
+    
+    protected QueueBufferConfig createQueueBufferConfig(QueueBufferConfig bufferConfigExemplar) {
+        return new QueueBufferConfig(bufferConfigExemplar);
     }
 
     class CachingMap extends LinkedHashMap<String, QueueBuffer> {
