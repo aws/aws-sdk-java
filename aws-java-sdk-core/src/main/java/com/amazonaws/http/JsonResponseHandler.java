@@ -29,10 +29,15 @@ import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.ValidationUtils;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
-import java.io.IOException;
-import java.util.Map;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+import java.util.Map;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.InflaterInputStream;
 
 /**
  * Default implementation of HttpResponseHandler that handles a successful response from an AWS
@@ -66,6 +71,7 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
      * Constructs a new response handler that will use the specified JSON unmarshaller to unmarshall
      * the service response and uses the specified response element path to find the root of the
      * business data in the service's response.
+     *
      * @param responseUnmarshaller    The JSON unmarshaller to use on the response.
      * @param simpleTypeUnmarshallers List of unmarshallers to be used for scalar types.
      * @param customTypeMarshallers   List of custom unmarshallers to be used for special types.
@@ -106,7 +112,13 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
         JsonParser jsonParser = null;
 
         if (shouldParsePayloadAsJson()) {
-            jsonParser = jsonFactory.createParser(response.getContent());
+            try {
+                jsonParser = jsonFactory.createParser(handleContentEncoding(
+                        response.getHeaderValues("content-encoding"), response.getContent()));
+            } catch (IOException e) {
+                log.warn("Content encoding handling problem, falling back to no handling", e);
+                jsonParser = jsonFactory.createParser(response.getContent());
+            }
         }
 
         try {
@@ -136,7 +148,7 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
 
             Map<String, String> metadata = unmarshallerContext.getMetadata();
             metadata.put(ResponseMetadata.AWS_REQUEST_ID,
-                         response.getHeaders().get(X_AMZN_REQUEST_ID_HEADER));
+                    response.getHeaders().get(X_AMZN_REQUEST_ID_HEADER));
             awsResponse.setResponseMetadata(new ResponseMetadata(metadata));
 
             log.trace("Done parsing service response");
@@ -153,12 +165,42 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     }
 
     /**
+     * Wraps raw response payload input stream with appropriate decoding input streams. Supports gzip and deflate decoding
+     *
+     * @param usedEncoding "Content-Encoding" list of the response headers
+     * @param stream       Raw response payload input stream
+     * @return Appropriate decoder input stream wrapped stream
+     * @throws IOException thrown on not supported encoding used or on streaming issues
+     */
+    private InputStream handleContentEncoding(List<String> usedEncoding, InputStream stream) throws IOException {
+        if (usedEncoding == null || usedEncoding.size() < 1) {
+            return stream;
+        }
+
+        String encoding = usedEncoding.get(0).toLowerCase();
+        InputStream wrappedInputStream;
+
+        switch (encoding) {
+            case "gzip":
+                wrappedInputStream = new GZIPInputStream(stream);
+                break;
+            case "deflate":
+                wrappedInputStream = new InflaterInputStream(stream);
+                break;
+            default:
+                throw new IOException(String.format("Not supported \"%s\"", encoding));
+        }
+
+        return usedEncoding.size() == 1 ? wrappedInputStream :
+                handleContentEncoding(usedEncoding.subList(1, usedEncoding.size() - 1), wrappedInputStream);
+    }
+
+    /**
      * Hook for subclasses to override in order to collect additional metadata from service
      * responses.
      *
-     * @param unmarshallerContext
-     *            The unmarshaller context used to configure a service's response
-     *            data.
+     * @param unmarshallerContext The unmarshaller context used to configure a service's response
+     *                            data.
      */
     protected void registerAdditionalMetadataExpressions(
             JsonUnmarshallerContext unmarshallerContext) {
