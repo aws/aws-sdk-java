@@ -70,7 +70,7 @@ public class SignerUtils {
      */
     public static String buildCustomPolicy(String resourcePath,
             Date expiresOn, Date activeFrom, String ipAddress) {
-        return "{\"Statement\": [{"
+        return "{\"Statement\":[{"
                 + "\"Resource\":\""
                 + resourcePath
                 + "\""
