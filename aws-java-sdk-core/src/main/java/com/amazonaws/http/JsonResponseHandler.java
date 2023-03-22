@@ -187,6 +187,9 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
             case "deflate":
                 wrappedInputStream = new InflaterInputStream(stream);
                 break;
+            case "identity":
+                wrappedInputStream = stream;
+                break;
             default:
                 throw new IOException(String.format("Not supported \"%s\"", encoding));
         }
