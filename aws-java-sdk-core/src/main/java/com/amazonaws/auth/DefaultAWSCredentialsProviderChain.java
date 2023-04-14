@@ -35,8 +35,8 @@ import com.amazonaws.auth.profile.ProfileCredentialsProvider;
  * @see EnvironmentVariableCredentialsProvider
  * @see SystemPropertiesCredentialsProvider
  * @see WebIdentityTokenCredentialsProvider
- * @see ProfileCredentialsProvider
  * @see EC2ContainerCredentialsProviderWrapper
+ * @see ProfileCredentialsProvider
  */
 public class DefaultAWSCredentialsProviderChain extends AWSCredentialsProviderChain {
 
@@ -47,8 +47,8 @@ public class DefaultAWSCredentialsProviderChain extends AWSCredentialsProviderCh
         super(new EnvironmentVariableCredentialsProvider(),
               new SystemPropertiesCredentialsProvider(),
               WebIdentityTokenCredentialsProvider.create(),
-              new ProfileCredentialsProvider(),
-              new EC2ContainerCredentialsProviderWrapper());
+              new EC2ContainerCredentialsProviderWrapper(),
+              new ProfileCredentialsProvider());
     }
 
     public static DefaultAWSCredentialsProviderChain getInstance() {
