@@ -23,6 +23,9 @@ import com.amazonaws.regions.AwsRegionProvider;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Base class for all service specific async client builders.
@@ -111,7 +114,8 @@ public abstract class AwsAsyncClientBuilder<Subclass extends AwsAsyncClientBuild
          * @return Default async Executor to use if none is explicitly provided by user.
          */
         private ExecutorService defaultExecutor() {
-            return Executors.newFixedThreadPool(getClientConfiguration().getMaxConnections());
+
+            return new ThreadPoolExecutor(0, getClientConfiguration().getMaxConnections(), 60L, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>());
         }
     }
 
