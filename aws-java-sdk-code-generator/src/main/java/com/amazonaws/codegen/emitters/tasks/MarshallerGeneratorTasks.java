@@ -111,7 +111,6 @@ public class MarshallerGeneratorTasks extends BaseGeneratorTasks {
     private String getProtocolEnumName() {
         switch (metadata.getProtocol()) {
             case CBOR:
-            case ION:
             case AWS_JSON:
                 return Protocol.AWS_JSON.name();
             default:

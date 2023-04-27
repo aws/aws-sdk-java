@@ -139,10 +139,6 @@ public class SdkJsonProtocolFactory implements SdkJsonMarshallerFactory {
     private SdkStructuredJsonFactory getSdkFactory() {
         if (isCborEnabled()) {
             return SdkStructuredCborFactory.SDK_CBOR_FACTORY;
-        } else if (isIonEnabled()) {
-            return isIonBinaryEnabled()
-                    ? SdkStructuredIonFactory.SDK_ION_BINARY_FACTORY
-                    : SdkStructuredIonFactory.SDK_ION_TEXT_FACTORY;
         } else {
             return SdkStructuredPlainJsonFactory.SDK_JSON_FACTORY;
         }
@@ -154,10 +150,6 @@ public class SdkJsonProtocolFactory implements SdkJsonMarshallerFactory {
     private JsonContentTypeResolver getContentTypeResolver() {
         if (isCborEnabled()) {
             return JsonContentTypeResolver.CBOR;
-        } else if (isIonEnabled()) {
-            return isIonBinaryEnabled()
-                    ? JsonContentTypeResolver.ION_BINARY
-                    : JsonContentTypeResolver.ION_TEXT;
         } else {
             return JsonContentTypeResolver.JSON;
         }
@@ -165,13 +157,5 @@ public class SdkJsonProtocolFactory implements SdkJsonMarshallerFactory {
 
     private boolean isCborEnabled() {
         return metadata.isSupportsCbor() && !SDKGlobalConfiguration.isCborDisabled();
-    }
-
-    private boolean isIonEnabled() {
-        return metadata.isSupportsIon();
-    }
-
-    boolean isIonBinaryEnabled() {
-        return !SDKGlobalConfiguration.isIonBinaryDisabled();
     }
 }

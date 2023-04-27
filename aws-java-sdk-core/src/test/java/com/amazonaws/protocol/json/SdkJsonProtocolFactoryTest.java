@@ -112,10 +112,6 @@ public class SdkJsonProtocolFactoryTest {
                 .withSupportsIon(ionEnabled == IonEnabled.YES)
                 .withProtocolVersion("1.0");
         SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(metadata) {
-            @Override
-            boolean isIonBinaryEnabled() {
-                return ionBinaryEnabled == IonBinaryEnabled.YES;
-            }
         };
         return protocolFactory;
     }

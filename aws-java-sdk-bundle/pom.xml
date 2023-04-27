@@ -42,7 +42,6 @@
                             <include>com.fasterxml.jackson.dataformat:jackson-dataformat-cbor</include>
                             <include>org.apache.httpcomponents:*</include>
                             <include>commons-codec:commons-codec</include>
-                            <include>software.amazon.ion:ion-java</include>
                             <include>commons-logging:commons-logging</include>
                             <include>io.netty:*</include>
                             <include>com.amazonaws:*</include>
@@ -64,10 +63,6 @@
                         <relocation>
                             <pattern>org.apache.commons.codec</pattern>
                             <shadedPattern>com.amazonaws.thirdparty.apache.codec</shadedPattern>
-                        </relocation>
-                        <relocation>
-                            <pattern>software.amazon.ion</pattern>
-                            <shadedPattern>com.amazonaws.thirdparty.ion</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>org.apache.commons.logging</pattern>

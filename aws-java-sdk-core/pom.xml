@@ -29,11 +29,6 @@
       <version>${httpcomponents.httpclient.version}</version>
     </dependency>
     <dependency>
-      <groupId>software.amazon.ion</groupId>
-      <artifactId>ion-java</artifactId>
-      <version>${ion.java.version}</version>
-    </dependency>
-    <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
       <version>${jackson.databind.version}</version>
