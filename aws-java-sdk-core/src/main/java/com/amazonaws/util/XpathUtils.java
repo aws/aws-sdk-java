@@ -143,12 +143,12 @@ public class XpathUtils {
         try {
             speedUpDcoumentBuilderFactory();
         } catch(Throwable t) {
-            log.debug("Ingore failure in speeding up DocumentBuilderFactory", t);
+            log.debug("Ignore failure in speeding up DocumentBuilderFactory", t);
         }
         try {
             speedUpDTMManager();
         } catch(Throwable t) {
-            log.debug("Ingore failure in speeding up DTMManager", t);
+            log.debug("Ignore failure in speeding up DTMManager", t);
         }
     }
 
