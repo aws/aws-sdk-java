@@ -1173,7 +1173,7 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
      * Sets the Amazon Web Services Key Management System parameters used to encrypt the object
      * on server side.
      *
-     * @return returns the update PutObjectRequest
+     * @return returns the updated PutObjectRequest
      */
     public <T extends AbstractPutObjectRequest> T withSSEAwsKeyManagementParams(
             SSEAwsKeyManagementParams sseAwsKeyManagementParams) {
@@ -1205,7 +1205,7 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
      * SSE-KMS.
      *
      * <p>Specifying this header with a PUT operation doesn't affect bucket-level settings for S3 Bucket Key.
-     * @return returns the update PutObjectRequest
+     * @return returns the updated PutObjectRequest
      */
     public <T extends AbstractPutObjectRequest> T withBucketKeyEnabled(Boolean bucketKeyEnabled) {
         setBucketKeyEnabled(bucketKeyEnabled);
