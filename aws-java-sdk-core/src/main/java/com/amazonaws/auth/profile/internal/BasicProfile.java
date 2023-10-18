@@ -116,4 +116,7 @@ public class BasicProfile {
     public boolean isProcessBasedProfile() {
         return getCredentialProcess() != null;
     }
+    public String getCredentialSource() {
+        return getPropertyValue(ProfileKeyConstants.CREDENTIAL_SOURCE);
+    }
 }

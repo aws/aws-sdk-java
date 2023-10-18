@@ -79,4 +79,9 @@ public class ProfileKeyConstants {
      * Absolute path to a JWT file containing a web identity token.
      */
     public static final String WEB_IDENTITY_TOKEN = "web_identity_token_file";
+    
+    /**
+     * A source to obtain credentials from.
+     */
+    public static final String CREDENTIAL_SOURCE = "credential_source";
 }
