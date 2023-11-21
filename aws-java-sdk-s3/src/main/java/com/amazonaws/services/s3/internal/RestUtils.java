@@ -44,7 +44,7 @@ public class RestUtils {
             "acl", "torrent", "logging", "location", "policy", "requestPayment", "versioning",
             "versions", "versionId", "notification", "uploadId", "uploads", "partNumber", "website",
             "delete", "lifecycle", "tagging", "cors", "restore", "replication", "accelerate",
-            "inventory", "analytics", "metrics",
+            "inventory", "analytics", "metrics", "object-lock",
             ResponseHeaderOverrides.RESPONSE_HEADER_CACHE_CONTROL,
             ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_DISPOSITION,
             ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_ENCODING,
