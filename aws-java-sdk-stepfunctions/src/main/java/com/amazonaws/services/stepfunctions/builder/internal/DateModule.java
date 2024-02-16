@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.stepfunctions.builder.internal;
 
+import com.amazonaws.util.DateUtils;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
@@ -59,7 +60,7 @@ public class DateModule {
     }
 
     public static Date fromJson(String jsonText) {
-        return FORMATTER.parseDateTime(jsonText).toDate();
+        return DateUtils.parseISO8601Date(jsonText);
     }
 
 }

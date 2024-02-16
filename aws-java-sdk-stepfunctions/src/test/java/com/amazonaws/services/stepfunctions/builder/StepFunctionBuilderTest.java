@@ -667,4 +667,18 @@ public class StepFunctionBuilderTest {
         StateMachine.fromJson("{");
     }
 
+    @Test
+    public void stateMachineFromJson_JsonWithTimestampWithFractionalSeconds_DoesNotThrowException() {
+        StateMachine.fromJson(
+            "{\"StartAt\":\"TestTime\",\"States\":{\"TestTime\":{\"Type\":\"Wait\",\"Timestamp\":\"2016-03-14T01:59:00.000Z\",\"End\":true}}}"
+        );
+    }
+
+    @Test
+    public void stateMachineFromJson_JsonWithTimestampWithoutFractionalSeconds_DoesNotThrowException() {
+        StateMachine.fromJson(
+            "{\"StartAt\":\"TestTime\",\"States\":{\"TestTime\":{\"Type\":\"Wait\",\"Timestamp\":\"2016-03-14T01:59:00Z\",\"End\":true}}}"
+        );
+    }
+
 }
