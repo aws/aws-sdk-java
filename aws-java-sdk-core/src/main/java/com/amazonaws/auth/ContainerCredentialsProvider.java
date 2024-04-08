@@ -18,9 +18,12 @@ import com.amazonaws.SdkClientException;
 import com.amazonaws.internal.CredentialsEndpointProvider;
 import com.amazonaws.retry.internal.CredentialsEndpointRetryPolicy;
 
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.URI;
 import java.net.UnknownHostException;
+import java.nio.file.Files;
+import java.nio.file.FileSystems;
 import java.util.*;
 
 /**
@@ -43,10 +46,20 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
 
     static final String CONTAINER_AUTHORIZATION_TOKEN = "AWS_CONTAINER_AUTHORIZATION_TOKEN";
 
+    static final String CONTAINER_AUTHORIZATION_TOKEN_FILE = "AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE";
+
+    static final String AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE = "AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE";
+
+    private static final String ECS_CONTAINER_HOST = "169.254.170.2";
+    private static final String EKS_CONTAINER_HOST_IPV6 = "[fd00:ec2::23]";
+    private static final String EKS_CONTAINER_HOST_IPV4 = "169.254.170.23";
+    private static final List<String> VALID_LOOP_BACK_IPV4 = Arrays.asList(ECS_CONTAINER_HOST, EKS_CONTAINER_HOST_IPV4);
+    private static final List<String> VALID_LOOP_BACK_IPV6 = Arrays.asList(EKS_CONTAINER_HOST_IPV6);
+
     private static final String HTTPS = "https";
 
     /** Default endpoint to retrieve the Amazon ECS Credentials. */
-    private static final String ECS_CREDENTIALS_ENDPOINT = "http://169.254.170.2";
+    private static final String ECS_CREDENTIALS_ENDPOINT = "http://" + ECS_CONTAINER_HOST;
 
     private final ContainerCredentialsFetcher credentialsFetcher;
 
@@ -125,6 +138,15 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
             if (System.getenv(CONTAINER_AUTHORIZATION_TOKEN) != null) {
                 return Collections.singletonMap("Authorization", System.getenv(CONTAINER_AUTHORIZATION_TOKEN));
             }
+            if (System.getenv(CONTAINER_AUTHORIZATION_TOKEN_FILE) != null) {
+                String tokenFile = System.getenv(CONTAINER_AUTHORIZATION_TOKEN_FILE);
+                try {
+                    byte[] tokenBytes = Files.readAllBytes(FileSystems.getDefault().getPath(tokenFile));
+                    return Collections.singletonMap("Authorization", new String(tokenBytes, "UTF-8"));
+                } catch (IOException e) {
+                    throw new SdkClientException(String.format("Cannot fetch credentials from container - failed to read %s", tokenFile));
+                }
+            }
             return new HashMap<String, String>();
         }
 
@@ -151,7 +173,7 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
                     }
                 }
 
-                return addresses.length > 0 && allAllowed;
+                return addresses.length > 0 && (allAllowed || isMetadataServiceEndpoint(host));
 
             } catch (UnknownHostException e) {
                 throw new SdkClientException(String.format("host (%s) could not be resolved to an IP address.", host), e);
@@ -160,6 +182,19 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
 
         private boolean isLoopbackAddress(InetAddress inetAddress) {
             return inetAddress.isLoopbackAddress();
+        }
+
+        private boolean isMetadataServiceEndpoint(String host) {
+            String mode = System.getenv(AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE);
+            if ("IPV6".equalsIgnoreCase(mode)) {
+                return VALID_LOOP_BACK_IPV6.contains(host);
+            }
+            return VALID_LOOP_BACK_IPV4.contains(host);
+        }
+
+        @Override
+        public CredentialsEndpointRetryPolicy getRetryPolicy() {
+            return ContainerCredentialsRetryPolicy.getInstance();
         }
     }
 
